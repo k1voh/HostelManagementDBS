@@ -1,1 +1,1 @@
-# HostelManagementDBS
+# Hostel Management System
