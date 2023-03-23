@@ -1,0 +1,11 @@
+D:\210953080\Applications\HostelManagement\HostelManagement\bin\Debug\HostelManagement.exe.config
+D:\210953080\Applications\FrontEnd\HostelManagement\HostelManagement\bin\Debug\HostelManagement.exe.config
+D:\210953174_ShouvikShome\FrontEnd\HostelManagement\HostelManagement\bin\Debug\HostelManagement.exe.config
+D:\210953174_ShouvikShome\FrontEnd\HostelManagement\HostelManagement\bin\Debug\HostelManagement.exe
+D:\210953174_ShouvikShome\FrontEnd\HostelManagement\HostelManagement\bin\Debug\HostelManagement.pdb
+D:\210953174_ShouvikShome\FrontEnd\HostelManagement\HostelManagement\obj\Debug\HostelManagement.csprojResolveAssemblyReference.cache
+D:\210953174_ShouvikShome\FrontEnd\HostelManagement\HostelManagement\obj\Debug\HostelManagement.LOGIN.resources
+D:\210953174_ShouvikShome\FrontEnd\HostelManagement\HostelManagement\obj\Debug\HostelManagement.Properties.Resources.resources
+D:\210953174_ShouvikShome\FrontEnd\HostelManagement\HostelManagement\obj\Debug\HostelManagement.csproj.GenerateResource.Cache
+D:\210953174_ShouvikShome\FrontEnd\HostelManagement\HostelManagement\obj\Debug\HostelManagement.exe
+D:\210953174_ShouvikShome\FrontEnd\HostelManagement\HostelManagement\obj\Debug\HostelManagement.pdb
