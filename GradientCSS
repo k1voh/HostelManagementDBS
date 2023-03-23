@@ -1,0 +1,17 @@
+background-image: linear-gradient(
+  305deg,
+  hsl(0deg 0% 100%) 0%,
+  hsl(53deg 100% 97%) 2%,
+  hsl(53deg 100% 94%) 6%,
+  hsl(53deg 100% 91%) 10%,
+  hsl(53deg 100% 88%) 16%,
+  hsl(53deg 100% 85%) 23%,
+  hsl(53deg 100% 82%) 30%,
+  hsl(53deg 100% 79%) 38%,
+  hsl(54deg 100% 76%) 46%,
+  hsl(54deg 100% 72%) 56%,
+  hsl(54deg 100% 69%) 65%,
+  hsl(54deg 100% 65%) 76%,
+  hsl(54deg 100% 60%) 87%,
+  hsl(55deg 100% 50%) 100%
+);
