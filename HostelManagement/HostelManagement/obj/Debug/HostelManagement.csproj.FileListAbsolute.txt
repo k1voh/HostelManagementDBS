@@ -1,0 +1,2 @@
+D:\210953080\Applications\HostelManagement\HostelManagement\bin\Debug\HostelManagement.exe.config
+D:\210953080\Applications\FrontEnd\HostelManagement\HostelManagement\bin\Debug\HostelManagement.exe.config
