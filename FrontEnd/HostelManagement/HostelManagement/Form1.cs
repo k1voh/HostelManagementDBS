@@ -21,40 +21,24 @@ namespace HostelManagement
         {
 
         }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void loginButton_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void richTextBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
+            if (regTB.Text == string.Empty)
+            {
+                reqreg.Visible = true;
+            }
+            else
+            {
+                reqreg.Visible = false;
+            }
+            if(passTB.Text == string.Empty)
+            {
+                reqpass.Visible = true;
+            }
+            else
+            {
+                reqpass.Visible = false;
+            }
         }
     }
 }
