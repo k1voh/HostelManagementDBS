@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Oracle.ManagedDataAccess.Client;
+//using Oracle.DataAccess.Client;
+//using Oracle.DataAccess.Types;
 
 namespace HostelManagement
 {
@@ -15,6 +18,7 @@ namespace HostelManagement
         public LOGIN()
         {
             InitializeComponent();
+            passTB.PasswordChar = '*';  
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -31,7 +35,7 @@ namespace HostelManagement
             {
                 reqreg.Visible = false;
             }
-            if(passTB.Text == string.Empty)
+            if (passTB.Text == string.Empty)
             {
                 reqpass.Visible = true;
             }
@@ -39,6 +43,21 @@ namespace HostelManagement
             {
                 reqpass.Visible = false;
             }
+            if (captcha.Checked == false)
+            {
+                reqcaptcha.Visible = true;
+            }
+            else
+            {
+                reqcaptcha.Visible = false; 
+            }
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Form2 frm = new Form2();
+            frm.Show();
+            this.Hide();
         }
     }
 }

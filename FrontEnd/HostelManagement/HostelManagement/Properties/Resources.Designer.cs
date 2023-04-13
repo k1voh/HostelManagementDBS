@@ -59,5 +59,15 @@ namespace HostelManagement.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_2023_03_23_at_09_50_00_CSS_Gradient_Generator {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot 2023-03-23 at 09-50-00 CSS Gradient Generator", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
