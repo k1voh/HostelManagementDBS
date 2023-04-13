@@ -59,5 +59,12 @@ namespace HostelManagement
             frm.Show();
             this.Hide();
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Form3 fr = new Form3();
+            fr.Show();
+            this.Hide();
+        }
     }
 }

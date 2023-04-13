@@ -49,17 +49,16 @@
             this.captcha = new System.Windows.Forms.CheckBox();
             this.registerButton = new System.Windows.Forms.Button();
             this.reqcaptcha = new System.Windows.Forms.Label();
-            this.retypepassTB = new System.Windows.Forms.RichTextBox();
-            this.reqretype = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.passTB = new System.Windows.Forms.RichTextBox();
-            this.reqpass = new System.Windows.Forms.Label();
-            this.pass = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.label5 = new System.Windows.Forms.Label();
+            this.reqretype = new System.Windows.Forms.Label();
+            this.retypepassTB = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.reqpass = new System.Windows.Forms.Label();
+            this.passTB = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -304,92 +303,6 @@
             this.reqcaptcha.Text = "*captcha unchecked";
             this.reqcaptcha.Visible = false;
             // 
-            // retypepassTB
-            // 
-            this.retypepassTB.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.retypepassTB.Location = new System.Drawing.Point(449, 491);
-            this.retypepassTB.Margin = new System.Windows.Forms.Padding(4);
-            this.retypepassTB.Multiline = false;
-            this.retypepassTB.Name = "retypepassTB";
-            this.retypepassTB.Size = new System.Drawing.Size(238, 29);
-            this.retypepassTB.TabIndex = 52;
-            this.retypepassTB.Text = "";
-            // 
-            // reqretype
-            // 
-            this.reqretype.AutoSize = true;
-            this.reqretype.BackColor = System.Drawing.Color.Transparent;
-            this.reqretype.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reqretype.ForeColor = System.Drawing.Color.Red;
-            this.reqretype.Location = new System.Drawing.Point(585, 524);
-            this.reqretype.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.reqretype.Name = "reqretype";
-            this.reqretype.Size = new System.Drawing.Size(102, 18);
-            this.reqretype.TabIndex = 51;
-            this.reqretype.Text = "*required field";
-            this.reqretype.Visible = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Bookman Old Style", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(445, 467);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(160, 20);
-            this.label4.TabIndex = 50;
-            this.label4.Text = "Retype Password";
-            // 
-            // passTB
-            // 
-            this.passTB.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passTB.Location = new System.Drawing.Point(106, 491);
-            this.passTB.Margin = new System.Windows.Forms.Padding(4);
-            this.passTB.Multiline = false;
-            this.passTB.Name = "passTB";
-            this.passTB.Size = new System.Drawing.Size(238, 29);
-            this.passTB.TabIndex = 49;
-            this.passTB.Text = "";
-            // 
-            // reqpass
-            // 
-            this.reqpass.AutoSize = true;
-            this.reqpass.BackColor = System.Drawing.Color.Transparent;
-            this.reqpass.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reqpass.ForeColor = System.Drawing.Color.Red;
-            this.reqpass.Location = new System.Drawing.Point(242, 524);
-            this.reqpass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.reqpass.Name = "reqpass";
-            this.reqpass.Size = new System.Drawing.Size(102, 18);
-            this.reqpass.TabIndex = 48;
-            this.reqpass.Text = "*required field";
-            this.reqpass.Visible = false;
-            // 
-            // pass
-            // 
-            this.pass.AutoSize = true;
-            this.pass.BackColor = System.Drawing.Color.Transparent;
-            this.pass.Font = new System.Drawing.Font("Bookman Old Style", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pass.Location = new System.Drawing.Point(104, 496);
-            this.pass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.pass.Name = "pass";
-            this.pass.Size = new System.Drawing.Size(93, 20);
-            this.pass.TabIndex = 47;
-            this.pass.Text = "Password";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Bookman Old Style", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(104, 467);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 20);
-            this.label2.TabIndex = 55;
-            this.label2.Text = "Password";
-            // 
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
@@ -443,6 +356,78 @@
             this.label5.TabIndex = 58;
             this.label5.Text = "Already registered?";
             // 
+            // reqretype
+            // 
+            this.reqretype.AutoSize = true;
+            this.reqretype.BackColor = System.Drawing.Color.Transparent;
+            this.reqretype.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reqretype.ForeColor = System.Drawing.Color.Red;
+            this.reqretype.Location = new System.Drawing.Point(585, 524);
+            this.reqretype.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.reqretype.Name = "reqretype";
+            this.reqretype.Size = new System.Drawing.Size(102, 18);
+            this.reqretype.TabIndex = 71;
+            this.reqretype.Text = "*required field";
+            this.reqretype.Visible = false;
+            // 
+            // retypepassTB
+            // 
+            this.retypepassTB.AcceptsReturn = true;
+            this.retypepassTB.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.retypepassTB.Location = new System.Drawing.Point(449, 491);
+            this.retypepassTB.Multiline = true;
+            this.retypepassTB.Name = "retypepassTB";
+            this.retypepassTB.Size = new System.Drawing.Size(240, 29);
+            this.retypepassTB.TabIndex = 70;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Bookman Old Style", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(109, 467);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(93, 20);
+            this.label2.TabIndex = 69;
+            this.label2.Text = "Password";
+            // 
+            // reqpass
+            // 
+            this.reqpass.AutoSize = true;
+            this.reqpass.BackColor = System.Drawing.Color.Transparent;
+            this.reqpass.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reqpass.ForeColor = System.Drawing.Color.Red;
+            this.reqpass.Location = new System.Drawing.Point(251, 524);
+            this.reqpass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.reqpass.Name = "reqpass";
+            this.reqpass.Size = new System.Drawing.Size(102, 18);
+            this.reqpass.TabIndex = 68;
+            this.reqpass.Text = "*required field";
+            this.reqpass.Visible = false;
+            // 
+            // passTB
+            // 
+            this.passTB.AcceptsReturn = true;
+            this.passTB.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passTB.Location = new System.Drawing.Point(115, 491);
+            this.passTB.Multiline = true;
+            this.passTB.Name = "passTB";
+            this.passTB.Size = new System.Drawing.Size(240, 29);
+            this.passTB.TabIndex = 67;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Bookman Old Style", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(445, 467);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(160, 20);
+            this.label4.TabIndex = 66;
+            this.label4.Text = "Retype Password";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -450,17 +435,16 @@
             this.BackgroundImage = global::HostelManagement.Properties.Resources.Screenshot_2023_03_23_at_09_50_00_CSS_Gradient_Generator;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(797, 745);
+            this.Controls.Add(this.reqretype);
+            this.Controls.Add(this.retypepassTB);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.reqpass);
+            this.Controls.Add(this.passTB);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.retypepassTB);
-            this.Controls.Add(this.reqretype);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.passTB);
-            this.Controls.Add(this.reqpass);
-            this.Controls.Add(this.pass);
             this.Controls.Add(this.reqcaptcha);
             this.Controls.Add(this.captcha);
             this.Controls.Add(this.registerButton);
@@ -517,16 +501,15 @@
         private System.Windows.Forms.CheckBox captcha;
         private System.Windows.Forms.Button registerButton;
         private System.Windows.Forms.Label reqcaptcha;
-        private System.Windows.Forms.RichTextBox retypepassTB;
-        private System.Windows.Forms.Label reqretype;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.RichTextBox passTB;
-        private System.Windows.Forms.Label reqpass;
-        private System.Windows.Forms.Label pass;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label reqretype;
+        private System.Windows.Forms.TextBox retypepassTB;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label reqpass;
+        private System.Windows.Forms.TextBox passTB;
+        private System.Windows.Forms.Label label4;
     }
 }

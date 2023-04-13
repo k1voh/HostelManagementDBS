@@ -34,3 +34,5 @@ E:\Study\OneDrive - Manipal Academy of Higher Education\Coding\DBS Project\Front
 E:\Study\OneDrive - Manipal Academy of Higher Education\Coding\DBS Project\FrontEnd\HostelManagement\HostelManagement\bin\Debug\Oracle.VsDevTools.EntityFramework.17.0.dll
 E:\Study\OneDrive - Manipal Academy of Higher Education\Coding\DBS Project\FrontEnd\HostelManagement\HostelManagement\obj\Debug\HostelManagement.Form2.resources
 E:\Study\OneDrive - Manipal Academy of Higher Education\Coding\DBS Project\FrontEnd\HostelManagement\HostelManagement\obj\Debug\HostelManagement.csproj.CopyComplete
+E:\Study\OneDrive - Manipal Academy of Higher Education\Coding\DBS Project\FrontEnd\HostelManagement\HostelManagement\obj\Debug\HostelManagement.Form3.resources
+E:\Study\OneDrive - Manipal Academy of Higher Education\Coding\DBS Project\FrontEnd\HostelManagement\HostelManagement\obj\Debug\HostelManagement.Form4.resources
