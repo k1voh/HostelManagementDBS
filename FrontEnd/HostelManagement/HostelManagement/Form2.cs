@@ -15,6 +15,8 @@ namespace HostelManagement
         public Form2()
         {
             InitializeComponent();
+            passTB.PasswordChar = '*';
+            retypepassTB.PasswordChar = '*';
         }
 
         private void Form2_Load(object sender, EventArgs e)
