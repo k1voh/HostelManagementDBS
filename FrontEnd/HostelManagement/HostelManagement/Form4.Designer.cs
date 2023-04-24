@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Profile));
-            this.profileicon = new System.Windows.Forms.PictureBox();
             this.messchangeicon = new System.Windows.Forms.PictureBox();
             this.roombookicon = new System.Windows.Forms.PictureBox();
             this.roomchangeicon = new System.Windows.Forms.PictureBox();
@@ -61,26 +60,15 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.profileicon)).BeginInit();
+            this.profileicon = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.messchangeicon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roombookicon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomchangeicon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.issuesicon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profileicon)).BeginInit();
             this.SuspendLayout();
-            // 
-            // profileicon
-            // 
-            this.profileicon.BackColor = System.Drawing.Color.Transparent;
-            this.profileicon.BackgroundImage = global::HostelManagement.Properties.Resources.profile_icon;
-            this.profileicon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.profileicon.Location = new System.Drawing.Point(75, 89);
-            this.profileicon.Name = "profileicon";
-            this.profileicon.Size = new System.Drawing.Size(61, 58);
-            this.profileicon.TabIndex = 0;
-            this.profileicon.TabStop = false;
-            this.profileicon.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // messchangeicon
             // 
@@ -423,6 +411,17 @@
             this.label21.TabIndex = 36;
             this.label21.Text = "Room Number: ";
             // 
+            // profileicon
+            // 
+            this.profileicon.BackColor = System.Drawing.Color.Transparent;
+            this.profileicon.BackgroundImage = global::HostelManagement.Properties.Resources.profile_icon;
+            this.profileicon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.profileicon.Location = new System.Drawing.Point(73, 89);
+            this.profileicon.Name = "profileicon";
+            this.profileicon.Size = new System.Drawing.Size(61, 58);
+            this.profileicon.TabIndex = 42;
+            this.profileicon.TabStop = false;
+            // 
             // Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -430,6 +429,7 @@
             this.BackgroundImage = global::HostelManagement.Properties.Resources.profilepage;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1039, 745);
+            this.Controls.Add(this.profileicon);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label18);
@@ -459,19 +459,18 @@
             this.Controls.Add(this.roomchangeicon);
             this.Controls.Add(this.roombookicon);
             this.Controls.Add(this.messchangeicon);
-            this.Controls.Add(this.profileicon);
             this.Controls.Add(this.shapeContainer1);
             this.DoubleBuffered = true;
             this.Name = "Profile";
             this.Text = "Profile";
             this.Load += new System.EventHandler(this.Profile_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.profileicon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.messchangeicon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roombookicon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomchangeicon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.issuesicon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profileicon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -479,7 +478,6 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox profileicon;
         private System.Windows.Forms.PictureBox messchangeicon;
         private System.Windows.Forms.PictureBox roombookicon;
         private System.Windows.Forms.PictureBox roomchangeicon;
@@ -511,6 +509,7 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.PictureBox profileicon;
 
     }
 }
