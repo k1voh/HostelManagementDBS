@@ -39,3 +39,7 @@ E:\Study\OneDrive - Manipal Academy of Higher Education\Coding\DBS Project\Front
 E:\Study\OneDrive - Manipal Academy of Higher Education\Coding\DBS Project\FrontEnd\HostelManagement\HostelManagement\obj\Debug\HostelManagement.csprojResolveAssemblyReference.cache
 E:\Study\OneDrive - Manipal Academy of Higher Education\Coding\DBS Project\FrontEnd\HostelManagement\HostelManagement\bin\Debug\Oracle.DataAccess.dll
 E:\Study\OneDrive - Manipal Academy of Higher Education\Coding\DBS Project\FrontEnd\HostelManagement\HostelManagement\obj\Debug\HostelManagement.Profile.resources
+E:\Study\OneDrive - Manipal Academy of Higher Education\Coding\DBS Project\FrontEnd\HostelManagement\HostelManagement\obj\Debug\HostelManagement.Booking.resources
+E:\Study\OneDrive - Manipal Academy of Higher Education\Coding\DBS Project\FrontEnd\HostelManagement\HostelManagement\obj\Debug\HostelManagement.Mess.resources
+E:\Study\OneDrive - Manipal Academy of Higher Education\Coding\DBS Project\FrontEnd\HostelManagement\HostelManagement\obj\Debug\HostelManagement.Change.resources
+E:\Study\OneDrive - Manipal Academy of Higher Education\Coding\DBS Project\FrontEnd\HostelManagement\HostelManagement\obj\Debug\HostelManagement.Issues.resources

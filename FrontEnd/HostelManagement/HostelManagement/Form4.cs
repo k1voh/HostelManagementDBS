@@ -22,19 +22,20 @@ namespace HostelManagement
             //Profile page to be highlighted
         }
 
-        private void pictureBox1_MouseHover(object sender, EventArgs e)
-        {
-            
-        }
-
         private void roombookicon_Click(object sender, EventArgs e)
         {
-
+            Booking frm = new Booking();
+            this.Hide();
+            frm.ShowDialog();
+            this.Close();
         }
 
         private void messchangeicon_Click(object sender, EventArgs e)
         {
-
+            Mess frm = new Mess();
+            this.Hide();
+            frm.ShowDialog();
+            this.Close();
         }
 
         private void Profile_Load(object sender, EventArgs e)
@@ -44,12 +45,18 @@ namespace HostelManagement
 
         private void roomchangeicon_Click(object sender, EventArgs e)
         {
-
+            Change frm = new Change();
+            this.Hide();
+            frm.ShowDialog();
+            this.Close();
         }
 
         private void issuesicon_Click(object sender, EventArgs e)
         {
-
+            Issues frm = new Issues();
+            this.Hide();
+            frm.ShowDialog();
+            this.Close();
         }
 
     }

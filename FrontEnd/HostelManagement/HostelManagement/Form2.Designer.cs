@@ -58,6 +58,7 @@
             this.invalidreg = new System.Windows.Forms.Label();
             this.invalidmail = new System.Windows.Forms.Label();
             this.invalidname = new System.Windows.Forms.Label();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
@@ -267,7 +268,7 @@
             this.radioButton2.AutoSize = true;
             this.radioButton2.BackColor = System.Drawing.Color.Transparent;
             this.radioButton2.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(419, 240);
+            this.radioButton2.Location = new System.Drawing.Point(352, 242);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(90, 23);
             this.radioButton2.TabIndex = 57;
@@ -280,7 +281,7 @@
             this.radioButton1.AutoSize = true;
             this.radioButton1.BackColor = System.Drawing.Color.Transparent;
             this.radioButton1.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(299, 240);
+            this.radioButton1.Location = new System.Drawing.Point(224, 242);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(78, 23);
             this.radioButton1.TabIndex = 56;
@@ -429,6 +430,19 @@
             this.invalidname.Text = "*invalid format";
             this.invalidname.Visible = false;
             // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.BackColor = System.Drawing.Color.Transparent;
+            this.radioButton3.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton3.Location = new System.Drawing.Point(475, 242);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(106, 23);
+            this.radioButton3.TabIndex = 75;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Caretaker";
+            this.radioButton3.UseVisualStyleBackColor = false;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -436,6 +450,7 @@
             this.BackgroundImage = global::HostelManagement.Properties.Resources.register1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(797, 745);
+            this.Controls.Add(this.radioButton3);
             this.Controls.Add(this.invalidname);
             this.Controls.Add(this.invalidmail);
             this.Controls.Add(this.invalidreg);
@@ -506,5 +521,6 @@
         private System.Windows.Forms.Label invalidreg;
         private System.Windows.Forms.Label invalidmail;
         private System.Windows.Forms.Label invalidname;
+        private System.Windows.Forms.RadioButton radioButton3;
     }
 }
