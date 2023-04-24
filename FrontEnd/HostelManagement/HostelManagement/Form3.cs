@@ -85,8 +85,9 @@ namespace HostelManagement
                 if (dr == DialogResult.OK)
                 {
                     LOGIN frm = new LOGIN();
-                    frm.Show();
                     this.Hide();
+                    frm.ShowDialog();
+                    this.Close();
                 }
             }
         }

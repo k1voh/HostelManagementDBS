@@ -51,20 +51,28 @@ namespace HostelManagement
             {
                 reqcaptcha.Visible = false; 
             }
+            if(!reqcaptcha.Visible && !reqpass.Visible && !reqreg.Visible){
+                Profile frm = new Profile();
+                this.Hide();
+                frm.ShowDialog();
+                this.Close();
+            }
         }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Form2 frm = new Form2();
-            frm.Show();
             this.Hide();
+            frm.ShowDialog();
+            this.Close();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Form3 fr = new Form3();
-            fr.Show();
             this.Hide();
+            fr.ShowDialog();
+            this.Close();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
