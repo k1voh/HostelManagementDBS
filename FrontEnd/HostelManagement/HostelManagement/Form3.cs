@@ -90,5 +90,10 @@ namespace HostelManagement
                 }
             }
         }
+
+        private void reqretype_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

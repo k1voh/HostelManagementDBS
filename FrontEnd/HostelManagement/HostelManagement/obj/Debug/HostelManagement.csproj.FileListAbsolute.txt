@@ -37,3 +37,4 @@ E:\Study\OneDrive - Manipal Academy of Higher Education\Coding\DBS Project\Front
 E:\Study\OneDrive - Manipal Academy of Higher Education\Coding\DBS Project\FrontEnd\HostelManagement\HostelManagement\bin\Debug\normnfkc.nlp
 E:\Study\OneDrive - Manipal Academy of Higher Education\Coding\DBS Project\FrontEnd\HostelManagement\HostelManagement\bin\Debug\normnfkd.nlp
 E:\Study\OneDrive - Manipal Academy of Higher Education\Coding\DBS Project\FrontEnd\HostelManagement\HostelManagement\obj\Debug\HostelManagement.csprojResolveAssemblyReference.cache
+E:\Study\OneDrive - Manipal Academy of Higher Education\Coding\DBS Project\FrontEnd\HostelManagement\HostelManagement\bin\Debug\Oracle.DataAccess.dll

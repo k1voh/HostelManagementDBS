@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.regTB = new System.Windows.Forms.RichTextBox();
             this.reqreg = new System.Windows.Forms.Label();
@@ -59,57 +55,17 @@
             this.reqpass = new System.Windows.Forms.Label();
             this.passTB = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Black;
-            this.pictureBox2.Location = new System.Drawing.Point(71, 51);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(2, 640);
-            this.pictureBox2.TabIndex = 28;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Black;
-            this.pictureBox1.Location = new System.Drawing.Point(71, 51);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(650, 2);
-            this.pictureBox1.TabIndex = 27;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Black;
-            this.pictureBox3.Location = new System.Drawing.Point(71, 689);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(650, 2);
-            this.pictureBox3.TabIndex = 29;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.Black;
-            this.pictureBox4.Location = new System.Drawing.Point(719, 51);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(2, 640);
-            this.pictureBox4.TabIndex = 30;
-            this.pictureBox4.TabStop = false;
             // 
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(246, 60);
+            this.pictureBox6.Location = new System.Drawing.Point(264, 67);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(284, 167);
+            this.pictureBox6.Size = new System.Drawing.Size(263, 156);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 31;
             this.pictureBox6.TabStop = false;
@@ -134,7 +90,7 @@
             this.reqreg.Location = new System.Drawing.Point(242, 335);
             this.reqreg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.reqreg.Name = "reqreg";
-            this.reqreg.Size = new System.Drawing.Size(102, 18);
+            this.reqreg.Size = new System.Drawing.Size(110, 19);
             this.reqreg.TabIndex = 33;
             this.reqreg.Text = "*required field";
             this.reqreg.Visible = false;
@@ -147,7 +103,7 @@
             this.label1.Location = new System.Drawing.Point(102, 278);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(192, 20);
+            this.label1.Size = new System.Drawing.Size(204, 21);
             this.label1.TabIndex = 32;
             this.label1.Text = "Registration Number";
             // 
@@ -171,7 +127,7 @@
             this.requser.Location = new System.Drawing.Point(576, 335);
             this.requser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.requser.Name = "requser";
-            this.requser.Size = new System.Drawing.Size(102, 18);
+            this.requser.Size = new System.Drawing.Size(110, 19);
             this.requser.TabIndex = 36;
             this.requser.Text = "*required field";
             this.requser.Visible = false;
@@ -184,7 +140,7 @@
             this.label3.Location = new System.Drawing.Point(445, 278);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 20);
+            this.label3.Size = new System.Drawing.Size(105, 21);
             this.label3.TabIndex = 35;
             this.label3.Text = "Username";
             // 
@@ -208,7 +164,7 @@
             this.reqcontact.Location = new System.Drawing.Point(242, 429);
             this.reqcontact.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.reqcontact.Name = "reqcontact";
-            this.reqcontact.Size = new System.Drawing.Size(102, 18);
+            this.reqcontact.Size = new System.Drawing.Size(110, 19);
             this.reqcontact.TabIndex = 39;
             this.reqcontact.Text = "*required field";
             this.reqcontact.Visible = false;
@@ -221,7 +177,7 @@
             this.contactlabel.Location = new System.Drawing.Point(102, 372);
             this.contactlabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.contactlabel.Name = "contactlabel";
-            this.contactlabel.Size = new System.Drawing.Size(153, 20);
+            this.contactlabel.Size = new System.Drawing.Size(164, 21);
             this.contactlabel.TabIndex = 38;
             this.contactlabel.Text = "Contact Number";
             // 
@@ -245,7 +201,7 @@
             this.reqmail.Location = new System.Drawing.Point(585, 429);
             this.reqmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.reqmail.Name = "reqmail";
-            this.reqmail.Size = new System.Drawing.Size(102, 18);
+            this.reqmail.Size = new System.Drawing.Size(110, 19);
             this.reqmail.TabIndex = 42;
             this.reqmail.Text = "*required field";
             this.reqmail.Visible = false;
@@ -258,7 +214,7 @@
             this.mailabel.Location = new System.Drawing.Point(445, 372);
             this.mailabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.mailabel.Name = "mailabel";
-            this.mailabel.Size = new System.Drawing.Size(143, 20);
+            this.mailabel.Size = new System.Drawing.Size(152, 21);
             this.mailabel.TabIndex = 41;
             this.mailabel.Text = "E-Mail Address";
             // 
@@ -298,7 +254,7 @@
             this.reqcaptcha.Location = new System.Drawing.Point(336, 624);
             this.reqcaptcha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.reqcaptcha.Name = "reqcaptcha";
-            this.reqcaptcha.Size = new System.Drawing.Size(142, 18);
+            this.reqcaptcha.Size = new System.Drawing.Size(152, 19);
             this.reqcaptcha.TabIndex = 46;
             this.reqcaptcha.Text = "*captcha unchecked";
             this.reqcaptcha.Visible = false;
@@ -365,7 +321,7 @@
             this.reqretype.Location = new System.Drawing.Point(585, 524);
             this.reqretype.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.reqretype.Name = "reqretype";
-            this.reqretype.Size = new System.Drawing.Size(102, 18);
+            this.reqretype.Size = new System.Drawing.Size(110, 19);
             this.reqretype.TabIndex = 71;
             this.reqretype.Text = "*required field";
             this.reqretype.Visible = false;
@@ -388,7 +344,7 @@
             this.label2.Location = new System.Drawing.Point(109, 467);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 20);
+            this.label2.Size = new System.Drawing.Size(99, 21);
             this.label2.TabIndex = 69;
             this.label2.Text = "Password";
             // 
@@ -401,7 +357,7 @@
             this.reqpass.Location = new System.Drawing.Point(251, 524);
             this.reqpass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.reqpass.Name = "reqpass";
-            this.reqpass.Size = new System.Drawing.Size(102, 18);
+            this.reqpass.Size = new System.Drawing.Size(110, 19);
             this.reqpass.TabIndex = 68;
             this.reqpass.Text = "*required field";
             this.reqpass.Visible = false;
@@ -424,7 +380,7 @@
             this.label4.Location = new System.Drawing.Point(445, 467);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(160, 20);
+            this.label4.Size = new System.Drawing.Size(168, 21);
             this.label4.TabIndex = 66;
             this.label4.Text = "Retype Password";
             // 
@@ -432,7 +388,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::HostelManagement.Properties.Resources.Screenshot_2023_03_23_at_09_50_00_CSS_Gradient_Generator;
+            this.BackgroundImage = global::HostelManagement.Properties.Resources.register1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(797, 745);
             this.Controls.Add(this.reqretype);
@@ -461,18 +417,10 @@
             this.Controls.Add(this.reqreg);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
             this.Name = "Form2";
             this.Text = "Registration Page";
             this.Load += new System.EventHandler(this.Form2_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -481,10 +429,6 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.RichTextBox regTB;
         private System.Windows.Forms.Label reqreg;

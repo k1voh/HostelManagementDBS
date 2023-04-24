@@ -112,6 +112,12 @@
   <ItemGroup>
     <None Include="Resources\Screenshot 2023-03-23 at 09-50-00 CSS Gradient Generator.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\register1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\forgotpassword1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
