@@ -24,6 +24,21 @@ namespace HostelManagement
 
         }
 
+        public bool IsNumeric(string value)
+        {
+            return value.All(char.IsNumber);
+        }
+
+        public bool Validate(string yourString)
+        {
+            return yourString.All(ch => char.IsLetterOrDigit(ch)) || (yourString.Any(ch => char.IsWhiteSpace(ch)));
+        }
+
+        public bool HaveNumeric(string value)
+        {
+            return value.Any(char.IsNumber);
+        }
+
         private void registerButton_Click(object sender, EventArgs e)
         {
             if (regTB.Text == string.Empty)
@@ -82,14 +97,39 @@ namespace HostelManagement
             {
                 reqcaptcha.Visible= false;
             }
-            if(!reqcaptcha.Visible && !reqcontact.Visible && !reqmail.Visible && !reqpass.Visible && !reqreg.Visible && !reqretype.Visible && !requser.Visible)
+            if (!reqreg.Visible && (regTB.Text.Length != 9 || !IsNumeric(regTB.Text)))
+            {
+                invalidreg.Visible = true;
+            }
+            else
+            {
+                invalidreg.Visible = false;
+            }
+            if (!reqmail.Visible && (!mailTB.Text.Contains("@") || !mailTB.Text.Contains(".com")))
+            {
+                invalidmail.Visible = true;
+            }
+            else
+            {
+                invalidmail.Visible = false;
+            }
+            if (HaveNumeric(userTB.Text) || !Validate(userTB.Text))
+            {
+                invalidname.Visible = true;
+            }
+            else
+            {
+                invalidname.Visible = false;
+            }
+            if(!reqcaptcha.Visible && !reqcontact.Visible && !reqmail.Visible && !reqpass.Visible && !reqreg.Visible && !reqretype.Visible && !requser.Visible && !invalidreg.Visible && !invalidmail.Visible && !invalidname.Visible)
             {
                 DialogResult dr = MessageBox.Show("Registered Successfully!","Success",MessageBoxButtons.OK);
                 if(dr == DialogResult.OK)
                 {
-                    LOGIN frm = new LOGIN(); 
-                    frm.Show();
+                    LOGIN frm = new LOGIN();
                     this.Hide();
+                    frm.ShowDialog();
+                    this.Close();
                 }
             }
         }
@@ -97,8 +137,9 @@ namespace HostelManagement
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             LOGIN frm = new LOGIN();
-            frm.Show();
             this.Hide();
+            frm.ShowDialog();
+            this.Close();
         }
     }
 }

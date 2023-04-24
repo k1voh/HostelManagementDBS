@@ -55,6 +55,9 @@
             this.reqpass = new System.Windows.Forms.Label();
             this.passTB = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.invalidreg = new System.Windows.Forms.Label();
+            this.invalidmail = new System.Windows.Forms.Label();
+            this.invalidname = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
@@ -384,6 +387,48 @@
             this.label4.TabIndex = 66;
             this.label4.Text = "Retype Password";
             // 
+            // invalidreg
+            // 
+            this.invalidreg.AutoSize = true;
+            this.invalidreg.BackColor = System.Drawing.Color.Transparent;
+            this.invalidreg.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.invalidreg.ForeColor = System.Drawing.Color.Red;
+            this.invalidreg.Location = new System.Drawing.Point(245, 335);
+            this.invalidreg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.invalidreg.Name = "invalidreg";
+            this.invalidreg.Size = new System.Drawing.Size(112, 19);
+            this.invalidreg.TabIndex = 72;
+            this.invalidreg.Text = "*invalid format";
+            this.invalidreg.Visible = false;
+            // 
+            // invalidmail
+            // 
+            this.invalidmail.AutoSize = true;
+            this.invalidmail.BackColor = System.Drawing.Color.Transparent;
+            this.invalidmail.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.invalidmail.ForeColor = System.Drawing.Color.Red;
+            this.invalidmail.Location = new System.Drawing.Point(583, 429);
+            this.invalidmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.invalidmail.Name = "invalidmail";
+            this.invalidmail.Size = new System.Drawing.Size(112, 19);
+            this.invalidmail.TabIndex = 73;
+            this.invalidmail.Text = "*invalid format";
+            this.invalidmail.Visible = false;
+            // 
+            // invalidname
+            // 
+            this.invalidname.AutoSize = true;
+            this.invalidname.BackColor = System.Drawing.Color.Transparent;
+            this.invalidname.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.invalidname.ForeColor = System.Drawing.Color.Red;
+            this.invalidname.Location = new System.Drawing.Point(574, 335);
+            this.invalidname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.invalidname.Name = "invalidname";
+            this.invalidname.Size = new System.Drawing.Size(112, 19);
+            this.invalidname.TabIndex = 74;
+            this.invalidname.Text = "*invalid format";
+            this.invalidname.Visible = false;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -391,6 +436,9 @@
             this.BackgroundImage = global::HostelManagement.Properties.Resources.register1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(797, 745);
+            this.Controls.Add(this.invalidname);
+            this.Controls.Add(this.invalidmail);
+            this.Controls.Add(this.invalidreg);
             this.Controls.Add(this.reqretype);
             this.Controls.Add(this.retypepassTB);
             this.Controls.Add(this.label2);
@@ -455,5 +503,8 @@
         private System.Windows.Forms.Label reqpass;
         private System.Windows.Forms.TextBox passTB;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label invalidreg;
+        private System.Windows.Forms.Label invalidmail;
+        private System.Windows.Forms.Label invalidname;
     }
 }

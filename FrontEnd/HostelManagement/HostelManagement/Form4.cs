@@ -10,11 +10,47 @@ using System.Windows.Forms;
 
 namespace HostelManagement
 {
-    public partial class Form4 : Form
+    public partial class Profile : Form
     {
-        public Form4()
+        public Profile()
         {
             InitializeComponent();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            //Profile page to be highlighted
+        }
+
+        private void pictureBox1_MouseHover(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void roombookicon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void messchangeicon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Profile_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void roomchangeicon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void issuesicon_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
