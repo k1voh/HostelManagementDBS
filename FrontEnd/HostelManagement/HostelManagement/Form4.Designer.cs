@@ -61,6 +61,7 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.profileicon = new System.Windows.Forms.PictureBox();
+            this.editbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.messchangeicon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roombookicon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomchangeicon)).BeginInit();
@@ -422,6 +423,18 @@
             this.profileicon.TabIndex = 42;
             this.profileicon.TabStop = false;
             // 
+            // editbutton
+            // 
+            this.editbutton.BackColor = System.Drawing.Color.PeachPuff;
+            this.editbutton.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editbutton.Location = new System.Drawing.Point(786, 586);
+            this.editbutton.Name = "editbutton";
+            this.editbutton.Size = new System.Drawing.Size(112, 41);
+            this.editbutton.TabIndex = 43;
+            this.editbutton.Text = "Edit Details";
+            this.editbutton.UseVisualStyleBackColor = false;
+            this.editbutton.Click += new System.EventHandler(this.editbutton_Click);
+            // 
             // Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -429,6 +442,7 @@
             this.BackgroundImage = global::HostelManagement.Properties.Resources.profilepage;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1039, 745);
+            this.Controls.Add(this.editbutton);
             this.Controls.Add(this.profileicon);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label17);
@@ -510,6 +524,7 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.PictureBox profileicon;
+        private System.Windows.Forms.Button editbutton;
 
     }
 }

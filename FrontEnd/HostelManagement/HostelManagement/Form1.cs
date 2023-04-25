@@ -52,10 +52,22 @@ namespace HostelManagement
                 reqcaptcha.Visible = false; 
             }
             if(!reqcaptcha.Visible && !reqpass.Visible && !reqreg.Visible){
-                Profile frm = new Profile();
-                this.Hide();
-                frm.ShowDialog();
-                this.Close();
+                if(regTB.Text[0]=='2'){
+                    long x = 0;
+                    long.TryParse(regTB.Text, out x);
+                    Profile frm = new Profile(x);
+                    this.Hide();
+                    frm.ShowDialog();
+                    this.Close();   
+                }
+                else if(regTB.Text[0]=='0'){
+                    long x = 0;
+                    long.TryParse(regTB.Text, out x);
+                    ProfileAdmin frm = new ProfileAdmin(x);
+                    this.Hide();
+                    frm.ShowDialog();
+                    this.Close();
+                }
             }
         }
 

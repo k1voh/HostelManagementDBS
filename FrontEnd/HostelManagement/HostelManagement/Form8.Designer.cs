@@ -61,11 +61,11 @@
             this.issuelabel.AutoSize = true;
             this.issuelabel.BackColor = System.Drawing.Color.Transparent;
             this.issuelabel.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.issuelabel.Location = new System.Drawing.Point(41, 584);
+            this.issuelabel.Location = new System.Drawing.Point(47, 584);
             this.issuelabel.Name = "issuelabel";
-            this.issuelabel.Size = new System.Drawing.Size(143, 19);
+            this.issuelabel.Size = new System.Drawing.Size(131, 19);
             this.issuelabel.TabIndex = 36;
-            this.issuelabel.Text = "Issues and Queries";
+            this.issuelabel.Text = "Issues and Query";
             // 
             // issuesicon
             // 
@@ -142,7 +142,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::HostelManagement.Properties.Resources.issues;
+            this.BackgroundImage = global::HostelManagement.Properties.Resources.issues11;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1039, 745);
             this.Controls.Add(this.pictureBox6);

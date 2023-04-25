@@ -51,6 +51,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="A1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="A1.Designer.cs">
+      <DependentUpon>A1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="A2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="A2.Designer.cs">
+      <DependentUpon>A2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="A3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="A3.Designer.cs">
+      <DependentUpon>A3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="A4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="A4.Designer.cs">
+      <DependentUpon>A4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditDetails.Designer.cs">
+      <DependentUpon>EditDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +131,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="A1.resx">
+      <DependentUpon>A1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="A2.resx">
+      <DependentUpon>A2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="A3.resx">
+      <DependentUpon>A3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="A4.resx">
+      <DependentUpon>A4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditDetails.resx">
+      <DependentUpon>EditDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -189,6 +234,42 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\issues.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profilepage1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\roomchange1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\roombooking1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\roombooking11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\roombooking2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profilepage2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stats_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\issues1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\issues11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adminroomchange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adminmesschange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adminstats.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
