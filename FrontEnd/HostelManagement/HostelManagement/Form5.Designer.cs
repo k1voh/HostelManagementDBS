@@ -49,7 +49,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox1.Location = new System.Drawing.Point(72, 316);
+            this.pictureBox1.Location = new System.Drawing.Point(68, 289);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(72, 5);
             this.pictureBox1.TabIndex = 16;
@@ -60,7 +60,7 @@
             this.issuelabel.AutoSize = true;
             this.issuelabel.BackColor = System.Drawing.Color.Transparent;
             this.issuelabel.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.issuelabel.Location = new System.Drawing.Point(54, 230);
+            this.issuelabel.Location = new System.Drawing.Point(50, 203);
             this.issuelabel.Name = "issuelabel";
             this.issuelabel.Size = new System.Drawing.Size(110, 19);
             this.issuelabel.TabIndex = 15;
@@ -71,7 +71,7 @@
             this.issuesicon.BackColor = System.Drawing.Color.Transparent;
             this.issuesicon.BackgroundImage = global::HostelManagement.Properties.Resources.issues_icon1;
             this.issuesicon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.issuesicon.Location = new System.Drawing.Point(77, 633);
+            this.issuesicon.Location = new System.Drawing.Point(73, 606);
             this.issuesicon.Name = "issuesicon";
             this.issuesicon.Size = new System.Drawing.Size(61, 58);
             this.issuesicon.TabIndex = 14;
@@ -83,7 +83,7 @@
             this.roomchangeicon.BackColor = System.Drawing.Color.Transparent;
             this.roomchangeicon.BackgroundImage = global::HostelManagement.Properties.Resources.roomchange_icon;
             this.roomchangeicon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.roomchangeicon.Location = new System.Drawing.Point(77, 503);
+            this.roomchangeicon.Location = new System.Drawing.Point(73, 476);
             this.roomchangeicon.Name = "roomchangeicon";
             this.roomchangeicon.Size = new System.Drawing.Size(61, 58);
             this.roomchangeicon.TabIndex = 13;
@@ -95,7 +95,7 @@
             this.roombookicon.BackColor = System.Drawing.Color.Transparent;
             this.roombookicon.BackgroundImage = global::HostelManagement.Properties.Resources.roombook_icon;
             this.roombookicon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.roombookicon.Location = new System.Drawing.Point(77, 252);
+            this.roombookicon.Location = new System.Drawing.Point(73, 225);
             this.roombookicon.Name = "roombookicon";
             this.roombookicon.Size = new System.Drawing.Size(61, 58);
             this.roombookicon.TabIndex = 12;
@@ -106,7 +106,7 @@
             this.messchangeicon.BackColor = System.Drawing.Color.Transparent;
             this.messchangeicon.BackgroundImage = global::HostelManagement.Properties.Resources.messchange_icon;
             this.messchangeicon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.messchangeicon.Location = new System.Drawing.Point(77, 372);
+            this.messchangeicon.Location = new System.Drawing.Point(73, 345);
             this.messchangeicon.Name = "messchangeicon";
             this.messchangeicon.Size = new System.Drawing.Size(61, 58);
             this.messchangeicon.TabIndex = 11;
@@ -118,7 +118,7 @@
             this.profileicon.BackColor = System.Drawing.Color.Transparent;
             this.profileicon.BackgroundImage = global::HostelManagement.Properties.Resources.profile_icon;
             this.profileicon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.profileicon.Location = new System.Drawing.Point(77, 124);
+            this.profileicon.Location = new System.Drawing.Point(73, 97);
             this.profileicon.Name = "profileicon";
             this.profileicon.Size = new System.Drawing.Size(61, 58);
             this.profileicon.TabIndex = 10;
@@ -129,7 +129,7 @@
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(468, 133);
+            this.pictureBox6.Location = new System.Drawing.Point(477, 97);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(284, 167);
@@ -141,7 +141,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::HostelManagement.Properties.Resources.roombooking;
+            this.BackgroundImage = global::HostelManagement.Properties.Resources.roombooking2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1039, 745);
             this.Controls.Add(this.pictureBox6);
@@ -155,6 +155,7 @@
             this.DoubleBuffered = true;
             this.Name = "Booking";
             this.Text = "Room Booking";
+            this.Load += new System.EventHandler(this.Booking_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.issuesicon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomchangeicon)).EndInit();

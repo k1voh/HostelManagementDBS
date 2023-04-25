@@ -12,9 +12,11 @@ namespace HostelManagement
 {
     public partial class Profile : Form
     {
-        public Profile()
+        long reg=0;
+        public Profile(long regno)
         {
             InitializeComponent();
+            reg = regno;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -24,7 +26,7 @@ namespace HostelManagement
 
         private void roombookicon_Click(object sender, EventArgs e)
         {
-            Booking frm = new Booking();
+            Booking frm = new Booking(reg);
             this.Hide();
             frm.ShowDialog();
             this.Close();
@@ -32,7 +34,7 @@ namespace HostelManagement
 
         private void messchangeicon_Click(object sender, EventArgs e)
         {
-            Mess frm = new Mess();
+            Mess frm = new Mess(reg);
             this.Hide();
             frm.ShowDialog();
             this.Close();
@@ -45,7 +47,7 @@ namespace HostelManagement
 
         private void roomchangeicon_Click(object sender, EventArgs e)
         {
-            Change frm = new Change();
+            Change frm = new Change(reg);
             this.Hide();
             frm.ShowDialog();
             this.Close();
@@ -53,11 +55,18 @@ namespace HostelManagement
 
         private void issuesicon_Click(object sender, EventArgs e)
         {
-            Issues frm = new Issues();
+            Issues frm = new Issues(reg);
             this.Hide();
             frm.ShowDialog();
             this.Close();
         }
 
+        private void editbutton_Click(object sender, EventArgs e)
+        {
+            EditDetails frm = new EditDetails(reg);
+            this.Hide();
+            frm.ShowDialog();
+            this.Close();
+        }
     }
 }
