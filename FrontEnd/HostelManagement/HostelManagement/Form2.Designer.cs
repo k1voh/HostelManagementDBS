@@ -57,6 +57,8 @@
             this.invalidmail = new System.Windows.Forms.Label();
             this.invalidname = new System.Windows.Forms.Label();
             this.invalidretype = new System.Windows.Forms.Label();
+            this.invalidno = new System.Windows.Forms.Label();
+            this.invalidpass = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
@@ -416,6 +418,34 @@
             this.invalidretype.Text = "*passwords do not match";
             this.invalidretype.Visible = false;
             // 
+            // invalidno
+            // 
+            this.invalidno.AutoSize = true;
+            this.invalidno.BackColor = System.Drawing.Color.Transparent;
+            this.invalidno.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.invalidno.ForeColor = System.Drawing.Color.Red;
+            this.invalidno.Location = new System.Drawing.Point(246, 411);
+            this.invalidno.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.invalidno.Name = "invalidno";
+            this.invalidno.Size = new System.Drawing.Size(112, 19);
+            this.invalidno.TabIndex = 76;
+            this.invalidno.Text = "*invalid format";
+            this.invalidno.Visible = false;
+            // 
+            // invalidpass
+            // 
+            this.invalidpass.AutoSize = true;
+            this.invalidpass.BackColor = System.Drawing.Color.Transparent;
+            this.invalidpass.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.invalidpass.ForeColor = System.Drawing.Color.Red;
+            this.invalidpass.Location = new System.Drawing.Point(183, 506);
+            this.invalidpass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.invalidpass.Name = "invalidpass";
+            this.invalidpass.Size = new System.Drawing.Size(184, 19);
+            this.invalidpass.TabIndex = 77;
+            this.invalidpass.Text = "*whitespaces not allowed";
+            this.invalidpass.Visible = false;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -423,6 +453,8 @@
             this.BackgroundImage = global::HostelManagement.Properties.Resources.register1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(797, 745);
+            this.Controls.Add(this.invalidpass);
+            this.Controls.Add(this.invalidno);
             this.Controls.Add(this.invalidretype);
             this.Controls.Add(this.invalidname);
             this.Controls.Add(this.invalidmail);
@@ -491,5 +523,7 @@
         private System.Windows.Forms.Label invalidmail;
         private System.Windows.Forms.Label invalidname;
         private System.Windows.Forms.Label invalidretype;
+        private System.Windows.Forms.Label invalidno;
+        private System.Windows.Forms.Label invalidpass;
     }
 }
