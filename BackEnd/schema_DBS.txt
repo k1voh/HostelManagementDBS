@@ -70,11 +70,11 @@ create table caretaker(
     shift_timings varchar(10));
 
 
-    create table complaints(
-        reg_no varchar(40) references student(registration_number), 
-        issue_id int primary key,
-        issue_type varchar(50), 
-        issue varchar(100), 
-        ct_id varchar(20) references caretaker(ct_id), 
-        issue_status varchar(50), 
-        constraint chk_status check (issue_status = 'COMPLETED' or issue_status = 'NOT COMPLETED'));
+create table complaints(
+    reg_no varchar(40) references student(registration_number), 
+    issue_id int primary key,
+    issue_type varchar(50), 
+    issue varchar(100), 
+    ct_id varchar(20) references caretaker(ct_id), 
+    issue_status varchar(50), 
+    constraint chk_status check (issue_status = 'COMPLETED' or issue_status = 'NOT COMPLETED'));

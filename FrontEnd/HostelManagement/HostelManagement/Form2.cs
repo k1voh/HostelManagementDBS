@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Oracle.DataAccess.Client;
+using Oracle.DataAccess.Types;
 
 namespace HostelManagement
 {
@@ -37,6 +39,10 @@ namespace HostelManagement
         public bool HaveNumeric(string value)
         {
             return value.Any(char.IsNumber);
+        }
+
+        public bool HaveWhitespace(string value) {
+            return value.Any(char.IsWhiteSpace);
         }
 
         private void registerButton_Click(object sender, EventArgs e)
@@ -104,9 +110,24 @@ namespace HostelManagement
             }
             else
             {
-                invalidreg.Visible = false;
+                if (regTB.Text[0] == '2' && regTB.Text.Length != 8)
+                {
+                    invalidreg.Visible = true;
+                }
+                else if(regTB.Text[0] == '1' && regTB.Text.Length != 5){
+                    invalidreg.Visible = true;
+                }
+                else if (regTB.Text[0] == '0' && regTB.Text.Length != 3)
+                {
+                    invalidreg.Visible = true;
+                }
+                else
+                {
+                    invalidreg.Visible = false;
+                }
             }
-            if (!reqmail.Visible && (!mailTB.Text.Contains("@") || !mailTB.Text.Contains(".com")))
+            // Ensures domain-check in email feild
+            if (!reqmail.Visible && (!mailTB.Text.Contains("@gmail.com") && !mailTB.Text.Contains("@yahoo.com") && !mailTB.Text.Contains("@outlook.com") && !mailTB.Text.Contains("@hotmail.com") && !mailTB.Text.Contains("@icloud.com")))
             {
                 invalidmail.Visible = true;
             }
@@ -130,15 +151,96 @@ namespace HostelManagement
             {
                 invalidretype.Visible = false;
             }
-            if(!reqcaptcha.Visible && !reqcontact.Visible && !reqmail.Visible && !reqpass.Visible && !reqreg.Visible && !reqretype.Visible && !requser.Visible && !invalidreg.Visible && !invalidmail.Visible && !invalidname.Visible && !invalidretype.Visible)
+            if (contactTB.Text.Length != 10 && !reqcontact.Visible)
             {
-                DialogResult dr = MessageBox.Show("Registered Successfully!","Success",MessageBoxButtons.OK);
-                if(dr == DialogResult.OK)
+                invalidno.Visible = true;
+            }
+            else
+            {
+                invalidno.Visible = false;
+            }
+            if (!reqpass.Visible && HaveWhitespace(passTB.Text))
+            {
+                invalidpass.Visible = true;
+            }
+            else 
+            {
+                invalidpass.Visible = false;
+            }
+            if(!reqcaptcha.Visible && !reqcontact.Visible && !reqmail.Visible && !reqpass.Visible && !reqreg.Visible && !reqretype.Visible && !requser.Visible && !invalidreg.Visible && !invalidmail.Visible && !invalidname.Visible && !invalidretype.Visible && !invalidno.Visible && !invalidpass.Visible)
+            {
+                string ConStr = "DATA SOURCE=DESKTOP-FE4CR37:1521/XE;USER ID=SYSTEM;Password=rampage";
+                OracleConnection con = new OracleConnection(ConStr);
+                try
                 {
-                    LOGIN frm = new LOGIN();
-                    this.Hide();
-                    frm.ShowDialog();
-                    this.Close();
+                    con.Open();
+                    OracleCommand cmd1 = new OracleCommand("", con);
+                    OracleCommand cmd2 = new OracleCommand("", con);
+                    OracleTransaction txn = con.BeginTransaction(IsolationLevel.ReadCommitted);
+                    try
+                    {
+                        if (regTB.Text[0] == '2') {
+                            cmd1.CommandText = "insert into usertype values ('"+regTB.Text+"','"+mailTB.Text+"','"+passTB.Text+"','"+contactTB.Text+"')";
+                            cmd1.CommandType = CommandType.Text;
+                            cmd1.ExecuteNonQuery();
+                            txn.Commit();
+                            cmd2.CommandText = "insert into student(registration_number,name) values('"+regTB.Text+"','"+userTB.Text+"')";
+                            cmd2.CommandType = CommandType.Text;
+                            cmd2.ExecuteNonQuery();
+                            txn.Commit();
+                            DialogResult dr = MessageBox.Show("Student Registered Successfully!", "Success", MessageBoxButtons.OK);
+                            if (dr == DialogResult.OK)
+                            {
+                                LOGIN frm = new LOGIN();
+                                this.Hide();
+                                frm.ShowDialog();
+                                this.Close();
+                            }
+                        }
+                        else if (regTB.Text[0] == '1')
+                        {
+                            cmd1.CommandText = "insert into usertype values ('" + regTB.Text + "','" + mailTB.Text + "','" + passTB.Text + "','" + contactTB.Text + "')";
+                            cmd1.CommandType = CommandType.Text;
+                            cmd1.ExecuteNonQuery();
+                            txn.Commit();
+                            cmd2.CommandText = "insert into caretaker(ct_id,ct_name) values('" + regTB.Text + "','" + userTB.Text + "')";
+                            cmd2.CommandType = CommandType.Text;
+                            cmd2.ExecuteNonQuery();
+                            //txn.Commit();
+                            DialogResult dr = MessageBox.Show("Caretaker Registered Successfully!", "Success", MessageBoxButtons.OK);
+                            if (dr == DialogResult.OK)
+                            {
+                                LOGIN frm = new LOGIN();
+                                this.Hide();
+                                frm.ShowDialog();
+                                this.Close();
+                            }
+                        }
+                        // Admin table not formed yet
+                    }
+                    catch (Exception e1)
+                    {
+                        txn.Rollback();
+                        DialogResult dr = MessageBox.Show("Already Registered!\n\nRedirecting to Login Page", "Fail", MessageBoxButtons.OK);
+                        if (dr == DialogResult.OK)
+                        {
+                            LOGIN frm = new LOGIN();
+                            this.Hide();
+                            frm.ShowDialog();
+                            this.Close();
+                        }
+                    }
+                }
+                catch (Exception e1)
+                {
+                    DialogResult dr = MessageBox.Show(e1.ToString(), "Fail", MessageBoxButtons.OK);
+                    if (dr == DialogResult.OK)
+                    {
+                        Form2 frm = new Form2();
+                        this.Hide();
+                        frm.ShowDialog();
+                        this.Close();
+                    }
                 }
             }
         }
