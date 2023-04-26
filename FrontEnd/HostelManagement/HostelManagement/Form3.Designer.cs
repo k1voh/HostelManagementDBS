@@ -45,6 +45,9 @@
             this.retypepassTB = new System.Windows.Forms.TextBox();
             this.invalidreg = new System.Windows.Forms.Label();
             this.invalidmail = new System.Windows.Forms.Label();
+            this.invaliduser = new System.Windows.Forms.Label();
+            this.match = new System.Windows.Forms.Label();
+            this.invalidretype = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,10 +55,10 @@
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(246, 101);
+            this.pictureBox6.Location = new System.Drawing.Point(246, 87);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(206, 107);
+            this.pictureBox6.Size = new System.Drawing.Size(206, 120);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 19;
             this.pictureBox6.TabStop = false;
@@ -115,7 +118,7 @@
             this.reqreg.Location = new System.Drawing.Point(243, 268);
             this.reqreg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.reqreg.Name = "reqreg";
-            this.reqreg.Size = new System.Drawing.Size(102, 18);
+            this.reqreg.Size = new System.Drawing.Size(93, 16);
             this.reqreg.TabIndex = 45;
             this.reqreg.Text = "*required field";
             this.reqreg.Visible = false;
@@ -141,7 +144,7 @@
             this.reqmail.Location = new System.Drawing.Point(494, 271);
             this.reqmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.reqmail.Name = "reqmail";
-            this.reqmail.Size = new System.Drawing.Size(102, 18);
+            this.reqmail.Size = new System.Drawing.Size(93, 16);
             this.reqmail.TabIndex = 56;
             this.reqmail.Text = "*required field";
             this.reqmail.Visible = false;
@@ -179,7 +182,7 @@
             this.reqpass.Location = new System.Drawing.Point(243, 347);
             this.reqpass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.reqpass.Name = "reqpass";
-            this.reqpass.Size = new System.Drawing.Size(102, 18);
+            this.reqpass.Size = new System.Drawing.Size(93, 16);
             this.reqpass.TabIndex = 62;
             this.reqpass.Text = "*required field";
             this.reqpass.Visible = false;
@@ -205,7 +208,7 @@
             this.reqretype.Location = new System.Drawing.Point(494, 347);
             this.reqretype.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.reqretype.Name = "reqretype";
-            this.reqretype.Size = new System.Drawing.Size(102, 18);
+            this.reqretype.Size = new System.Drawing.Size(93, 16);
             this.reqretype.TabIndex = 65;
             this.reqretype.Text = "*required field";
             this.reqretype.Visible = false;
@@ -230,7 +233,7 @@
             this.invalidreg.Location = new System.Drawing.Point(244, 269);
             this.invalidreg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.invalidreg.Name = "invalidreg";
-            this.invalidreg.Size = new System.Drawing.Size(106, 18);
+            this.invalidreg.Size = new System.Drawing.Size(96, 16);
             this.invalidreg.TabIndex = 66;
             this.invalidreg.Text = "*invalid format";
             this.invalidreg.Visible = false;
@@ -241,13 +244,55 @@
             this.invalidmail.BackColor = System.Drawing.Color.Transparent;
             this.invalidmail.Font = new System.Drawing.Font("Bookman Old Style", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.invalidmail.ForeColor = System.Drawing.Color.Red;
-            this.invalidmail.Location = new System.Drawing.Point(490, 270);
+            this.invalidmail.Location = new System.Drawing.Point(494, 270);
             this.invalidmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.invalidmail.Name = "invalidmail";
-            this.invalidmail.Size = new System.Drawing.Size(106, 18);
+            this.invalidmail.Size = new System.Drawing.Size(96, 16);
             this.invalidmail.TabIndex = 67;
             this.invalidmail.Text = "*invalid format";
             this.invalidmail.Visible = false;
+            // 
+            // invaliduser
+            // 
+            this.invaliduser.AutoSize = true;
+            this.invaliduser.BackColor = System.Drawing.Color.Transparent;
+            this.invaliduser.Font = new System.Drawing.Font("Bookman Old Style", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.invaliduser.ForeColor = System.Drawing.Color.Red;
+            this.invaliduser.Location = new System.Drawing.Point(243, 270);
+            this.invaliduser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.invaliduser.Name = "invaliduser";
+            this.invaliduser.Size = new System.Drawing.Size(84, 16);
+            this.invaliduser.TabIndex = 68;
+            this.invaliduser.Text = "*invalid user";
+            this.invaliduser.Visible = false;
+            // 
+            // match
+            // 
+            this.match.AutoSize = true;
+            this.match.BackColor = System.Drawing.Color.Transparent;
+            this.match.Font = new System.Drawing.Font("Bookman Old Style", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.match.ForeColor = System.Drawing.Color.Red;
+            this.match.Location = new System.Drawing.Point(188, 271);
+            this.match.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.match.Name = "match";
+            this.match.Size = new System.Drawing.Size(330, 16);
+            this.match.TabIndex = 69;
+            this.match.Text = "*email address and registration number do not match";
+            this.match.Visible = false;
+            // 
+            // invalidretype
+            // 
+            this.invalidretype.AutoSize = true;
+            this.invalidretype.BackColor = System.Drawing.Color.Transparent;
+            this.invalidretype.Font = new System.Drawing.Font("Bookman Old Style", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.invalidretype.ForeColor = System.Drawing.Color.Red;
+            this.invalidretype.Location = new System.Drawing.Point(425, 347);
+            this.invalidretype.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.invalidretype.Name = "invalidretype";
+            this.invalidretype.Size = new System.Drawing.Size(162, 16);
+            this.invalidretype.TabIndex = 70;
+            this.invalidretype.Text = "*passwords do not match\'";
+            this.invalidretype.Visible = false;
             // 
             // Form3
             // 
@@ -256,6 +301,9 @@
             this.BackgroundImage = global::HostelManagement.Properties.Resources.forgotpassword1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(695, 497);
+            this.Controls.Add(this.invalidretype);
+            this.Controls.Add(this.match);
+            this.Controls.Add(this.invaliduser);
             this.Controls.Add(this.invalidmail);
             this.Controls.Add(this.invalidreg);
             this.Controls.Add(this.reqretype);
@@ -300,5 +348,8 @@
         private System.Windows.Forms.TextBox retypepassTB;
         private System.Windows.Forms.Label invalidreg;
         private System.Windows.Forms.Label invalidmail;
+        private System.Windows.Forms.Label invaliduser;
+        private System.Windows.Forms.Label match;
+        private System.Windows.Forms.Label invalidretype;
     }
 }

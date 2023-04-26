@@ -114,10 +114,10 @@ namespace HostelManagement
                 {
                     invalidreg.Visible = true;
                 }
-                else if(regTB.Text[0] == '1' && regTB.Text.Length != 5){
+                else if(regTB.Text[0] == '1' && regTB.Text.Length != 3){
                     invalidreg.Visible = true;
                 }
-                else if (regTB.Text[0] == '0' && regTB.Text.Length != 3)
+                else if (regTB.Text[0] == '0' && regTB.Text.Length != 5)
                 {
                     invalidreg.Visible = true;
                 }
@@ -187,8 +187,8 @@ namespace HostelManagement
                             cmd2.CommandText = "insert into student(registration_number,name) values('"+regTB.Text+"','"+userTB.Text+"')";
                             cmd2.CommandType = CommandType.Text;
                             cmd2.ExecuteNonQuery();
-                            txn.Commit();
-                            DialogResult dr = MessageBox.Show("Student Registered Successfully!", "Success", MessageBoxButtons.OK);
+                            //txn.Commit();
+                            DialogResult dr = MessageBox.Show("Student Registered Successfully!", "Success", MessageBoxButtons.OK,MessageBoxIcon.Information);
                             if (dr == DialogResult.OK)
                             {
                                 LOGIN frm = new LOGIN();
@@ -207,7 +207,7 @@ namespace HostelManagement
                             cmd2.CommandType = CommandType.Text;
                             cmd2.ExecuteNonQuery();
                             //txn.Commit();
-                            DialogResult dr = MessageBox.Show("Caretaker Registered Successfully!", "Success", MessageBoxButtons.OK);
+                            DialogResult dr = MessageBox.Show("Caretaker Registered Successfully!", "Success", MessageBoxButtons.OK,MessageBoxIcon.Information);
                             if (dr == DialogResult.OK)
                             {
                                 LOGIN frm = new LOGIN();
@@ -216,12 +216,30 @@ namespace HostelManagement
                                 this.Close();
                             }
                         }
-                        // Admin table not formed yet
+                        else if (regTB.Text[0] == '0')
+                        {
+                            cmd1.CommandText = "insert into usertype values ('" + regTB.Text + "','" + mailTB.Text + "','" + passTB.Text + "','" + contactTB.Text + "')";
+                            cmd1.CommandType = CommandType.Text;
+                            cmd1.ExecuteNonQuery();
+                            txn.Commit();
+                            cmd2.CommandText = "insert into administrator(admin_id,name) values('" + regTB.Text + "','" + userTB.Text + "')";
+                            cmd2.CommandType = CommandType.Text;
+                            cmd2.ExecuteNonQuery();
+                            //txn.Commit();
+                            DialogResult dr = MessageBox.Show("Administrator Registered Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if (dr == DialogResult.OK)
+                            {
+                                LOGIN frm = new LOGIN();
+                                this.Hide();
+                                frm.ShowDialog();
+                                this.Close();
+                            }
+                        }
                     }
                     catch (Exception e1)
                     {
                         txn.Rollback();
-                        DialogResult dr = MessageBox.Show("Already Registered!\n\nRedirecting to Login Page", "Fail", MessageBoxButtons.OK);
+                        DialogResult dr = MessageBox.Show("Already Registered!\n\nRedirecting to Login Page", "Fail", MessageBoxButtons.OK,MessageBoxIcon.Warning);
                         if (dr == DialogResult.OK)
                         {
                             LOGIN frm = new LOGIN();
@@ -233,7 +251,7 @@ namespace HostelManagement
                 }
                 catch (Exception e1)
                 {
-                    DialogResult dr = MessageBox.Show(e1.ToString(), "Fail", MessageBoxButtons.OK);
+                    DialogResult dr = MessageBox.Show(e1.ToString(), "Fail", MessageBoxButtons.OK,MessageBoxIcon.Error);
                     if (dr == DialogResult.OK)
                     {
                         Form2 frm = new Form2();

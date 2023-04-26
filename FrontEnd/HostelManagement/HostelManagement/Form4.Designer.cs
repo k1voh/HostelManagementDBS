@@ -39,26 +39,26 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.name = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.namelabel = new System.Windows.Forms.Label();
+            this.emailabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.phonelabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.genderlabel = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.regno = new System.Windows.Forms.Label();
+            this.reglabel = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.cgpalabel = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.branchlabel = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
+            this.blocklabel = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
+            this.idlabel = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
+            this.roomlabel = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.profileicon = new System.Windows.Forms.PictureBox();
             this.editbutton = new System.Windows.Forms.Button();
@@ -112,7 +112,7 @@
             this.issuesicon.BackColor = System.Drawing.Color.Transparent;
             this.issuesicon.BackgroundImage = global::HostelManagement.Properties.Resources.issues_icon1;
             this.issuesicon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.issuesicon.Location = new System.Drawing.Point(75, 598);
+            this.issuesicon.Location = new System.Drawing.Point(75, 590);
             this.issuesicon.Name = "issuesicon";
             this.issuesicon.Size = new System.Drawing.Size(61, 58);
             this.issuesicon.TabIndex = 4;
@@ -181,27 +181,27 @@
             this.label1.TabIndex = 20;
             this.label1.Text = "Name: ";
             // 
-            // name
+            // namelabel
             // 
-            this.name.AutoSize = true;
-            this.name.BackColor = System.Drawing.Color.Transparent;
-            this.name.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name.Location = new System.Drawing.Point(345, 322);
-            this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(56, 21);
-            this.name.TabIndex = 21;
-            this.name.Text = "NULL";
+            this.namelabel.AutoSize = true;
+            this.namelabel.BackColor = System.Drawing.Color.Transparent;
+            this.namelabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.namelabel.Location = new System.Drawing.Point(345, 322);
+            this.namelabel.Name = "namelabel";
+            this.namelabel.Size = new System.Drawing.Size(56, 21);
+            this.namelabel.TabIndex = 21;
+            this.namelabel.Text = "NULL";
             // 
-            // label2
+            // emailabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(345, 442);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 21);
-            this.label2.TabIndex = 23;
-            this.label2.Text = "NULL";
+            this.emailabel.AutoSize = true;
+            this.emailabel.BackColor = System.Drawing.Color.Transparent;
+            this.emailabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailabel.Location = new System.Drawing.Point(345, 442);
+            this.emailabel.Name = "emailabel";
+            this.emailabel.Size = new System.Drawing.Size(56, 21);
+            this.emailabel.TabIndex = 23;
+            this.emailabel.Text = "NULL";
             // 
             // label3
             // 
@@ -214,16 +214,16 @@
             this.label3.TabIndex = 22;
             this.label3.Text = "Email: ";
             // 
-            // label4
+            // phonelabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(423, 401);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 21);
-            this.label4.TabIndex = 25;
-            this.label4.Text = "NULL";
+            this.phonelabel.AutoSize = true;
+            this.phonelabel.BackColor = System.Drawing.Color.Transparent;
+            this.phonelabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phonelabel.Location = new System.Drawing.Point(423, 401);
+            this.phonelabel.Name = "phonelabel";
+            this.phonelabel.Size = new System.Drawing.Size(56, 21);
+            this.phonelabel.TabIndex = 25;
+            this.phonelabel.Text = "NULL";
             // 
             // label5
             // 
@@ -236,38 +236,38 @@
             this.label5.TabIndex = 24;
             this.label5.Text = "Phone Number: ";
             // 
-            // label6
+            // genderlabel
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(361, 483);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 21);
-            this.label6.TabIndex = 27;
-            this.label6.Text = "NULL";
+            this.genderlabel.AutoSize = true;
+            this.genderlabel.BackColor = System.Drawing.Color.Transparent;
+            this.genderlabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.genderlabel.Location = new System.Drawing.Point(361, 483);
+            this.genderlabel.Name = "genderlabel";
+            this.genderlabel.Size = new System.Drawing.Size(56, 21);
+            this.genderlabel.TabIndex = 27;
+            this.genderlabel.Text = "NULL";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(272, 483);
+            this.label7.Location = new System.Drawing.Point(270, 483);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(83, 21);
             this.label7.TabIndex = 26;
             this.label7.Text = "Gender: ";
             // 
-            // regno
+            // reglabel
             // 
-            this.regno.AutoSize = true;
-            this.regno.BackColor = System.Drawing.Color.Transparent;
-            this.regno.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.regno.Location = new System.Drawing.Point(469, 360);
-            this.regno.Name = "regno";
-            this.regno.Size = new System.Drawing.Size(56, 21);
-            this.regno.TabIndex = 29;
-            this.regno.Text = "NULL";
+            this.reglabel.AutoSize = true;
+            this.reglabel.BackColor = System.Drawing.Color.Transparent;
+            this.reglabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reglabel.Location = new System.Drawing.Point(469, 360);
+            this.reglabel.Name = "reglabel";
+            this.reglabel.Size = new System.Drawing.Size(56, 21);
+            this.reglabel.TabIndex = 29;
+            this.reglabel.Text = "NULL";
             // 
             // label9
             // 
@@ -280,45 +280,45 @@
             this.label9.TabIndex = 28;
             this.label9.Text = "Registration Number: ";
             // 
-            // label10
+            // cgpalabel
             // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(361, 520);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(56, 21);
-            this.label10.TabIndex = 31;
-            this.label10.Text = "NULL";
+            this.cgpalabel.AutoSize = true;
+            this.cgpalabel.BackColor = System.Drawing.Color.Transparent;
+            this.cgpalabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cgpalabel.Location = new System.Drawing.Point(361, 520);
+            this.cgpalabel.Name = "cgpalabel";
+            this.cgpalabel.Size = new System.Drawing.Size(56, 21);
+            this.cgpalabel.TabIndex = 31;
+            this.cgpalabel.Text = "NULL";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(272, 520);
+            this.label11.Location = new System.Drawing.Point(270, 520);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(70, 21);
             this.label11.TabIndex = 30;
             this.label11.Text = "CGPA: ";
             // 
-            // label12
+            // branchlabel
             // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(361, 554);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(56, 21);
-            this.label12.TabIndex = 33;
-            this.label12.Text = "NULL";
+            this.branchlabel.AutoSize = true;
+            this.branchlabel.BackColor = System.Drawing.Color.Transparent;
+            this.branchlabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.branchlabel.Location = new System.Drawing.Point(361, 554);
+            this.branchlabel.Name = "branchlabel";
+            this.branchlabel.Size = new System.Drawing.Size(56, 21);
+            this.branchlabel.TabIndex = 33;
+            this.branchlabel.Text = "NULL";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(272, 554);
+            this.label13.Location = new System.Drawing.Point(270, 554);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(81, 21);
             this.label13.TabIndex = 32;
@@ -346,67 +346,67 @@
             this.label14.TabIndex = 35;
             this.label14.Text = "Hostel Information";
             // 
-            // label16
+            // blocklabel
             // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(828, 360);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(56, 21);
-            this.label16.TabIndex = 41;
-            this.label16.Text = "NULL";
+            this.blocklabel.AutoSize = true;
+            this.blocklabel.BackColor = System.Drawing.Color.Transparent;
+            this.blocklabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.blocklabel.Location = new System.Drawing.Point(832, 360);
+            this.blocklabel.Name = "blocklabel";
+            this.blocklabel.Size = new System.Drawing.Size(56, 21);
+            this.blocklabel.TabIndex = 41;
+            this.blocklabel.Text = "NULL";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.BackColor = System.Drawing.Color.Transparent;
             this.label17.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(690, 360);
+            this.label17.Location = new System.Drawing.Point(694, 360);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(142, 21);
             this.label17.TabIndex = 40;
             this.label17.Text = "Block Number: ";
             // 
-            // label18
+            // idlabel
             // 
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.Color.Transparent;
-            this.label18.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(828, 401);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(56, 21);
-            this.label18.TabIndex = 39;
-            this.label18.Text = "NULL";
+            this.idlabel.AutoSize = true;
+            this.idlabel.BackColor = System.Drawing.Color.Transparent;
+            this.idlabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idlabel.Location = new System.Drawing.Point(832, 401);
+            this.idlabel.Name = "idlabel";
+            this.idlabel.Size = new System.Drawing.Size(56, 21);
+            this.idlabel.TabIndex = 39;
+            this.idlabel.Text = "NULL";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(739, 401);
+            this.label19.Location = new System.Drawing.Point(743, 401);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(93, 21);
             this.label19.TabIndex = 38;
             this.label19.Text = "Room ID: ";
             // 
-            // label20
+            // roomlabel
             // 
-            this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.Color.Transparent;
-            this.label20.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(828, 322);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(56, 21);
-            this.label20.TabIndex = 37;
-            this.label20.Text = "NULL";
+            this.roomlabel.AutoSize = true;
+            this.roomlabel.BackColor = System.Drawing.Color.Transparent;
+            this.roomlabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roomlabel.Location = new System.Drawing.Point(832, 322);
+            this.roomlabel.Name = "roomlabel";
+            this.roomlabel.Size = new System.Drawing.Size(56, 21);
+            this.roomlabel.TabIndex = 37;
+            this.roomlabel.Text = "NULL";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
             this.label21.BackColor = System.Drawing.Color.Transparent;
             this.label21.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(690, 322);
+            this.label21.Location = new System.Drawing.Point(694, 322);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(142, 21);
             this.label21.TabIndex = 36;
@@ -427,9 +427,9 @@
             // 
             this.editbutton.BackColor = System.Drawing.Color.PeachPuff;
             this.editbutton.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editbutton.Location = new System.Drawing.Point(786, 586);
+            this.editbutton.Location = new System.Drawing.Point(762, 563);
             this.editbutton.Name = "editbutton";
-            this.editbutton.Size = new System.Drawing.Size(112, 41);
+            this.editbutton.Size = new System.Drawing.Size(126, 48);
             this.editbutton.TabIndex = 43;
             this.editbutton.Text = "Edit Details";
             this.editbutton.UseVisualStyleBackColor = false;
@@ -444,27 +444,27 @@
             this.ClientSize = new System.Drawing.Size(1039, 745);
             this.Controls.Add(this.editbutton);
             this.Controls.Add(this.profileicon);
-            this.Controls.Add(this.label16);
+            this.Controls.Add(this.blocklabel);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.label18);
+            this.Controls.Add(this.idlabel);
             this.Controls.Add(this.label19);
-            this.Controls.Add(this.label20);
+            this.Controls.Add(this.roomlabel);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.label12);
+            this.Controls.Add(this.branchlabel);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.cgpalabel);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.regno);
+            this.Controls.Add(this.reglabel);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.genderlabel);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.phonelabel);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.emailabel);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.name);
+            this.Controls.Add(this.namelabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox1);
@@ -476,7 +476,7 @@
             this.Controls.Add(this.shapeContainer1);
             this.DoubleBuffered = true;
             this.Name = "Profile";
-            this.Text = "Profile";
+            this.Text = "s";
             this.Load += new System.EventHandler(this.Profile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.messchangeicon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roombookicon)).EndInit();
@@ -502,26 +502,26 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label name;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label namelabel;
+        private System.Windows.Forms.Label emailabel;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label phonelabel;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label genderlabel;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label regno;
+        private System.Windows.Forms.Label reglabel;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label cgpalabel;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label branchlabel;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label blocklabel;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label idlabel;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label roomlabel;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.PictureBox profileicon;
         private System.Windows.Forms.Button editbutton;
