@@ -97,7 +97,8 @@ namespace HostelManagement
             {
                 reqcaptcha.Visible= false;
             }
-            if (!reqreg.Visible && (regTB.Text.Length != 9 || !IsNumeric(regTB.Text)))
+            // Ensures registration number to have digits starting from the digit 0,1,2
+            if (!reqreg.Visible && (!IsNumeric(regTB.Text) || (regTB.Text[0]!='2' && regTB.Text[0]!='1' && regTB.Text[0]!='0')))
             {
                 invalidreg.Visible = true;
             }
@@ -121,7 +122,15 @@ namespace HostelManagement
             {
                 invalidname.Visible = false;
             }
-            if(!reqcaptcha.Visible && !reqcontact.Visible && !reqmail.Visible && !reqpass.Visible && !reqreg.Visible && !reqretype.Visible && !requser.Visible && !invalidreg.Visible && !invalidmail.Visible && !invalidname.Visible)
+            if (passTB.Text != retypepassTB.Text && !reqpass.Visible && !reqretype.Visible)
+            {
+                invalidretype.Visible = true;
+            }
+            else
+            {
+                invalidretype.Visible = false;
+            }
+            if(!reqcaptcha.Visible && !reqcontact.Visible && !reqmail.Visible && !reqpass.Visible && !reqreg.Visible && !reqretype.Visible && !requser.Visible && !invalidreg.Visible && !invalidmail.Visible && !invalidname.Visible && !invalidretype.Visible)
             {
                 DialogResult dr = MessageBox.Show("Registered Successfully!","Success",MessageBoxButtons.OK);
                 if(dr == DialogResult.OK)
