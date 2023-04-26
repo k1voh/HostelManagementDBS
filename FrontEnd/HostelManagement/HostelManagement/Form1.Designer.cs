@@ -42,6 +42,8 @@
             this.regTB = new System.Windows.Forms.TextBox();
             this.passTB = new System.Windows.Forms.TextBox();
             this.captcha = new System.Windows.Forms.CheckBox();
+            this.match = new System.Windows.Forms.Label();
+            this.invaliduser = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,11 +51,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Bookman Old Style", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Bookman Old Style", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(222, 301);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(257, 27);
+            this.label1.Size = new System.Drawing.Size(238, 25);
             this.label1.TabIndex = 3;
             this.label1.Text = "Registration Number";
             // 
@@ -61,11 +63,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Bookman Old Style", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(222, 402);
+            this.label2.Font = new System.Drawing.Font("Bookman Old Style", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(222, 406);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 27);
+            this.label2.Size = new System.Drawing.Size(114, 25);
             this.label2.TabIndex = 5;
             this.label2.Text = "Password";
             // 
@@ -203,14 +205,42 @@
             // 
             this.captcha.AutoSize = true;
             this.captcha.BackColor = System.Drawing.Color.Transparent;
-            this.captcha.Font = new System.Drawing.Font("Bookman Old Style", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.captcha.Location = new System.Drawing.Point(306, 507);
+            this.captcha.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.captcha.Location = new System.Drawing.Point(314, 506);
             this.captcha.Margin = new System.Windows.Forms.Padding(4);
             this.captcha.Name = "captcha";
-            this.captcha.Size = new System.Drawing.Size(183, 25);
+            this.captcha.Size = new System.Drawing.Size(165, 25);
             this.captcha.TabIndex = 34;
             this.captcha.Text = "I am not a robot";
             this.captcha.UseVisualStyleBackColor = false;
+            // 
+            // match
+            // 
+            this.match.AutoSize = true;
+            this.match.BackColor = System.Drawing.Color.Transparent;
+            this.match.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.match.ForeColor = System.Drawing.Color.Red;
+            this.match.Location = new System.Drawing.Point(189, 269);
+            this.match.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.match.Name = "match";
+            this.match.Size = new System.Drawing.Size(409, 19);
+            this.match.TabIndex = 35;
+            this.match.Text = "!! Password and Registration Number Do Not Match !!";
+            this.match.Visible = false;
+            // 
+            // invaliduser
+            // 
+            this.invaliduser.AutoSize = true;
+            this.invaliduser.BackColor = System.Drawing.Color.Transparent;
+            this.invaliduser.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.invaliduser.ForeColor = System.Drawing.Color.Red;
+            this.invaliduser.Location = new System.Drawing.Point(427, 367);
+            this.invaliduser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.invaliduser.Name = "invaliduser";
+            this.invaliduser.Size = new System.Drawing.Size(126, 19);
+            this.invaliduser.TabIndex = 36;
+            this.invaliduser.Text = "*user not found";
+            this.invaliduser.Visible = false;
             // 
             // LOGIN
             // 
@@ -221,6 +251,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(797, 745);
+            this.Controls.Add(this.invaliduser);
+            this.Controls.Add(this.match);
             this.Controls.Add(this.captcha);
             this.Controls.Add(this.passTB);
             this.Controls.Add(this.regTB);
@@ -259,6 +291,8 @@
         private System.Windows.Forms.TextBox regTB;
         private System.Windows.Forms.TextBox passTB;
         private System.Windows.Forms.CheckBox captcha;
+        private System.Windows.Forms.Label match;
+        private System.Windows.Forms.Label invaliduser;
     }
 }
 

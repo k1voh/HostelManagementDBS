@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Oracle.ManagedDataAccess.Client;
+//using Oracle.ManagedDataAccess.Client;
 using Oracle.DataAccess.Client;
 using Oracle.DataAccess.Types;
 
@@ -15,6 +15,13 @@ namespace HostelManagement
 {
     public partial class LOGIN : Form
     {
+        OracleDataAdapter da;
+        DataSet ds;
+        DataTable dt;
+        DataRow dr;
+        int i = 0;
+        string reg = string.Empty;
+        string pass = string.Empty;
         public LOGIN()
         {
             InitializeComponent();
@@ -52,21 +59,62 @@ namespace HostelManagement
                 reqcaptcha.Visible = false; 
             }
             if(!reqcaptcha.Visible && !reqpass.Visible && !reqreg.Visible){
-                if(regTB.Text[0]=='2'){
-                    long x = 0;
-                    long.TryParse(regTB.Text, out x);
-                    Profile frm = new Profile(x);
-                    this.Hide();
-                    frm.ShowDialog();
-                    this.Close();   
+                string ConStr = "DATA SOURCE=DESKTOP-FE4CR37:1521/XE;USER ID=SYSTEM;Password=rampage";
+                OracleConnection conn = new OracleConnection(ConStr);
+                reg = regTB.Text;
+                try
+                {
+                    conn.Open();
+                    OracleCommand comm = new OracleCommand("", conn);
+                    comm.CommandText = "select password from usertype where reg_no="+reg;
+                    comm.CommandType = CommandType.Text;
+                    ds = new DataSet();
+                    da = new OracleDataAdapter(comm.CommandText, conn);
+                    da.Fill(ds, "usertype");
+                    dt = ds.Tables["usertype"];
+                    int t = dt.Rows.Count;
+                    if (t == 0)
+                    {
+                        invaliduser.Visible = true;
+                        conn.Close();
+                        return;
+                    }
+                    else {
+                        invaliduser.Visible = false;
+                        dr = dt.Rows[0];
+                        pass = dr["password"].ToString();
+                        if (pass != passTB.Text) {
+                            match.Visible = true;
+                            conn.Close();
+                            return;
+                        }
+                        match.Visible = false;
+                        if (regTB.Text[0] == '2')
+                        {
+                            long x = 0;
+                            long.TryParse(regTB.Text, out x);
+                            Profile frm = new Profile(x);
+                            this.Hide();
+                            frm.ShowDialog();
+                            this.Close();
+                        }
+                        else if (regTB.Text[0] == '0')
+                        {
+                            long x = 0;
+                            long.TryParse(regTB.Text, out x);
+                            ProfileAdmin frm = new ProfileAdmin(x);
+                            this.Hide();
+                            frm.ShowDialog();
+                            this.Close();
+                        }
+                    }
+                    
+                    conn.Close();
+
                 }
-                else if(regTB.Text[0]=='0'){
-                    long x = 0;
-                    long.TryParse(regTB.Text, out x);
-                    ProfileAdmin frm = new ProfileAdmin(x);
-                    this.Hide();
-                    frm.ShowDialog();
-                    this.Close();
+                catch (Exception e1)
+                {
+                    MessageBox.Show(e1.ToString(),"Fail",MessageBoxButtons.OK);
                 }
             }
         }

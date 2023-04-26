@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditDetails));
-            this.editbutton = new System.Windows.Forms.Button();
+            this.savebutton = new System.Windows.Forms.Button();
             this.profileicon = new System.Windows.Forms.PictureBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -41,10 +41,8 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.regno = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,11 +53,19 @@
             this.roomchangeicon = new System.Windows.Forms.PictureBox();
             this.roombookicon = new System.Windows.Forms.PictureBox();
             this.messchangeicon = new System.Windows.Forms.PictureBox();
-            this.name = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.mailTB = new System.Windows.Forms.TextBox();
             this.branchTB = new System.Windows.Forms.TextBox();
             this.cgpaTB = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.genderCB = new System.Windows.Forms.ComboBox();
+            this.namelabel = new System.Windows.Forms.Label();
+            this.reglabel = new System.Windows.Forms.Label();
+            this.phoneTB = new System.Windows.Forms.TextBox();
+            this.invalidphone = new System.Windows.Forms.Label();
+            this.invalidmail = new System.Windows.Forms.Label();
+            this.invalidcg = new System.Windows.Forms.Label();
+            this.invalidbranch = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.forgotpassword = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.profileicon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -69,16 +75,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.messchangeicon)).BeginInit();
             this.SuspendLayout();
             // 
-            // editbutton
+            // savebutton
             // 
-            this.editbutton.BackColor = System.Drawing.Color.PeachPuff;
-            this.editbutton.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editbutton.Location = new System.Drawing.Point(768, 584);
-            this.editbutton.Name = "editbutton";
-            this.editbutton.Size = new System.Drawing.Size(126, 46);
-            this.editbutton.TabIndex = 74;
-            this.editbutton.Text = "Save Changes";
-            this.editbutton.UseVisualStyleBackColor = false;
+            this.savebutton.BackColor = System.Drawing.Color.PeachPuff;
+            this.savebutton.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.savebutton.Location = new System.Drawing.Point(753, 580);
+            this.savebutton.Name = "savebutton";
+            this.savebutton.Size = new System.Drawing.Size(141, 50);
+            this.savebutton.TabIndex = 74;
+            this.savebutton.Text = "Save Changes";
+            this.savebutton.UseVisualStyleBackColor = false;
+            this.savebutton.Click += new System.EventHandler(this.savebutton_Click);
             // 
             // profileicon
             // 
@@ -202,17 +209,6 @@
             this.label11.TabIndex = 61;
             this.label11.Text = "CGPA: ";
             // 
-            // regno
-            // 
-            this.regno.AutoSize = true;
-            this.regno.BackColor = System.Drawing.Color.Transparent;
-            this.regno.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.regno.Location = new System.Drawing.Point(465, 363);
-            this.regno.Name = "regno";
-            this.regno.Size = new System.Drawing.Size(56, 21);
-            this.regno.TabIndex = 60;
-            this.regno.Text = "NULL";
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -235,17 +231,6 @@
             this.label7.TabIndex = 57;
             this.label7.Text = "Gender: ";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(419, 404);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 21);
-            this.label4.TabIndex = 56;
-            this.label4.Text = "NULL";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -253,9 +238,9 @@
             this.label5.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(266, 404);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(147, 21);
+            this.label5.Size = new System.Drawing.Size(73, 21);
             this.label5.TabIndex = 55;
-            this.label5.Text = "Phone Number: ";
+            this.label5.Text = "Phone: ";
             // 
             // label3
             // 
@@ -359,51 +344,150 @@
             this.messchangeicon.TabStop = false;
             this.messchangeicon.Click += new System.EventHandler(this.messchangeicon_Click);
             // 
-            // name
+            // mailTB
             // 
-            this.name.AutoSize = true;
-            this.name.BackColor = System.Drawing.Color.Transparent;
-            this.name.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name.Location = new System.Drawing.Point(341, 325);
-            this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(56, 21);
-            this.name.TabIndex = 52;
-            this.name.Text = "NULL";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(360, 444);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 22);
-            this.textBox1.TabIndex = 79;
+            this.mailTB.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mailTB.Location = new System.Drawing.Point(360, 444);
+            this.mailTB.Name = "mailTB";
+            this.mailTB.Size = new System.Drawing.Size(162, 25);
+            this.mailTB.TabIndex = 79;
             // 
             // branchTB
             // 
+            this.branchTB.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.branchTB.Location = new System.Drawing.Point(360, 567);
             this.branchTB.Name = "branchTB";
-            this.branchTB.Size = new System.Drawing.Size(121, 22);
+            this.branchTB.Size = new System.Drawing.Size(162, 25);
             this.branchTB.TabIndex = 80;
             // 
             // cgpaTB
             // 
-            this.cgpaTB.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cgpaTB.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cgpaTB.Location = new System.Drawing.Point(360, 529);
             this.cgpaTB.Name = "cgpaTB";
-            this.cgpaTB.Size = new System.Drawing.Size(121, 23);
+            this.cgpaTB.Size = new System.Drawing.Size(162, 25);
             this.cgpaTB.TabIndex = 81;
             // 
-            // comboBox1
+            // genderCB
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
-            this.comboBox1.Location = new System.Drawing.Point(360, 487);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 26);
-            this.comboBox1.TabIndex = 82;
-            this.comboBox1.Text = "Choose";
+            this.genderCB.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.genderCB.FormattingEnabled = true;
+            this.genderCB.Items.AddRange(new object[] {
+            "MALE",
+            "FEMALE"});
+            this.genderCB.Location = new System.Drawing.Point(360, 487);
+            this.genderCB.Name = "genderCB";
+            this.genderCB.Size = new System.Drawing.Size(162, 27);
+            this.genderCB.TabIndex = 82;
+            this.genderCB.Text = "Choose";
+            // 
+            // namelabel
+            // 
+            this.namelabel.AutoSize = true;
+            this.namelabel.BackColor = System.Drawing.Color.Transparent;
+            this.namelabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.namelabel.Location = new System.Drawing.Point(341, 325);
+            this.namelabel.Name = "namelabel";
+            this.namelabel.Size = new System.Drawing.Size(56, 21);
+            this.namelabel.TabIndex = 83;
+            this.namelabel.Text = "NULL";
+            // 
+            // reglabel
+            // 
+            this.reglabel.AutoSize = true;
+            this.reglabel.BackColor = System.Drawing.Color.Transparent;
+            this.reglabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reglabel.Location = new System.Drawing.Point(466, 363);
+            this.reglabel.Name = "reglabel";
+            this.reglabel.Size = new System.Drawing.Size(56, 21);
+            this.reglabel.TabIndex = 84;
+            this.reglabel.Text = "NULL";
+            // 
+            // phoneTB
+            // 
+            this.phoneTB.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phoneTB.Location = new System.Drawing.Point(360, 402);
+            this.phoneTB.Name = "phoneTB";
+            this.phoneTB.Size = new System.Drawing.Size(162, 25);
+            this.phoneTB.TabIndex = 86;
+            // 
+            // invalidphone
+            // 
+            this.invalidphone.AutoSize = true;
+            this.invalidphone.BackColor = System.Drawing.Color.Transparent;
+            this.invalidphone.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.invalidphone.ForeColor = System.Drawing.Color.Red;
+            this.invalidphone.Location = new System.Drawing.Point(528, 404);
+            this.invalidphone.Name = "invalidphone";
+            this.invalidphone.Size = new System.Drawing.Size(99, 19);
+            this.invalidphone.TabIndex = 87;
+            this.invalidphone.Text = "*invalid field";
+            this.invalidphone.Visible = false;
+            // 
+            // invalidmail
+            // 
+            this.invalidmail.AutoSize = true;
+            this.invalidmail.BackColor = System.Drawing.Color.Transparent;
+            this.invalidmail.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.invalidmail.ForeColor = System.Drawing.Color.Red;
+            this.invalidmail.Location = new System.Drawing.Point(528, 447);
+            this.invalidmail.Name = "invalidmail";
+            this.invalidmail.Size = new System.Drawing.Size(99, 19);
+            this.invalidmail.TabIndex = 88;
+            this.invalidmail.Text = "*invalid field";
+            this.invalidmail.Visible = false;
+            // 
+            // invalidcg
+            // 
+            this.invalidcg.AutoSize = true;
+            this.invalidcg.BackColor = System.Drawing.Color.Transparent;
+            this.invalidcg.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.invalidcg.ForeColor = System.Drawing.Color.Red;
+            this.invalidcg.Location = new System.Drawing.Point(528, 530);
+            this.invalidcg.Name = "invalidcg";
+            this.invalidcg.Size = new System.Drawing.Size(99, 19);
+            this.invalidcg.TabIndex = 89;
+            this.invalidcg.Text = "*invalid field";
+            this.invalidcg.Visible = false;
+            // 
+            // invalidbranch
+            // 
+            this.invalidbranch.AutoSize = true;
+            this.invalidbranch.BackColor = System.Drawing.Color.Transparent;
+            this.invalidbranch.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.invalidbranch.ForeColor = System.Drawing.Color.Red;
+            this.invalidbranch.Location = new System.Drawing.Point(528, 571);
+            this.invalidbranch.Name = "invalidbranch";
+            this.invalidbranch.Size = new System.Drawing.Size(99, 19);
+            this.invalidbranch.TabIndex = 90;
+            this.invalidbranch.Text = "*invalid field";
+            this.invalidbranch.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(266, 609);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 21);
+            this.label2.TabIndex = 91;
+            this.label2.Text = "Password: ";
+            // 
+            // forgotpassword
+            // 
+            this.forgotpassword.AutoSize = true;
+            this.forgotpassword.BackColor = System.Drawing.Color.Transparent;
+            this.forgotpassword.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.forgotpassword.LinkColor = System.Drawing.Color.Blue;
+            this.forgotpassword.Location = new System.Drawing.Point(373, 611);
+            this.forgotpassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.forgotpassword.Name = "forgotpassword";
+            this.forgotpassword.Size = new System.Drawing.Size(138, 19);
+            this.forgotpassword.TabIndex = 92;
+            this.forgotpassword.TabStop = true;
+            this.forgotpassword.Text = "Forgot password?";
+            this.forgotpassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.forgotpassword_LinkClicked);
             // 
             // EditDetails
             // 
@@ -412,11 +496,20 @@
             this.BackgroundImage = global::HostelManagement.Properties.Resources.profilepage1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1039, 745);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.forgotpassword);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.invalidbranch);
+            this.Controls.Add(this.invalidcg);
+            this.Controls.Add(this.invalidmail);
+            this.Controls.Add(this.invalidphone);
+            this.Controls.Add(this.phoneTB);
+            this.Controls.Add(this.reglabel);
+            this.Controls.Add(this.namelabel);
+            this.Controls.Add(this.genderCB);
             this.Controls.Add(this.cgpaTB);
             this.Controls.Add(this.branchTB);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.editbutton);
+            this.Controls.Add(this.mailTB);
+            this.Controls.Add(this.savebutton);
             this.Controls.Add(this.profileicon);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label17);
@@ -428,13 +521,10 @@
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.regno);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.name);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox1);
@@ -461,7 +551,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button editbutton;
+        private System.Windows.Forms.Button savebutton;
         private System.Windows.Forms.PictureBox profileicon;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
@@ -473,10 +563,8 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label regno;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
@@ -487,10 +575,18 @@
         private System.Windows.Forms.PictureBox roomchangeicon;
         private System.Windows.Forms.PictureBox roombookicon;
         private System.Windows.Forms.PictureBox messchangeicon;
-        private System.Windows.Forms.Label name;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox mailTB;
         private System.Windows.Forms.TextBox branchTB;
         private System.Windows.Forms.TextBox cgpaTB;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox genderCB;
+        private System.Windows.Forms.Label namelabel;
+        private System.Windows.Forms.Label reglabel;
+        private System.Windows.Forms.TextBox phoneTB;
+        private System.Windows.Forms.Label invalidphone;
+        private System.Windows.Forms.Label invalidmail;
+        private System.Windows.Forms.Label invalidcg;
+        private System.Windows.Forms.Label invalidbranch;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.LinkLabel forgotpassword;
     }
 }

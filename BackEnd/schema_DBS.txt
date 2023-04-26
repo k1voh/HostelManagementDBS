@@ -78,3 +78,14 @@ create table complaints(
     ct_id varchar(20) references caretaker(ct_id), 
     issue_status varchar(50), 
     constraint chk_status check (issue_status = 'COMPLETED' or issue_status = 'NOT COMPLETED'));
+
+
+create table administrator(
+    admin_id varchar(20) references usertype(reg_no) primary key,
+    name varchar(20) not null,
+    department varchar(20));
+
+
+ create table changecounter(
+    facility varchar(20) primary key,
+    counter int);
