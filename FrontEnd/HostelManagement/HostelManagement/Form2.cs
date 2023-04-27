@@ -110,14 +110,7 @@ namespace HostelManagement
             }
             else
             {
-                if (regTB.Text[0] == '2' && regTB.Text.Length != 8)
-                {
-                    invalidreg.Visible = true;
-                }
-                else if(regTB.Text[0] == '1' && regTB.Text.Length != 3){
-                    invalidreg.Visible = true;
-                }
-                else if (regTB.Text[0] == '0' && regTB.Text.Length != 5)
+                if ((regTB.Text[0] == '2' && regTB.Text.Length != 8) || (regTB.Text[0] == '1' && regTB.Text.Length != 3) || (regTB.Text[0] == '0' && regTB.Text.Length != 5))
                 {
                     invalidreg.Visible = true;
                 }

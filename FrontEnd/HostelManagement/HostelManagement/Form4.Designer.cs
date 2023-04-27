@@ -56,12 +56,14 @@
             this.label14 = new System.Windows.Forms.Label();
             this.blocklabel = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.idlabel = new System.Windows.Forms.Label();
+            this.occupantlabel = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.roomlabel = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.profileicon = new System.Windows.Forms.PictureBox();
             this.editbutton = new System.Windows.Forms.Button();
+            this.aclabel = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.messchangeicon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roombookicon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomchangeicon)).BeginInit();
@@ -368,27 +370,27 @@
             this.label17.TabIndex = 40;
             this.label17.Text = "Block Number: ";
             // 
-            // idlabel
+            // occupantlabel
             // 
-            this.idlabel.AutoSize = true;
-            this.idlabel.BackColor = System.Drawing.Color.Transparent;
-            this.idlabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idlabel.Location = new System.Drawing.Point(832, 401);
-            this.idlabel.Name = "idlabel";
-            this.idlabel.Size = new System.Drawing.Size(56, 21);
-            this.idlabel.TabIndex = 39;
-            this.idlabel.Text = "NULL";
+            this.occupantlabel.AutoSize = true;
+            this.occupantlabel.BackColor = System.Drawing.Color.Transparent;
+            this.occupantlabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.occupantlabel.Location = new System.Drawing.Point(832, 397);
+            this.occupantlabel.Name = "occupantlabel";
+            this.occupantlabel.Size = new System.Drawing.Size(56, 21);
+            this.occupantlabel.TabIndex = 39;
+            this.occupantlabel.Text = "NULL";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(743, 401);
+            this.label19.Location = new System.Drawing.Point(722, 397);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(93, 21);
+            this.label19.Size = new System.Drawing.Size(114, 21);
             this.label19.TabIndex = 38;
-            this.label19.Text = "Room ID: ";
+            this.label19.Text = "Occupancy: ";
             // 
             // roomlabel
             // 
@@ -435,6 +437,28 @@
             this.editbutton.UseVisualStyleBackColor = false;
             this.editbutton.Click += new System.EventHandler(this.editbutton_Click);
             // 
+            // aclabel
+            // 
+            this.aclabel.AutoSize = true;
+            this.aclabel.BackColor = System.Drawing.Color.Transparent;
+            this.aclabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aclabel.Location = new System.Drawing.Point(832, 429);
+            this.aclabel.Name = "aclabel";
+            this.aclabel.Size = new System.Drawing.Size(56, 21);
+            this.aclabel.TabIndex = 45;
+            this.aclabel.Text = "NULL";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(709, 429);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(127, 21);
+            this.label4.TabIndex = 44;
+            this.label4.Text = "Conditioning: ";
+            // 
             // Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -442,11 +466,13 @@
             this.BackgroundImage = global::HostelManagement.Properties.Resources.profilepage;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1039, 745);
+            this.Controls.Add(this.aclabel);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.editbutton);
             this.Controls.Add(this.profileicon);
             this.Controls.Add(this.blocklabel);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.idlabel);
+            this.Controls.Add(this.occupantlabel);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.roomlabel);
             this.Controls.Add(this.label21);
@@ -519,12 +545,14 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label blocklabel;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label idlabel;
+        private System.Windows.Forms.Label occupantlabel;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label roomlabel;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.PictureBox profileicon;
         private System.Windows.Forms.Button editbutton;
+        private System.Windows.Forms.Label aclabel;
+        private System.Windows.Forms.Label label4;
 
     }
 }

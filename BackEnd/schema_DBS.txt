@@ -1,8 +1,8 @@
 create table Hostel(
     Hostel_id int primary key,
     warden varchar(50), 
-    total_rooms int, 
-    rooms_available int, 
+    total_occupancy int, 
+    unoccupied int, 
     constraint chk_rooms check (total_rooms >= rooms_available));
 
 
@@ -31,9 +31,6 @@ create table fees(
     Hostel_fee int not null, 
     Mess_fee int not null, 
     total_fee int);
-
-
-alter table fees modify (total_fee null);
 
 
 create table Hostel_rooms(
