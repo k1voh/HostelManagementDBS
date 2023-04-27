@@ -37,6 +37,12 @@
             this.messchangeicon = new System.Windows.Forms.PictureBox();
             this.profileicon = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.reglabel = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.namelabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.genderlabel = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.issuesicon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomchangeicon)).BeginInit();
@@ -137,6 +143,72 @@
             this.pictureBox6.TabIndex = 20;
             this.pictureBox6.TabStop = false;
             // 
+            // reglabel
+            // 
+            this.reglabel.AutoSize = true;
+            this.reglabel.BackColor = System.Drawing.Color.Transparent;
+            this.reglabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reglabel.Location = new System.Drawing.Point(468, 319);
+            this.reglabel.Name = "reglabel";
+            this.reglabel.Size = new System.Drawing.Size(56, 21);
+            this.reglabel.TabIndex = 33;
+            this.reglabel.Text = "NULL";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(269, 319);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(194, 21);
+            this.label9.TabIndex = 32;
+            this.label9.Text = "Registration Number: ";
+            // 
+            // namelabel
+            // 
+            this.namelabel.AutoSize = true;
+            this.namelabel.BackColor = System.Drawing.Color.Transparent;
+            this.namelabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.namelabel.Location = new System.Drawing.Point(342, 273);
+            this.namelabel.Name = "namelabel";
+            this.namelabel.Size = new System.Drawing.Size(56, 21);
+            this.namelabel.TabIndex = 31;
+            this.namelabel.Text = "NULL";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(267, 273);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 21);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Name: ";
+            // 
+            // genderlabel
+            // 
+            this.genderlabel.AutoSize = true;
+            this.genderlabel.BackColor = System.Drawing.Color.Transparent;
+            this.genderlabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.genderlabel.Location = new System.Drawing.Point(362, 364);
+            this.genderlabel.Name = "genderlabel";
+            this.genderlabel.Size = new System.Drawing.Size(56, 21);
+            this.genderlabel.TabIndex = 35;
+            this.genderlabel.Text = "NULL";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(271, 364);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(83, 21);
+            this.label7.TabIndex = 34;
+            this.label7.Text = "Gender: ";
+            // 
             // Booking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -144,6 +216,12 @@
             this.BackgroundImage = global::HostelManagement.Properties.Resources.roombooking2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1039, 745);
+            this.Controls.Add(this.genderlabel);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.reglabel);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.namelabel);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.issuelabel);
@@ -178,5 +256,11 @@
         private System.Windows.Forms.PictureBox messchangeicon;
         private System.Windows.Forms.PictureBox profileicon;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Label reglabel;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label namelabel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label genderlabel;
+        private System.Windows.Forms.Label label7;
     }
 }

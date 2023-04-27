@@ -32,13 +32,13 @@
             this.editbutton = new System.Windows.Forms.Button();
             this.profileicon = new System.Windows.Forms.PictureBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.regno = new System.Windows.Forms.Label();
+            this.reglabel = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.phonelabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.emailabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.name = new System.Windows.Forms.Label();
+            this.namelabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -87,16 +87,16 @@
             this.label15.TabIndex = 65;
             this.label15.Text = "Admin Information";
             // 
-            // regno
+            // reglabel
             // 
-            this.regno.AutoSize = true;
-            this.regno.BackColor = System.Drawing.Color.Transparent;
-            this.regno.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.regno.Location = new System.Drawing.Point(471, 372);
-            this.regno.Name = "regno";
-            this.regno.Size = new System.Drawing.Size(56, 21);
-            this.regno.TabIndex = 60;
-            this.regno.Text = "NULL";
+            this.reglabel.AutoSize = true;
+            this.reglabel.BackColor = System.Drawing.Color.Transparent;
+            this.reglabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reglabel.Location = new System.Drawing.Point(486, 372);
+            this.reglabel.Name = "reglabel";
+            this.reglabel.Size = new System.Drawing.Size(56, 21);
+            this.reglabel.TabIndex = 60;
+            this.reglabel.Text = "NULL";
             // 
             // label9
             // 
@@ -109,16 +109,16 @@
             this.label9.TabIndex = 59;
             this.label9.Text = "Registration Number: ";
             // 
-            // label4
+            // phonelabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(425, 413);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 21);
-            this.label4.TabIndex = 56;
-            this.label4.Text = "NULL";
+            this.phonelabel.AutoSize = true;
+            this.phonelabel.BackColor = System.Drawing.Color.Transparent;
+            this.phonelabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phonelabel.Location = new System.Drawing.Point(432, 413);
+            this.phonelabel.Name = "phonelabel";
+            this.phonelabel.Size = new System.Drawing.Size(56, 21);
+            this.phonelabel.TabIndex = 56;
+            this.phonelabel.Text = "NULL";
             // 
             // label5
             // 
@@ -131,16 +131,16 @@
             this.label5.TabIndex = 55;
             this.label5.Text = "Phone Number: ";
             // 
-            // label2
+            // emailabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(347, 454);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 21);
-            this.label2.TabIndex = 54;
-            this.label2.Text = "NULL";
+            this.emailabel.AutoSize = true;
+            this.emailabel.BackColor = System.Drawing.Color.Transparent;
+            this.emailabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailabel.Location = new System.Drawing.Point(363, 454);
+            this.emailabel.Name = "emailabel";
+            this.emailabel.Size = new System.Drawing.Size(56, 21);
+            this.emailabel.TabIndex = 54;
+            this.emailabel.Text = "NULL";
             // 
             // label3
             // 
@@ -153,16 +153,16 @@
             this.label3.TabIndex = 53;
             this.label3.Text = "Email: ";
             // 
-            // name
+            // namelabel
             // 
-            this.name.AutoSize = true;
-            this.name.BackColor = System.Drawing.Color.Transparent;
-            this.name.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name.Location = new System.Drawing.Point(347, 334);
-            this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(56, 21);
-            this.name.TabIndex = 52;
-            this.name.Text = "NULL";
+            this.namelabel.AutoSize = true;
+            this.namelabel.BackColor = System.Drawing.Color.Transparent;
+            this.namelabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.namelabel.Location = new System.Drawing.Point(363, 334);
+            this.namelabel.Name = "namelabel";
+            this.namelabel.Size = new System.Drawing.Size(56, 21);
+            this.namelabel.TabIndex = 52;
+            this.namelabel.Text = "NULL";
             // 
             // label1
             // 
@@ -254,13 +254,13 @@
             this.Controls.Add(this.editbutton);
             this.Controls.Add(this.profileicon);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.regno);
+            this.Controls.Add(this.reglabel);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.phonelabel);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.emailabel);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.name);
+            this.Controls.Add(this.namelabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox1);
@@ -269,7 +269,7 @@
             this.Controls.Add(this.messchangeicon);
             this.DoubleBuffered = true;
             this.Name = "ProfileAdmin";
-            this.Text = "f";
+            this.Text = "Admin Profile";
             this.Load += new System.EventHandler(this.ProfileAdmin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.profileicon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -287,13 +287,13 @@
         private System.Windows.Forms.Button editbutton;
         private System.Windows.Forms.PictureBox profileicon;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label regno;
+        private System.Windows.Forms.Label reglabel;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label phonelabel;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label emailabel;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label name;
+        private System.Windows.Forms.Label namelabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox1;
