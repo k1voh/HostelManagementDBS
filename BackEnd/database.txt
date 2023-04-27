@@ -23,14 +23,14 @@ insert into rooms values('02NC','DOUBLE','NO');
 
 *****
 
-insert into hostel_rooms values(10,'01AC',8,8.5);
-insert into hostel_rooms values(10,'01NC',12,7.5);
+insert into hostel_rooms values(10,'01AC',5,8.5);
+insert into hostel_rooms values(10,'01NC',5,7.5);
 insert into hostel_rooms values(10,'02AC',10,7.5);
 insert into hostel_rooms values(10,'02NC',10,6.5);
 insert into hostel_rooms values(11,'01AC',5,8.5);
 insert into hostel_rooms values(11,'01NC',5,8);
 insert into hostel_rooms values(11,'02AC',10,7.5);
-insert into hostel_rooms values(11,'02NC',15,7);
+insert into hostel_rooms values(11,'02NC',5,7);
 //insertion into block 12,20 and 21 remains
 
 *****
