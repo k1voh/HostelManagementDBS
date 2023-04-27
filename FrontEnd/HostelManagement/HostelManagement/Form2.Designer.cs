@@ -83,7 +83,7 @@
             this.regTB.Name = "regTB";
             this.regTB.Size = new System.Drawing.Size(238, 29);
             this.regTB.TabIndex = 34;
-            this.regTB.Text = "";
+            this.regTB.Text = " ";
             // 
             // reqreg
             // 

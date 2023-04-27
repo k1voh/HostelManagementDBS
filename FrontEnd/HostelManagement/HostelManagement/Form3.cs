@@ -133,7 +133,7 @@ namespace HostelManagement
                             comm.CommandType = CommandType.Text;
                             comm.ExecuteNonQuery();
                             txn.Commit();
-                            DialogResult dr1 = MessageBox.Show("Password Reset Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            DialogResult dr1 = MessageBox.Show("Password Reset Successfully!\n\nRedirecting to Login", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             if (dr1 == DialogResult.OK)
                             {
                                 LOGIN frm = new LOGIN();
