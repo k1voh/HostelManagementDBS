@@ -23,6 +23,8 @@ begin
 end;
 /
 
+--DONT INSERT THE FOLLOWING TRIGGER FOR NOW--
+
 // TRIGGER TO CALCULATE ROOM CHANGE //
 
 create or replace trigger CHANGE_room_B10
@@ -34,3 +36,5 @@ begin
     end if;
 end;
 /
+
+-----------------------------------------------
