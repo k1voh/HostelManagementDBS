@@ -2,8 +2,8 @@ create table Hostel(
     Hostel_id int primary key,
     warden varchar(50), 
     total_occupancy int, 
-    unoccupied int, 
-    constraint chk_rooms check (total_rooms >= rooms_available));
+    occupancy int, 
+    constraint chk_rooms check (total_occupancy >= occupancy));
 
 
 create table Mess(
@@ -31,6 +31,9 @@ create table fees(
     Hostel_fee int not null, 
     Mess_fee int not null, 
     total_fee int);
+
+
+alter table fees modify (total_fee null);
 
 
 create table Hostel_rooms(
@@ -86,3 +89,48 @@ create table administrator(
  create table changecounter(
     facility varchar(20) primary key,
     counter int);
+
+create table B10(
+    reg_no varchar(20) references student(registration_number), 
+    name varchar(50),
+    room_id varchar(15) references rooms(Room_ID), 
+    room_number int , 
+    contact varchar(30));
+
+create table B11(
+    reg_no varchar(20) references student(registration_number), 
+    name varchar(50), 
+    room_id varchar(15) references rooms(Room_ID), 
+    room_number int , 
+    contact varchar(30));
+
+create table B12(
+    reg_no varchar(20) references student(registration_number), 
+    name varchar(50), 
+    room_id varchar(15) references rooms(Room_ID), 
+    room_number int , 
+    contact varchar(30));
+
+create table B20(
+    reg_no varchar(20) references student(registration_number), 
+    name varchar(50), 
+    room_id varchar(15) references rooms(Room_ID), 
+    room_number int , 
+    contact varchar(30));
+
+create table B21(
+    reg_no varchar(20) references student(registration_number), 
+    name varchar(50), 
+    room_id varchar(15) references rooms(Room_ID), 
+    room_number int , 
+    contact varchar(30));
+
+// TRIGGER TO ADD 2 COLUMN AND INSERT IN THIRD //
+create or replace trigger totfee
+after insert on fees
+begin
+    if inserting then
+        update fees set total_fee = hostel_fee + mess_fee;
+    end if;
+end;
+/

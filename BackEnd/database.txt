@@ -1,10 +1,12 @@
 *****
 
-insert into hostel values(10,'DANIEL',40,40);
-insert into hostel values(11,'JOHN',30,30);
+insert into hostel values(10,'DANIEL',40,30);
+insert into hostel values(11,'JOHN',30,25);
 insert into hostel values(12,'TOM',35,35);
 insert into hostel values(20,'MAY',40,40);
 insert into hostel values(21,'JOAN',30,30);
+//dont make warden details predetermined
+
 
 *****
 
@@ -29,7 +31,7 @@ insert into hostel_rooms values(10,'02AC',5,7.5);
 insert into hostel_rooms values(10,'02NC',5,6.5);
 insert into hostel_rooms values(11,'01AC',5,8.5);
 insert into hostel_rooms values(11,'01NC',5,8);
-insert into hostel_rooms values(11,'02AC',5,7.5);
+insert into hostel_rooms values(11,'02AC',10,7.5);
 insert into hostel_rooms values(11,'02NC',5,7);
 //insertion into block 12,20 and 21 remains
 
@@ -76,4 +78,18 @@ insert into complaints values('21090003',1011,'Maintainance','No Hot Water','105
 insert into complaints values('21090004',1012,'Appliance','AC not working','123','NOT COMPLETED');
 insert into complaints values('21090005',1015,'Appliance','Fan regulator broken','107','NOT COMPLETED');
 
+*****
 
+insert into changecounter values('Mess Change', 0);
+insert into changecounter values('Room Change', 0);
+insert into changecounter values('Complaints', 0);
+
+*****
+
+//Every hostel block will have its own database block
+//trigger to reduce available rooms when data is inserted or incremented when data is deleted.
+
+// To access room number for a student , we check student block number and then iterate over the same block table for the room number
+
+//check for occupancy of every room
+// room allotment initialised to null
