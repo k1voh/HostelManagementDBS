@@ -528,7 +528,7 @@
             this.Controls.Add(this.shapeContainer1);
             this.DoubleBuffered = true;
             this.Name = "Profile";
-            this.Text = "s";
+            this.Text = "Profile";
             this.Load += new System.EventHandler(this.Profile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.messchangeicon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roombookicon)).EndInit();

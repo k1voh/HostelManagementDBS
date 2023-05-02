@@ -6,14 +6,6 @@ create table Hostel(
     constraint chk_rooms check (total_occupancy >= occupancy));
 
 
-create table Mess(
-    Mess_id int primary key, 
-    mess_name varchar(50), 
-    availability int not null, 
-    constraint chk_availability 
-    check (availability = 0 or availability = 1));
-
-
 create table rooms(
     Room_ID varchar(20) primary key not null,
     Occupant_type varchar(20) not null, 
@@ -25,6 +17,22 @@ create table rooms(
 alter table rooms 
 add constraint chk_ID check(Room_ID = '01AC' or Room_ID = '01NC' or Room_ID = '02AC' or Room_ID = '02NC');
 
+
+create table Hostel_rooms(
+    Hostel_id int references Hostel(Hostel_id), 
+    Room_ID varchar(20) references rooms(Room_ID), 
+    available_rooms int,
+    cgpa_needed float(4));
+
+
+create table Mess(
+    Mess_id int primary key, 
+    mess_name varchar(50), 
+    availability int not null, 
+    constraint chk_availability 
+    check (availability = 0 or availability = 1));
+
+
 create table fees(
     Hostel_id int references Hostel(Hostel_id), 
     room_ID references rooms(room_ID), 
@@ -34,13 +42,6 @@ create table fees(
 
 
 alter table fees modify (total_fee null);
-
-
-create table Hostel_rooms(
-    Hostel_id int references Hostel(Hostel_id), 
-    Room_ID varchar(20) references rooms(Room_ID), 
-    available_rooms int, cgpa_needed float(4));
-
 
 
 create table usertype(

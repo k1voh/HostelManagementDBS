@@ -38,11 +38,18 @@
             this.profileicon = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.reglabel = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.namelabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cgpalabel = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.genderlabel = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.FblockCB = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.bookbuttonM = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.roomtypeCB = new System.Windows.Forms.ComboBox();
+            this.MblockCB = new System.Windows.Forms.ComboBox();
+            this.bookuttonF = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.issuesicon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomchangeicon)).BeginInit();
@@ -135,10 +142,10 @@
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(460, 79);
+            this.pictureBox6.Location = new System.Drawing.Point(503, 76);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(284, 167);
+            this.pictureBox6.Size = new System.Drawing.Size(212, 123);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 20;
             this.pictureBox6.TabStop = false;
@@ -148,66 +155,168 @@
             this.reglabel.AutoSize = true;
             this.reglabel.BackColor = System.Drawing.Color.Transparent;
             this.reglabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reglabel.Location = new System.Drawing.Point(468, 319);
+            this.reglabel.Location = new System.Drawing.Point(270, 122);
             this.reglabel.Name = "reglabel";
             this.reglabel.Size = new System.Drawing.Size(56, 21);
             this.reglabel.TabIndex = 33;
             this.reglabel.Text = "NULL";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(269, 319);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(194, 21);
-            this.label9.TabIndex = 32;
-            this.label9.Text = "Registration Number: ";
             // 
             // namelabel
             // 
             this.namelabel.AutoSize = true;
             this.namelabel.BackColor = System.Drawing.Color.Transparent;
             this.namelabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.namelabel.Location = new System.Drawing.Point(342, 273);
+            this.namelabel.Location = new System.Drawing.Point(850, 122);
             this.namelabel.Name = "namelabel";
             this.namelabel.Size = new System.Drawing.Size(56, 21);
             this.namelabel.TabIndex = 31;
             this.namelabel.Text = "NULL";
             // 
-            // label1
+            // label2
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(267, 273);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 21);
-            this.label1.TabIndex = 30;
-            this.label1.Text = "Name: ";
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Bookman Old Style", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(417, 203);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(379, 40);
+            this.label2.TabIndex = 36;
+            this.label2.Text = "Room Booking Portal";
+            // 
+            // cgpalabel
+            // 
+            this.cgpalabel.AutoSize = true;
+            this.cgpalabel.BackColor = System.Drawing.Color.Transparent;
+            this.cgpalabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cgpalabel.Location = new System.Drawing.Point(333, 159);
+            this.cgpalabel.Name = "cgpalabel";
+            this.cgpalabel.Size = new System.Drawing.Size(56, 21);
+            this.cgpalabel.TabIndex = 38;
+            this.cgpalabel.Text = "NULL";
+            this.cgpalabel.Click += new System.EventHandler(this.cgpalabel_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(266, 159);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(70, 21);
+            this.label11.TabIndex = 37;
+            this.label11.Text = "CGPA: ";
             // 
             // genderlabel
             // 
             this.genderlabel.AutoSize = true;
             this.genderlabel.BackColor = System.Drawing.Color.Transparent;
             this.genderlabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.genderlabel.Location = new System.Drawing.Point(362, 364);
+            this.genderlabel.Location = new System.Drawing.Point(859, 159);
             this.genderlabel.Name = "genderlabel";
             this.genderlabel.Size = new System.Drawing.Size(56, 21);
-            this.genderlabel.TabIndex = 35;
+            this.genderlabel.TabIndex = 39;
             this.genderlabel.Text = "NULL";
             // 
-            // label7
+            // FblockCB
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(271, 364);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(83, 21);
-            this.label7.TabIndex = 34;
-            this.label7.Text = "Gender: ";
+            this.FblockCB.AllowDrop = true;
+            this.FblockCB.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FblockCB.FormattingEnabled = true;
+            this.FblockCB.ItemHeight = 21;
+            this.FblockCB.Items.AddRange(new object[] {
+            "20",
+            "21"});
+            this.FblockCB.Location = new System.Drawing.Point(287, 324);
+            this.FblockCB.Name = "FblockCB";
+            this.FblockCB.Size = new System.Drawing.Size(221, 29);
+            this.FblockCB.TabIndex = 83;
+            this.FblockCB.TabStop = false;
+            this.FblockCB.Text = "Choose";
+            this.FblockCB.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Bookman Old Style", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(317, 289);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(125, 21);
+            this.label1.TabIndex = 84;
+            this.label1.Text = "Select Block";
+            // 
+            // bookbuttonM
+            // 
+            this.bookbuttonM.BackColor = System.Drawing.Color.PeachPuff;
+            this.bookbuttonM.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bookbuttonM.Location = new System.Drawing.Point(544, 570);
+            this.bookbuttonM.Name = "bookbuttonM";
+            this.bookbuttonM.Size = new System.Drawing.Size(124, 45);
+            this.bookbuttonM.TabIndex = 85;
+            this.bookbuttonM.Text = "Book Room";
+            this.bookbuttonM.UseVisualStyleBackColor = false;
+            this.bookbuttonM.Visible = false;
+            this.bookbuttonM.Click += new System.EventHandler(this.bookbutton_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Bookman Old Style", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(730, 289);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(176, 21);
+            this.label3.TabIndex = 87;
+            this.label3.Text = "Select Room Type";
+            // 
+            // roomtypeCB
+            // 
+            this.roomtypeCB.AllowDrop = true;
+            this.roomtypeCB.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roomtypeCB.FormattingEnabled = true;
+            this.roomtypeCB.ItemHeight = 21;
+            this.roomtypeCB.Items.AddRange(new object[] {
+            "01AC",
+            "01NC",
+            "02AC",
+            "02NC"});
+            this.roomtypeCB.Location = new System.Drawing.Point(712, 324);
+            this.roomtypeCB.Name = "roomtypeCB";
+            this.roomtypeCB.Size = new System.Drawing.Size(219, 29);
+            this.roomtypeCB.TabIndex = 86;
+            this.roomtypeCB.TabStop = false;
+            this.roomtypeCB.Text = "Choose";
+            // 
+            // MblockCB
+            // 
+            this.MblockCB.AllowDrop = true;
+            this.MblockCB.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MblockCB.FormattingEnabled = true;
+            this.MblockCB.ItemHeight = 21;
+            this.MblockCB.Items.AddRange(new object[] {
+            "10",
+            "11",
+            "12"});
+            this.MblockCB.Location = new System.Drawing.Point(287, 324);
+            this.MblockCB.Name = "MblockCB";
+            this.MblockCB.Size = new System.Drawing.Size(221, 29);
+            this.MblockCB.TabIndex = 88;
+            this.MblockCB.TabStop = false;
+            this.MblockCB.Text = "Choose";
+            this.MblockCB.Visible = false;
+            // 
+            // bookuttonF
+            // 
+            this.bookuttonF.BackColor = System.Drawing.Color.PeachPuff;
+            this.bookuttonF.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bookuttonF.Location = new System.Drawing.Point(544, 570);
+            this.bookuttonF.Name = "bookuttonF";
+            this.bookuttonF.Size = new System.Drawing.Size(124, 45);
+            this.bookuttonF.TabIndex = 93;
+            this.bookuttonF.Text = "Book Room";
+            this.bookuttonF.UseVisualStyleBackColor = false;
+            this.bookuttonF.Visible = false;
+            this.bookuttonF.Click += new System.EventHandler(this.bookuttonF_Click);
             // 
             // Booking
             // 
@@ -216,12 +325,18 @@
             this.BackgroundImage = global::HostelManagement.Properties.Resources.roombooking2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1039, 745);
-            this.Controls.Add(this.genderlabel);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.reglabel);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.namelabel);
+            this.Controls.Add(this.bookuttonF);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.roomtypeCB);
+            this.Controls.Add(this.bookbuttonM);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.FblockCB);
+            this.Controls.Add(this.genderlabel);
+            this.Controls.Add(this.cgpalabel);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.reglabel);
+            this.Controls.Add(this.namelabel);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.issuelabel);
@@ -230,6 +345,7 @@
             this.Controls.Add(this.roombookicon);
             this.Controls.Add(this.messchangeicon);
             this.Controls.Add(this.profileicon);
+            this.Controls.Add(this.MblockCB);
             this.DoubleBuffered = true;
             this.Name = "Booking";
             this.Text = "Room Booking";
@@ -257,10 +373,17 @@
         private System.Windows.Forms.PictureBox profileicon;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label reglabel;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label namelabel;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label cgpalabel;
+        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label genderlabel;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox FblockCB;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button bookbuttonM;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox roomtypeCB;
+        private System.Windows.Forms.ComboBox MblockCB;
+        private System.Windows.Forms.Button bookuttonF;
     }
 }
