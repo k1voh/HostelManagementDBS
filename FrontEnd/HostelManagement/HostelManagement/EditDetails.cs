@@ -20,6 +20,10 @@ namespace HostelManagement
         DataRow dr;
         int i = 0;
         long reg;
+        string gender = string.Empty;
+        string cg = string.Empty;
+        string branch = string.Empty;
+        string sem = string.Empty;
         public EditDetails(long rego)
         {
             InitializeComponent();
@@ -50,8 +54,12 @@ namespace HostelManagement
                 namelabel.Text = dr["name"].ToString();
                 cgpaTB.Text = dr["cgpa"].ToString();
                 branchTB.Text = dr["branch"].ToString();
+                semTB.Text = dr["semester"].ToString();
+                cg = dr["cgpa"].ToString();
+                sem = dr["semester"].ToString();
+                gender = dr["gender"].ToString();
+                branch = dr["branch"].ToString();
                 conn.Close();
-
             }
             catch (Exception e1)
             {
@@ -73,10 +81,24 @@ namespace HostelManagement
 
         private void roombookicon_Click(object sender, EventArgs e)
         {
-            Booking frm = new Booking(reg);
-            this.Hide();
-            frm.ShowDialog();
-            this.Close();
+            if (cg!=string.Empty && gender!=string.Empty && branch!=string.Empty && gender!=string.Empty)
+            {
+                Booking frm = new Booking(reg);
+                this.Hide();
+                frm.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                DialogResult dr = MessageBox.Show("Details not updated yet!\n\nUpdate details first to proceed for room booking", "Edit Details First", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (dr == DialogResult.OK)
+                {
+                    EditDetails frm = new EditDetails(reg);
+                    this.Hide();
+                    frm.ShowDialog();
+                    this.Close();
+                }
+            }
         }
 
         private void messchangeicon_Click(object sender, EventArgs e)
@@ -105,6 +127,8 @@ namespace HostelManagement
 
         private void savebutton_Click(object sender, EventArgs e)
         {
+            int sem = 0;
+            int.TryParse(semTB.Text, out sem);
             string ConStr = "DATA SOURCE=DESKTOP-FE4CR37:1521/XE;USER ID=SYSTEM;Password=rampage";
             OracleConnection con = new OracleConnection(ConStr);
             if (!mailTB.Text.Contains("@gmail.com") && !mailTB.Text.Contains("@yahoo.com") && !mailTB.Text.Contains("@outlook.com") && !mailTB.Text.Contains("@hotmail.com") && !mailTB.Text.Contains("@icloud.com"))
@@ -129,7 +153,14 @@ namespace HostelManagement
             else {
                 invalidbranch.Visible = false;
             }
-            if (!invalidcg.Visible && !invalidmail.Visible && !invalidphone.Visible && !invalidbranch.Visible) {
+            if (semTB.Text == string.Empty || sem>8 || sem<1)
+            {
+                invalidsem.Visible = true;
+            }
+            else {
+                invalidsem.Visible = false;
+            }
+            if (!invalidcg.Visible && !invalidmail.Visible && !invalidphone.Visible && !invalidbranch.Visible && !invalidsem.Visible) {
                 try
                 {
                     con.Open();
@@ -143,7 +174,10 @@ namespace HostelManagement
                         //txn.Commit();
                         float cg = 0;
                         float.TryParse(cgpaTB.Text,out cg);
-                        cmd.CommandText = "update student set cgpa=" + cg + ", branch='" + branchTB.Text + "',gender='"+ genderCB.SelectedItem.ToString()+"' where registration_number=" + reg.ToString();
+                        cmd.CommandText = "update student set  cgpa=" + cg + ", branch='" + branchTB.Text + "',gender='"+ genderCB.SelectedItem.ToString()+"' where registration_number=" + reg.ToString();
+                        cmd.CommandType = CommandType.Text;
+                        cmd.ExecuteNonQuery();
+                        cmd.CommandText = "update student set semester=" + sem + " where registration_number=" + reg.ToString();
                         cmd.CommandType = CommandType.Text;
                         cmd.ExecuteNonQuery();
                         txn.Commit();

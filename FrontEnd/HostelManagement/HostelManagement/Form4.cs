@@ -52,26 +52,39 @@ namespace HostelManagement
                 genderlabel.Text = dr["gender"].ToString();
                 cgpalabel.Text = dr["cgpa"].ToString();
                 branchlabel.Text = dr["branch"].ToString();
+                semlabel.Text = dr["semester"].ToString();
                 conn.Close();
 
             }
             catch (Exception e1)
             {
-                //label1.Text = e1.ToString();
             }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            //Profile page to be highlighted
         }
 
         private void roombookicon_Click(object sender, EventArgs e)
         {
-            Booking frm = new Booking(reg);
-            this.Hide();
-            frm.ShowDialog();
-            this.Close();
+            if (cgpalabel.Text != string.Empty && branchlabel.Text != string.Empty && genderlabel.Text != string.Empty)
+            {
+                Booking frm = new Booking(reg);
+                this.Hide();
+                frm.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                DialogResult dr = MessageBox.Show("Details not updated yet!\n\nUpdate details first to proceed for room booking", "Edit Details First", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (dr == DialogResult.OK)
+                {
+                    EditDetails frm = new EditDetails(reg);
+                    this.Hide();
+                    frm.ShowDialog();
+                    this.Close();
+                }
+            }
         }
 
         private void messchangeicon_Click(object sender, EventArgs e)
