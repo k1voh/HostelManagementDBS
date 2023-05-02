@@ -2,9 +2,9 @@
 
 insert into hostel values(10,'DANIEL',40,30);
 insert into hostel values(11,'JOHN',30,25);
-insert into hostel values(12,'TOM',35,35);
-insert into hostel values(20,'MAY',40,40);
-insert into hostel values(21,'JOAN',30,30);
+insert into hostel values(12,'TOM',30,20);
+insert into hostel values(20,'MAY',40,30);
+insert into hostel values(21,'JOAN',30,20);
 //dont make warden details predetermined
 
 
@@ -33,9 +33,21 @@ insert into hostel_rooms values(11,'01AC',5,8.5);
 insert into hostel_rooms values(11,'01NC',5,8);
 insert into hostel_rooms values(11,'02AC',10,7.5);
 insert into hostel_rooms values(11,'02NC',5,7);
-//insertion into block 12,20 and 21 remains
+insert into hostel_rooms values(12,'01AC',5,8.5);
+insert into hostel_rooms values(12,'01NC',5,8);
+insert into hostel_rooms values(12,'02AC',5,7.5);
+insert into hostel_rooms values(12,'02NC',5,6);
+insert into hostel_rooms values(20,'01AC',10,8.5);
+insert into hostel_rooms values(20,'01NC',10,7);
+insert into hostel_rooms values(20,'02AC',5,7);
+insert into hostel_rooms values(20,'02NC',5,6.5);
+insert into hostel_rooms values(21,'01AC',5,8);
+insert into hostel_rooms values(21,'01NC',5,8);
+insert into hostel_rooms values(21,'02AC',5,7.5);
+insert into hostel_rooms values(21,'02NC',5,7);
 
 *****
+
 insert into fees(hostel_id,room_id,hostel_fee,mess_fee) values(10,'01AC',200000,20000);
 insert into fees(hostel_id,room_id,hostel_fee,mess_fee) values(10,'01NC',175000,15000);
 insert into fees(hostel_id,room_id,hostel_fee,mess_fee) values(10,'02AC',185000,15000);
@@ -86,10 +98,8 @@ insert into changecounter values('Complaints', 0);
 
 *****
 
-//Every hostel block will have its own database block
-//trigger to reduce available rooms when data is inserted or incremented when data is deleted.
-
+// Every hostel block will have its own database block
+// Trigger to reduce available rooms when data is inserted or incremented when data is deleted.
 // To access room number for a student , we check student block number and then iterate over the same block table for the room number
-
-//check for occupancy of every room
-// room allotment initialised to null
+// Check for occupancy of every room
+// Room allotment initialised to null
