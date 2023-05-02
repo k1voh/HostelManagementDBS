@@ -64,8 +64,12 @@
             this.invalidmail = new System.Windows.Forms.Label();
             this.invalidcg = new System.Windows.Forms.Label();
             this.invalidbranch = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.forgotpassword = new System.Windows.Forms.LinkLabel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.invalidsem = new System.Windows.Forms.Label();
+            this.semTB = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.invalidgender = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.profileicon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -347,7 +351,7 @@
             // mailTB
             // 
             this.mailTB.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mailTB.Location = new System.Drawing.Point(360, 444);
+            this.mailTB.Location = new System.Drawing.Point(381, 442);
             this.mailTB.Name = "mailTB";
             this.mailTB.Size = new System.Drawing.Size(162, 25);
             this.mailTB.TabIndex = 79;
@@ -355,7 +359,7 @@
             // branchTB
             // 
             this.branchTB.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.branchTB.Location = new System.Drawing.Point(360, 567);
+            this.branchTB.Location = new System.Drawing.Point(381, 565);
             this.branchTB.Name = "branchTB";
             this.branchTB.Size = new System.Drawing.Size(162, 25);
             this.branchTB.TabIndex = 80;
@@ -363,7 +367,7 @@
             // cgpaTB
             // 
             this.cgpaTB.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cgpaTB.Location = new System.Drawing.Point(360, 529);
+            this.cgpaTB.Location = new System.Drawing.Point(381, 527);
             this.cgpaTB.Name = "cgpaTB";
             this.cgpaTB.Size = new System.Drawing.Size(162, 25);
             this.cgpaTB.TabIndex = 81;
@@ -375,7 +379,7 @@
             this.genderCB.Items.AddRange(new object[] {
             "MALE",
             "FEMALE"});
-            this.genderCB.Location = new System.Drawing.Point(360, 487);
+            this.genderCB.Location = new System.Drawing.Point(381, 485);
             this.genderCB.Name = "genderCB";
             this.genderCB.Size = new System.Drawing.Size(162, 27);
             this.genderCB.TabIndex = 82;
@@ -406,7 +410,7 @@
             // phoneTB
             // 
             this.phoneTB.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phoneTB.Location = new System.Drawing.Point(360, 402);
+            this.phoneTB.Location = new System.Drawing.Point(381, 400);
             this.phoneTB.Name = "phoneTB";
             this.phoneTB.Size = new System.Drawing.Size(162, 25);
             this.phoneTB.TabIndex = 86;
@@ -417,7 +421,7 @@
             this.invalidphone.BackColor = System.Drawing.Color.Transparent;
             this.invalidphone.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.invalidphone.ForeColor = System.Drawing.Color.Red;
-            this.invalidphone.Location = new System.Drawing.Point(528, 404);
+            this.invalidphone.Location = new System.Drawing.Point(549, 399);
             this.invalidphone.Name = "invalidphone";
             this.invalidphone.Size = new System.Drawing.Size(99, 19);
             this.invalidphone.TabIndex = 87;
@@ -430,7 +434,7 @@
             this.invalidmail.BackColor = System.Drawing.Color.Transparent;
             this.invalidmail.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.invalidmail.ForeColor = System.Drawing.Color.Red;
-            this.invalidmail.Location = new System.Drawing.Point(528, 447);
+            this.invalidmail.Location = new System.Drawing.Point(549, 442);
             this.invalidmail.Name = "invalidmail";
             this.invalidmail.Size = new System.Drawing.Size(99, 19);
             this.invalidmail.TabIndex = 88;
@@ -443,7 +447,7 @@
             this.invalidcg.BackColor = System.Drawing.Color.Transparent;
             this.invalidcg.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.invalidcg.ForeColor = System.Drawing.Color.Red;
-            this.invalidcg.Location = new System.Drawing.Point(528, 530);
+            this.invalidcg.Location = new System.Drawing.Point(549, 530);
             this.invalidcg.Name = "invalidcg";
             this.invalidcg.Size = new System.Drawing.Size(99, 19);
             this.invalidcg.TabIndex = 89;
@@ -456,23 +460,12 @@
             this.invalidbranch.BackColor = System.Drawing.Color.Transparent;
             this.invalidbranch.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.invalidbranch.ForeColor = System.Drawing.Color.Red;
-            this.invalidbranch.Location = new System.Drawing.Point(528, 571);
+            this.invalidbranch.Location = new System.Drawing.Point(549, 571);
             this.invalidbranch.Name = "invalidbranch";
             this.invalidbranch.Size = new System.Drawing.Size(99, 19);
             this.invalidbranch.TabIndex = 90;
             this.invalidbranch.Text = "*invalid field";
             this.invalidbranch.Visible = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(266, 609);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 21);
-            this.label2.TabIndex = 91;
-            this.label2.Text = "Password: ";
             // 
             // forgotpassword
             // 
@@ -480,14 +473,69 @@
             this.forgotpassword.BackColor = System.Drawing.Color.Transparent;
             this.forgotpassword.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.forgotpassword.LinkColor = System.Drawing.Color.Blue;
-            this.forgotpassword.Location = new System.Drawing.Point(373, 611);
+            this.forgotpassword.Location = new System.Drawing.Point(804, 544);
             this.forgotpassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.forgotpassword.Name = "forgotpassword";
             this.forgotpassword.Size = new System.Drawing.Size(138, 19);
-            this.forgotpassword.TabIndex = 92;
+            this.forgotpassword.TabIndex = 94;
             this.forgotpassword.TabStop = true;
             this.forgotpassword.Text = "Forgot password?";
-            this.forgotpassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.forgotpassword_LinkClicked);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(697, 542);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 21);
+            this.label2.TabIndex = 93;
+            this.label2.Text = "Password: ";
+            // 
+            // invalidsem
+            // 
+            this.invalidsem.AutoSize = true;
+            this.invalidsem.BackColor = System.Drawing.Color.Transparent;
+            this.invalidsem.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.invalidsem.ForeColor = System.Drawing.Color.Red;
+            this.invalidsem.Location = new System.Drawing.Point(549, 609);
+            this.invalidsem.Name = "invalidsem";
+            this.invalidsem.Size = new System.Drawing.Size(99, 19);
+            this.invalidsem.TabIndex = 97;
+            this.invalidsem.Text = "*invalid field";
+            this.invalidsem.Visible = false;
+            // 
+            // semTB
+            // 
+            this.semTB.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.semTB.Location = new System.Drawing.Point(381, 603);
+            this.semTB.Name = "semTB";
+            this.semTB.Size = new System.Drawing.Size(162, 25);
+            this.semTB.TabIndex = 96;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(268, 604);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(99, 21);
+            this.label6.TabIndex = 95;
+            this.label6.Text = "Semester: ";
+            // 
+            // invalidgender
+            // 
+            this.invalidgender.AutoSize = true;
+            this.invalidgender.BackColor = System.Drawing.Color.Transparent;
+            this.invalidgender.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.invalidgender.ForeColor = System.Drawing.Color.Red;
+            this.invalidgender.Location = new System.Drawing.Point(549, 489);
+            this.invalidgender.Name = "invalidgender";
+            this.invalidgender.Size = new System.Drawing.Size(99, 19);
+            this.invalidgender.TabIndex = 98;
+            this.invalidgender.Text = "*invalid field";
+            this.invalidgender.Visible = false;
             // 
             // EditDetails
             // 
@@ -496,6 +544,10 @@
             this.BackgroundImage = global::HostelManagement.Properties.Resources.profilepage1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1039, 745);
+            this.Controls.Add(this.invalidgender);
+            this.Controls.Add(this.invalidsem);
+            this.Controls.Add(this.semTB);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.forgotpassword);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.invalidbranch);
@@ -586,7 +638,11 @@
         private System.Windows.Forms.Label invalidmail;
         private System.Windows.Forms.Label invalidcg;
         private System.Windows.Forms.Label invalidbranch;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.LinkLabel forgotpassword;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label invalidsem;
+        private System.Windows.Forms.TextBox semTB;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label invalidgender;
     }
 }
