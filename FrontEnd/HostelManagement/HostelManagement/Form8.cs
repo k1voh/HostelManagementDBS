@@ -100,7 +100,7 @@ namespace HostelManagement
             frm.ShowDialog();
             this.Close();
         }
-
+        
         private void roomchangeicon_Click(object sender, EventArgs e)
         {
             Change frm = new Change(reg);
