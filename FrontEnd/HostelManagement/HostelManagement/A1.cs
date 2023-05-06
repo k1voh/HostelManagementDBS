@@ -86,5 +86,10 @@ namespace HostelManagement
             frm.ShowDialog();
             this.Close();
         }
+
+        private void reglabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

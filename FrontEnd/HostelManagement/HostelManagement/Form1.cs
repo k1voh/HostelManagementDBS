@@ -66,7 +66,7 @@ namespace HostelManagement
                 {
                     conn.Open();
                     OracleCommand comm = new OracleCommand("", conn);
-                    comm.CommandText = "select password from usertype where reg_no="+reg;
+                    comm.CommandText = "select password from usertype where reg_no='"+reg+"'";
                     comm.CommandType = CommandType.Text;
                     ds = new DataSet();
                     da = new OracleDataAdapter(comm.CommandText, conn);

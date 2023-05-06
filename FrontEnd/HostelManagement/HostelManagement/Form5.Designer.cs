@@ -43,13 +43,15 @@
             this.cgpalabel = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.genderlabel = new System.Windows.Forms.Label();
-            this.FblockCB = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.bookbuttonM = new System.Windows.Forms.Button();
+            this.bookuttonF = new System.Windows.Forms.Button();
+            this.femalecriteria = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.roomtypeCB = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.FblockCB = new System.Windows.Forms.ComboBox();
             this.MblockCB = new System.Windows.Forms.ComboBox();
-            this.bookuttonF = new System.Windows.Forms.Button();
+            this.malecriteria = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.issuesicon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomchangeicon)).BeginInit();
@@ -57,6 +59,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.messchangeicon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profileicon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.femalecriteria)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.malecriteria)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -142,10 +146,10 @@
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(503, 76);
+            this.pictureBox6.Location = new System.Drawing.Point(502, 77);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(212, 123);
+            this.pictureBox6.Size = new System.Drawing.Size(215, 134);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 20;
             this.pictureBox6.TabStop = false;
@@ -177,7 +181,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Bookman Old Style", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(417, 203);
+            this.label2.Location = new System.Drawing.Point(424, 203);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(379, 40);
             this.label2.TabIndex = 36;
@@ -217,39 +221,11 @@
             this.genderlabel.TabIndex = 39;
             this.genderlabel.Text = "NULL";
             // 
-            // FblockCB
-            // 
-            this.FblockCB.AllowDrop = true;
-            this.FblockCB.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FblockCB.FormattingEnabled = true;
-            this.FblockCB.ItemHeight = 21;
-            this.FblockCB.Items.AddRange(new object[] {
-            "20",
-            "21"});
-            this.FblockCB.Location = new System.Drawing.Point(287, 324);
-            this.FblockCB.Name = "FblockCB";
-            this.FblockCB.Size = new System.Drawing.Size(221, 29);
-            this.FblockCB.TabIndex = 83;
-            this.FblockCB.TabStop = false;
-            this.FblockCB.Text = "Choose";
-            this.FblockCB.Visible = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Bookman Old Style", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(317, 289);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 21);
-            this.label1.TabIndex = 84;
-            this.label1.Text = "Select Block";
-            // 
             // bookbuttonM
             // 
             this.bookbuttonM.BackColor = System.Drawing.Color.PeachPuff;
             this.bookbuttonM.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bookbuttonM.Location = new System.Drawing.Point(544, 570);
+            this.bookbuttonM.Location = new System.Drawing.Point(550, 606);
             this.bookbuttonM.Name = "bookbuttonM";
             this.bookbuttonM.Size = new System.Drawing.Size(124, 45);
             this.bookbuttonM.TabIndex = 85;
@@ -258,15 +234,40 @@
             this.bookbuttonM.Visible = false;
             this.bookbuttonM.Click += new System.EventHandler(this.bookbutton_Click);
             // 
+            // bookuttonF
+            // 
+            this.bookuttonF.BackColor = System.Drawing.Color.PeachPuff;
+            this.bookuttonF.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bookuttonF.Location = new System.Drawing.Point(550, 606);
+            this.bookuttonF.Name = "bookuttonF";
+            this.bookuttonF.Size = new System.Drawing.Size(124, 45);
+            this.bookuttonF.TabIndex = 93;
+            this.bookuttonF.Text = "Book Room";
+            this.bookuttonF.UseVisualStyleBackColor = false;
+            this.bookuttonF.Visible = false;
+            this.bookuttonF.Click += new System.EventHandler(this.bookuttonF_Click);
+            // 
+            // femalecriteria
+            // 
+            this.femalecriteria.BackColor = System.Drawing.Color.Transparent;
+            this.femalecriteria.BackgroundImage = global::HostelManagement.Properties.Resources.FemaleCriteria;
+            this.femalecriteria.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.femalecriteria.Location = new System.Drawing.Point(411, 270);
+            this.femalecriteria.Name = "femalecriteria";
+            this.femalecriteria.Size = new System.Drawing.Size(392, 181);
+            this.femalecriteria.TabIndex = 94;
+            this.femalecriteria.TabStop = false;
+            this.femalecriteria.Visible = false;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Bookman Old Style", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(730, 289);
+            this.label3.Location = new System.Drawing.Point(724, 506);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(176, 21);
-            this.label3.TabIndex = 87;
+            this.label3.TabIndex = 98;
             this.label3.Text = "Select Room Type";
             // 
             // roomtypeCB
@@ -280,12 +281,40 @@
             "01NC",
             "02AC",
             "02NC"});
-            this.roomtypeCB.Location = new System.Drawing.Point(712, 324);
+            this.roomtypeCB.Location = new System.Drawing.Point(706, 541);
             this.roomtypeCB.Name = "roomtypeCB";
             this.roomtypeCB.Size = new System.Drawing.Size(219, 29);
-            this.roomtypeCB.TabIndex = 86;
+            this.roomtypeCB.TabIndex = 97;
             this.roomtypeCB.TabStop = false;
             this.roomtypeCB.Text = "Choose";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Bookman Old Style", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(327, 506);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(125, 21);
+            this.label1.TabIndex = 96;
+            this.label1.Text = "Select Block";
+            // 
+            // FblockCB
+            // 
+            this.FblockCB.AllowDrop = true;
+            this.FblockCB.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FblockCB.FormattingEnabled = true;
+            this.FblockCB.ItemHeight = 21;
+            this.FblockCB.Items.AddRange(new object[] {
+            "20",
+            "21"});
+            this.FblockCB.Location = new System.Drawing.Point(281, 541);
+            this.FblockCB.Name = "FblockCB";
+            this.FblockCB.Size = new System.Drawing.Size(221, 29);
+            this.FblockCB.TabIndex = 95;
+            this.FblockCB.TabStop = false;
+            this.FblockCB.Text = "Choose";
+            this.FblockCB.Visible = false;
             // 
             // MblockCB
             // 
@@ -297,26 +326,25 @@
             "10",
             "11",
             "12"});
-            this.MblockCB.Location = new System.Drawing.Point(287, 324);
+            this.MblockCB.Location = new System.Drawing.Point(281, 541);
             this.MblockCB.Name = "MblockCB";
             this.MblockCB.Size = new System.Drawing.Size(221, 29);
-            this.MblockCB.TabIndex = 88;
+            this.MblockCB.TabIndex = 99;
             this.MblockCB.TabStop = false;
             this.MblockCB.Text = "Choose";
             this.MblockCB.Visible = false;
             // 
-            // bookuttonF
+            // malecriteria
             // 
-            this.bookuttonF.BackColor = System.Drawing.Color.PeachPuff;
-            this.bookuttonF.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bookuttonF.Location = new System.Drawing.Point(544, 570);
-            this.bookuttonF.Name = "bookuttonF";
-            this.bookuttonF.Size = new System.Drawing.Size(124, 45);
-            this.bookuttonF.TabIndex = 93;
-            this.bookuttonF.Text = "Book Room";
-            this.bookuttonF.UseVisualStyleBackColor = false;
-            this.bookuttonF.Visible = false;
-            this.bookuttonF.Click += new System.EventHandler(this.bookuttonF_Click);
+            this.malecriteria.BackColor = System.Drawing.Color.Transparent;
+            this.malecriteria.BackgroundImage = global::HostelManagement.Properties.Resources.MaleCriteria;
+            this.malecriteria.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.malecriteria.Location = new System.Drawing.Point(422, 257);
+            this.malecriteria.Name = "malecriteria";
+            this.malecriteria.Size = new System.Drawing.Size(381, 226);
+            this.malecriteria.TabIndex = 100;
+            this.malecriteria.TabStop = false;
+            this.malecriteria.Visible = false;
             // 
             // Booking
             // 
@@ -325,12 +353,15 @@
             this.BackgroundImage = global::HostelManagement.Properties.Resources.roombooking2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1039, 745);
-            this.Controls.Add(this.bookuttonF);
+            this.Controls.Add(this.malecriteria);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.roomtypeCB);
-            this.Controls.Add(this.bookbuttonM);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.FblockCB);
+            this.Controls.Add(this.MblockCB);
+            this.Controls.Add(this.femalecriteria);
+            this.Controls.Add(this.bookuttonF);
+            this.Controls.Add(this.bookbuttonM);
             this.Controls.Add(this.genderlabel);
             this.Controls.Add(this.cgpalabel);
             this.Controls.Add(this.label11);
@@ -345,7 +376,6 @@
             this.Controls.Add(this.roombookicon);
             this.Controls.Add(this.messchangeicon);
             this.Controls.Add(this.profileicon);
-            this.Controls.Add(this.MblockCB);
             this.DoubleBuffered = true;
             this.Name = "Booking";
             this.Text = "Room Booking";
@@ -357,6 +387,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.messchangeicon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profileicon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.femalecriteria)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.malecriteria)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -378,12 +410,14 @@
         private System.Windows.Forms.Label cgpalabel;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label genderlabel;
-        private System.Windows.Forms.ComboBox FblockCB;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button bookbuttonM;
+        private System.Windows.Forms.Button bookuttonF;
+        private System.Windows.Forms.PictureBox femalecriteria;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox roomtypeCB;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox FblockCB;
         private System.Windows.Forms.ComboBox MblockCB;
-        private System.Windows.Forms.Button bookuttonF;
+        private System.Windows.Forms.PictureBox malecriteria;
     }
 }

@@ -93,6 +93,16 @@ namespace HostelManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap FemaleCriteria {
+            get {
+                object obj = ResourceManager.GetObject("FemaleCriteria", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap forgotpassword1 {
             get {
                 object obj = ResourceManager.GetObject("forgotpassword1", resourceCulture);
@@ -146,6 +156,16 @@ namespace HostelManagement.Properties {
         internal static System.Drawing.Bitmap issues11 {
             get {
                 object obj = ResourceManager.GetObject("issues11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MaleCriteria {
+            get {
+                object obj = ResourceManager.GetObject("MaleCriteria", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

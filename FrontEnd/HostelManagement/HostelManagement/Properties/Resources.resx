@@ -121,79 +121,85 @@
   <data name="adminmesschange" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\adminmesschange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="issues11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\issues11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="messchange" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\messchange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="profilepage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\profilepage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="messchange_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\messchange_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="roomchange_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\roomchange_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="roomchange" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\roomchange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="profile_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\profile_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="stats_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\stats_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="issues" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\issues.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="roombook_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\roombook_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Screenshot 2023-03-23 at 09-50-00 CSS Gradient Generator" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Screenshot 2023-03-23 at 09-50-00 CSS Gradient Generator.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="roomchange1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\roomchange1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="issues_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\issues_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="register1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\register1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="roombooking11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\roombooking11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="roombooking" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\roombooking.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="roombooking1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\roombooking1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="profilepage1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\profilepage1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="FemaleCriteria" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FemaleCriteria.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="profile_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\profile_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Screenshot 2023-03-23 at 09-50-00 CSS Gradient Generator" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Screenshot 2023-03-23 at 09-50-00 CSS Gradient Generator.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="messchange_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\messchange_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="roombooking" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\roombooking.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="forgotpassword1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\forgotpassword1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="profilepage2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\profilepage2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="roombooking2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\roombooking2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="adminroomchange" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\adminroomchange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="roombooking1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\roombooking1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="roomchange1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\roomchange1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="roomchange" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\roomchange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="roombooking11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\roombooking11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="roombook_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\roombook_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="issues_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\issues_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="register1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\register1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="roomchange_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\roomchange_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="roombooking2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\roombooking2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="profilepage2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\profilepage2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="issues11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\issues11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="issues_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\issues_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="issues" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\issues.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="messchange" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\messchange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="adminstats" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adminstats.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="stats_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stats_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="issues1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\issues1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="adminstats" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\adminstats.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MaleCriteria" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MaleCriteria.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
