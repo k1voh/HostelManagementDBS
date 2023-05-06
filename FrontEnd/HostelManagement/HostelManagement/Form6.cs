@@ -35,7 +35,7 @@ namespace HostelManagement
                 OracleConnection conn = new OracleConnection(ConStr);
                 conn.Open();
                 OracleCommand comm = new OracleCommand("", conn);
-                comm.CommandText = "select * from student where registration_number = " + reg.ToString();
+                comm.CommandText = "select * from student where registration_number = '" + reg.ToString()+"'";
                 comm.CommandType = CommandType.Text;
                 ds = new DataSet();
                 da = new OracleDataAdapter(comm.CommandText, conn);

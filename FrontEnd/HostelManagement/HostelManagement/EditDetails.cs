@@ -35,7 +35,7 @@ namespace HostelManagement
                 OracleConnection conn = new OracleConnection(ConStr);
                 conn.Open();
                 OracleCommand comm = new OracleCommand("", conn);
-                comm.CommandText = "select * from usertype where reg_no = " + reg.ToString();
+                comm.CommandText = "select * from usertype where reg_no = '" + reg.ToString()+"'";
                 comm.CommandType = CommandType.Text;
                 ds = new DataSet();
                 da = new OracleDataAdapter(comm.CommandText, conn);
@@ -44,7 +44,7 @@ namespace HostelManagement
                 dr = dt.Rows[i];
                 phoneTB.Text = dr["phone"].ToString();
                 mailTB.Text = dr["email"].ToString();
-                comm.CommandText = "select * from student where registration_number = " + reg.ToString();
+                comm.CommandText = "select * from student where registration_number = '" + reg.ToString()+"'";
                 comm.CommandType = CommandType.Text;
                 ds = new DataSet();
                 da = new OracleDataAdapter(comm.CommandText, conn);
@@ -168,16 +168,16 @@ namespace HostelManagement
                     OracleTransaction txn = con.BeginTransaction(IsolationLevel.ReadCommitted);
                     try
                     {
-                        cmd.CommandText = "update usertype set phone='" + phoneTB.Text + "', email='" + mailTB.Text + "' where reg_no=" + reg.ToString();
+                        cmd.CommandText = "update usertype set phone='" + phoneTB.Text + "', email='" + mailTB.Text + "' where reg_no='" + reg.ToString()+"'";
                         cmd.CommandType = CommandType.Text;
                         cmd.ExecuteNonQuery();
                         //txn.Commit();
                         float cg = 0;
                         float.TryParse(cgpaTB.Text,out cg);
-                        cmd.CommandText = "update student set  cgpa=" + cg + ", branch='" + branchTB.Text + "',gender='"+ genderCB.SelectedItem.ToString()+"' where registration_number=" + reg.ToString();
+                        cmd.CommandText = "update student set  cgpa=" + cg + ", branch='" + branchTB.Text + "',gender='"+ genderCB.SelectedItem.ToString()+"' where registration_number='" + reg.ToString()+"'";
                         cmd.CommandType = CommandType.Text;
                         cmd.ExecuteNonQuery();
-                        cmd.CommandText = "update student set semester=" + sem + " where registration_number=" + reg.ToString();
+                        cmd.CommandText = "update student set semester=" + sem + " where registration_number='" + reg.ToString()+"'";
                         cmd.CommandType = CommandType.Text;
                         cmd.ExecuteNonQuery();
                         txn.Commit();

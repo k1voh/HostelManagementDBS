@@ -32,7 +32,7 @@ namespace HostelManagement
             {
                 conn.Open();
                 OracleCommand comm = new OracleCommand("", conn);
-                comm.CommandText = "select * from usertype where reg_no = "+reg.ToString();
+                comm.CommandText = "select * from usertype where reg_no = '"+reg.ToString()+"'";
                 comm.CommandType = CommandType.Text;
                 ds = new DataSet();
                 da = new OracleDataAdapter(comm.CommandText, conn);
@@ -41,7 +41,7 @@ namespace HostelManagement
                 dr = dt.Rows[i];
                 phonelabel.Text = dr["phone"].ToString();
                 emailabel.Text = dr["email"].ToString();
-                comm.CommandText = "select * from student where registration_number = "+reg.ToString();
+                comm.CommandText = "select * from student where registration_number = '"+reg.ToString()+"'";
                 comm.CommandType = CommandType.Text;
                 ds = new DataSet();
                 da = new OracleDataAdapter(comm.CommandText, conn);
