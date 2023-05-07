@@ -131,12 +131,7 @@ create table B21(
     room_number int , 
     contact varchar(30));
 
-// TRIGGER TO ADD 2 COLUMN AND INSERT IN THIRD //
-create or replace trigger totfee
-after insert on fees
-begin
-    if inserting then
-        update fees set total_fee = hostel_fee + mess_fee;
-    end if;
-end;
-/
+create table mess_change(
+    reg_no varchar(20) references student(registration_number),
+    old_mess int references mess(mess_id),
+    new_mess int references mess(mess_id));

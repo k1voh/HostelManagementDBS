@@ -21,7 +21,7 @@ end;
 /
 
 
--- TRIGGER TO UPDATE OCCUPANCY ON UPDATE OF BLOCK
+-- TRIGGER TO UPDATE OCCUPANCY ON UPDATE OF BLOCK 10
 create or replace trigger updateB10
 after update on B10
 for each row
@@ -36,6 +36,7 @@ begin
 end;
 /
 
+-- TRIGGER TO UPDATE OCCUPANCY ON UPDATE OF BLOCK 11
 create or replace trigger updateB11
 after update on B11
 for each row
@@ -50,6 +51,7 @@ begin
 end;
 /
 
+-- TRIGGER TO UPDATE OCCUPANCY ON UPDATE OF BLOCK 12
 create or replace trigger updateB12
 after update on B12
 for each row
@@ -64,6 +66,7 @@ begin
 end;
 /
 
+-- TRIGGER TO UPDATE OCCUPANCY ON UPDATE OF BLOCK 20
 create or replace trigger updateB20
 after update on B20
 for each row
@@ -78,6 +81,7 @@ begin
 end;
 /
 
+-- TRIGGER TO UPDATE OCCUPANCY ON UPDATE OF BLOCK 21
 create or replace trigger updateB21
 after update on B21
 for each row

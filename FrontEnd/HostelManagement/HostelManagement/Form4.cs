@@ -108,14 +108,7 @@ namespace HostelManagement
 
         private void roombookicon_Click(object sender, EventArgs e)
         {
-            if (cgpalabel.Text != string.Empty && branchlabel.Text != string.Empty && genderlabel.Text != string.Empty)
-            {
-                Booking frm = new Booking(reg);
-                this.Hide();
-                frm.ShowDialog();
-                this.Close();
-            }
-            else
+            if (cgpalabel.Text == string.Empty || genderlabel.Text == string.Empty || branchlabel.Text == string.Empty || semlabel.Text == string.Empty)
             {
                 DialogResult dr = MessageBox.Show("Details not updated yet!\n\nUpdate details first to proceed for room booking", "Edit Details First", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 if (dr == DialogResult.OK)
@@ -126,14 +119,60 @@ namespace HostelManagement
                     this.Close();
                 }
             }
+            else if (blocklabel.Text.Length != 0)
+            {
+                MessageBox.Show("Already booked a room!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return;
+            }
+            else
+            {
+                Booking frm = new Booking(reg);
+                this.Hide();
+                frm.ShowDialog();
+                this.Close();
+            }
         }
 
         private void messchangeicon_Click(object sender, EventArgs e)
         {
-            Mess frm = new Mess(reg);
-            this.Hide();
-            frm.ShowDialog();
-            this.Close();
+            string ConStr = "DATA SOURCE=DESKTOP-FE4CR37:1521/XE;USER ID=SYSTEM;Password=rampage";
+            OracleConnection conn = new OracleConnection(ConStr);
+            conn.Open();
+            OracleCommand comm = new OracleCommand("", conn);
+            OracleTransaction txn = conn.BeginTransaction(IsolationLevel.ReadCommitted);
+            try
+            {
+                comm.CommandText = "select * from mess_change where reg_no='" + reglabel.Text + "'";
+                comm.CommandType = CommandType.Text;
+                ds = new DataSet();
+                da = new OracleDataAdapter(comm.CommandText, conn);
+                da.Fill(ds, "mess_change");
+                dt = ds.Tables["mess_change"];
+                int n = dt.Rows.Count;
+                if (n == 0)
+                {
+                    Mess frm = new Mess(reg);
+                    this.Hide();
+                    frm.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Mess change application under approval process\n\nPlease contact your administrator for updates!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+            }
+            catch (Exception e1)
+            {
+                txn.Rollback();
+                DialogResult dr = MessageBox.Show(e1.ToString(), "Fail", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (dr == DialogResult.OK)
+                {
+                    EditDetails frm1 = new EditDetails(reg);
+                    this.Hide();
+                    frm1.ShowDialog();
+                    this.Close();
+                }
+            }
         }
 
         private void Profile_Load(object sender, EventArgs e)

@@ -11,7 +11,7 @@ insert into hostel values(21,'JOAN',30,30);
 *****
 
 insert into mess values(1,'Quest',1);
-insert into mess values(2,'Chess',1);
+insert into mess values(2,'Rook',1);
 insert into mess values(3,'Opulence',1);
 insert into mess values(4,'Force',1);
 insert into mess values(5,'Nevada',1);

@@ -24,10 +24,14 @@ namespace HostelManagement
         string cg = string.Empty;
         string branch = string.Empty;
         string sem = string.Empty;
+        string hostel;
+        int oldmess, newmess;
+        string password;
 
         public Mess(long rego)
         {
             InitializeComponent();
+            passTB.PasswordChar = '*';
             reg = rego;
             try
             {
@@ -42,10 +46,44 @@ namespace HostelManagement
                 da.Fill(ds, "student");
                 dt = ds.Tables["student"];
                 dr = dt.Rows[i];
-                cg = dr["cgpa"].ToString();
-                sem = dr["semester"].ToString();
+                reglabel.Text = reg.ToString();
+                namelabel.Text = dr["name"].ToString();
                 gender = dr["gender"].ToString();
+                cg = dr["cgpa"].ToString();
                 branch = dr["branch"].ToString();
+                sem = dr["semester"].ToString();
+                hostel = dr["hostel_id"].ToString();
+                blocklabel.Text = dr["hostel_id"].ToString();
+                string mess = dr["mess_id"].ToString();
+                comm.CommandText = "select * from mess where mess_id = '" + mess + "'";
+                comm.CommandType = CommandType.Text;
+                ds = new DataSet();
+                da = new OracleDataAdapter(comm.CommandText, conn);
+                da.Fill(ds, "mess");
+                dt = ds.Tables["mess"];
+                dr = dt.Rows[i];
+                messlabel.Text = dr["mess_name"].ToString();
+                comm.CommandText = "select * from usertype where reg_no = '" + reg.ToString() + "'";
+                comm.CommandType = CommandType.Text;
+                ds = new DataSet();
+                da = new OracleDataAdapter(comm.CommandText, conn);
+                da.Fill(ds, "usertype");
+                dt = ds.Tables["usertype"];
+                dr = dt.Rows[i];
+                password = dr["password"].ToString();
+                comm.CommandText = "select * from mess where mess_id <> '" + mess + "' and mess_id<>-999 ";
+                comm.CommandType = CommandType.Text;
+                ds = new DataSet();
+                da = new OracleDataAdapter(comm.CommandText, conn);
+                da.Fill(ds, "mess");
+                dt = ds.Tables["mess"];
+                int n = dt.Rows.Count;
+                for (i = 0; i < n; i++ )
+                {
+                    dr = dt.Rows[i];
+                    messCB.Items.Add(dr["mess_name"].ToString());
+                }
+                i = 0;
                 conn.Close();
             }
             catch (Exception e1)
@@ -62,14 +100,7 @@ namespace HostelManagement
 
         private void roombookicon_Click(object sender, EventArgs e)
         {
-            if (cg != string.Empty && gender != string.Empty && branch != string.Empty && gender != string.Empty)
-            {
-                Booking frm = new Booking(reg);
-                this.Hide();
-                frm.ShowDialog();
-                this.Close();
-            }
-            else
+            if (cg == string.Empty || sem == string.Empty || branch == string.Empty || gender == string.Empty)
             {
                 DialogResult dr = MessageBox.Show("Details not updated yet!\n\nUpdate details first to proceed for room booking", "Edit Details First", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 if (dr == DialogResult.OK)
@@ -79,6 +110,18 @@ namespace HostelManagement
                     frm.ShowDialog();
                     this.Close();
                 }
+            }
+            else if (hostel.Length != 0)
+            {
+                MessageBox.Show("Already booked a room!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return;
+            }
+            else
+            {
+                Booking frm = new Booking(reg);
+                this.Hide();
+                frm.ShowDialog();
+                this.Close();
             }
         }
 
@@ -101,6 +144,107 @@ namespace HostelManagement
             this.Hide();
             frm.ShowDialog();
             this.Close();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (messCB.SelectedIndex<=-1)
+            {
+                invalidmess.Visible = true;
+            }
+            else
+            {
+                invalidmess.Visible = false;
+            }
+            if (reasonTB.Text == string.Empty)
+            {
+                invalidreason.Visible = true;
+            }
+            else
+            {
+                invalidreason.Visible = false;
+            }
+            if (!invalidreason.Visible && !invalidmess.Visible)
+            {
+
+                if (!passTB.Visible)
+                {
+                    passenter.Visible = true;
+                    passTB.Visible = true;
+                    return;
+                }
+            }
+            if (passTB.Text != password && passTB.Visible)
+            {
+                invalidpass.Visible = true;
+            }
+            else{
+                invalidpass.Visible = false;
+            }
+            if(!invalidpass.Visible && !invalidmess.Visible && !invalidreason.Visible && passTB.Visible)
+            {
+                DialogResult dr2 = MessageBox.Show("Applied for mess change successfully!", "Request Submitted Successfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (dr2 == DialogResult.OK)
+                {
+                    string ConStr = "DATA SOURCE=DESKTOP-FE4CR37:1521/XE;USER ID=SYSTEM;Password=rampage";
+                    OracleConnection conn = new OracleConnection(ConStr);
+                    conn.Open();
+                    OracleCommand comm = new OracleCommand("", conn);
+                    OracleTransaction txn = conn.BeginTransaction(IsolationLevel.ReadCommitted);
+                    try
+                    {
+                        //int messno;
+                        comm.CommandText = "select * from mess where mess_name='"+messCB.SelectedItem.ToString()+"'";
+                        comm.CommandType = CommandType.Text;
+                        ds = new DataSet();
+                        da = new OracleDataAdapter(comm.CommandText, conn);
+                        da.Fill(ds, "mess");
+                        dt = ds.Tables["mess"];
+                        dr = dt.Rows[0];
+                        string strnewmess = dr["mess_id"].ToString();
+                        int.TryParse(strnewmess, out newmess);
+                        comm.CommandText = "select * from mess where mess_name='" + messlabel.Text + "'";
+                        comm.CommandType = CommandType.Text;
+                        ds = new DataSet();
+                        da = new OracleDataAdapter(comm.CommandText, conn);
+                        da.Fill(ds, "mess");
+                        dt = ds.Tables["mess"];
+                        dr = dt.Rows[0];
+                        string stroldmess = dr["mess_id"].ToString();
+                        int.TryParse(stroldmess, out oldmess);
+                        comm.CommandText = "insert into mess_change values('"+reglabel.Text+"',"+oldmess+","+newmess+")";
+                        comm.CommandType = CommandType.Text;
+                        comm.ExecuteNonQuery();
+                        txn.Commit();
+                        Profile frm = new Profile(reg);
+                        this.Hide();
+                        frm.ShowDialog();
+                        this.Close();
+                    }
+                    catch (Exception e1)
+                    {
+                        txn.Rollback();
+                        DialogResult dr = MessageBox.Show(e1.ToString(), "Fail", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        if (dr == DialogResult.OK)
+                        {
+                            EditDetails frm1 = new EditDetails(reg);
+                            this.Hide();
+                            frm1.ShowDialog();
+                            this.Close();
+                        }
+                    }
+                }
+            }
         }
     }
 }
