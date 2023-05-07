@@ -52,6 +52,8 @@
             this.FblockCB = new System.Windows.Forms.ComboBox();
             this.MblockCB = new System.Windows.Forms.ComboBox();
             this.malecriteria = new System.Windows.Forms.PictureBox();
+            this.invalidblock = new System.Windows.Forms.Label();
+            this.invalidroom = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.issuesicon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomchangeicon)).BeginInit();
@@ -252,7 +254,7 @@
             this.femalecriteria.BackColor = System.Drawing.Color.Transparent;
             this.femalecriteria.BackgroundImage = global::HostelManagement.Properties.Resources.FemaleCriteria;
             this.femalecriteria.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.femalecriteria.Location = new System.Drawing.Point(411, 270);
+            this.femalecriteria.Location = new System.Drawing.Point(411, 268);
             this.femalecriteria.Name = "femalecriteria";
             this.femalecriteria.Size = new System.Drawing.Size(392, 181);
             this.femalecriteria.TabIndex = 94;
@@ -264,7 +266,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Bookman Old Style", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(724, 506);
+            this.label3.Location = new System.Drawing.Point(726, 500);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(176, 21);
             this.label3.TabIndex = 98;
@@ -281,7 +283,7 @@
             "01NC",
             "02AC",
             "02NC"});
-            this.roomtypeCB.Location = new System.Drawing.Point(706, 541);
+            this.roomtypeCB.Location = new System.Drawing.Point(708, 535);
             this.roomtypeCB.Name = "roomtypeCB";
             this.roomtypeCB.Size = new System.Drawing.Size(219, 29);
             this.roomtypeCB.TabIndex = 97;
@@ -293,7 +295,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Bookman Old Style", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(327, 506);
+            this.label1.Location = new System.Drawing.Point(329, 500);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(125, 21);
             this.label1.TabIndex = 96;
@@ -308,7 +310,7 @@
             this.FblockCB.Items.AddRange(new object[] {
             "20",
             "21"});
-            this.FblockCB.Location = new System.Drawing.Point(281, 541);
+            this.FblockCB.Location = new System.Drawing.Point(283, 535);
             this.FblockCB.Name = "FblockCB";
             this.FblockCB.Size = new System.Drawing.Size(221, 29);
             this.FblockCB.TabIndex = 95;
@@ -326,7 +328,7 @@
             "10",
             "11",
             "12"});
-            this.MblockCB.Location = new System.Drawing.Point(281, 541);
+            this.MblockCB.Location = new System.Drawing.Point(283, 535);
             this.MblockCB.Name = "MblockCB";
             this.MblockCB.Size = new System.Drawing.Size(221, 29);
             this.MblockCB.TabIndex = 99;
@@ -339,12 +341,38 @@
             this.malecriteria.BackColor = System.Drawing.Color.Transparent;
             this.malecriteria.BackgroundImage = global::HostelManagement.Properties.Resources.MaleCriteria;
             this.malecriteria.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.malecriteria.Location = new System.Drawing.Point(411, 257);
+            this.malecriteria.Location = new System.Drawing.Point(411, 255);
             this.malecriteria.Name = "malecriteria";
             this.malecriteria.Size = new System.Drawing.Size(392, 226);
             this.malecriteria.TabIndex = 100;
             this.malecriteria.TabStop = false;
             this.malecriteria.Visible = false;
+            // 
+            // invalidblock
+            // 
+            this.invalidblock.AutoSize = true;
+            this.invalidblock.BackColor = System.Drawing.Color.Transparent;
+            this.invalidblock.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.invalidblock.ForeColor = System.Drawing.Color.Red;
+            this.invalidblock.Location = new System.Drawing.Point(445, 567);
+            this.invalidblock.Name = "invalidblock";
+            this.invalidblock.Size = new System.Drawing.Size(110, 19);
+            this.invalidblock.TabIndex = 103;
+            this.invalidblock.Text = "*required field";
+            this.invalidblock.Visible = false;
+            // 
+            // invalidroom
+            // 
+            this.invalidroom.AutoSize = true;
+            this.invalidroom.BackColor = System.Drawing.Color.Transparent;
+            this.invalidroom.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.invalidroom.ForeColor = System.Drawing.Color.Red;
+            this.invalidroom.Location = new System.Drawing.Point(850, 567);
+            this.invalidroom.Name = "invalidroom";
+            this.invalidroom.Size = new System.Drawing.Size(110, 19);
+            this.invalidroom.TabIndex = 104;
+            this.invalidroom.Text = "*required field";
+            this.invalidroom.Visible = false;
             // 
             // Booking
             // 
@@ -353,6 +381,8 @@
             this.BackgroundImage = global::HostelManagement.Properties.Resources.roombooking2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1039, 745);
+            this.Controls.Add(this.invalidroom);
+            this.Controls.Add(this.invalidblock);
             this.Controls.Add(this.malecriteria);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.roomtypeCB);
@@ -419,5 +449,7 @@
         private System.Windows.Forms.ComboBox FblockCB;
         private System.Windows.Forms.ComboBox MblockCB;
         private System.Windows.Forms.PictureBox malecriteria;
+        private System.Windows.Forms.Label invalidblock;
+        private System.Windows.Forms.Label invalidroom;
     }
 }
