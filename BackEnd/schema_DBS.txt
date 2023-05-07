@@ -92,6 +92,7 @@ create table administrator(
     counter int);
 
 create table B10(
+    sno int primary key,
     reg_no varchar(20) references student(registration_number), 
     name varchar(50),
     room_id varchar(15) references rooms(Room_ID), 
@@ -99,29 +100,33 @@ create table B10(
     contact varchar(30));
 
 create table B11(
+    sno int primary key,
     reg_no varchar(20) references student(registration_number), 
-    name varchar(50), 
+    name varchar(50),
     room_id varchar(15) references rooms(Room_ID), 
     room_number int , 
     contact varchar(30));
 
 create table B12(
+    sno int primary key,
     reg_no varchar(20) references student(registration_number), 
-    name varchar(50), 
+    name varchar(50),
     room_id varchar(15) references rooms(Room_ID), 
     room_number int , 
     contact varchar(30));
 
 create table B20(
+    sno int primary key,
     reg_no varchar(20) references student(registration_number), 
-    name varchar(50), 
+    name varchar(50),
     room_id varchar(15) references rooms(Room_ID), 
     room_number int , 
     contact varchar(30));
 
 create table B21(
+    sno int primary key,
     reg_no varchar(20) references student(registration_number), 
-    name varchar(50), 
+    name varchar(50),
     room_id varchar(15) references rooms(Room_ID), 
     room_number int , 
     contact varchar(30));

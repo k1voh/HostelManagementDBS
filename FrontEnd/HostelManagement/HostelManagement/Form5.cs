@@ -21,18 +21,20 @@ namespace HostelManagement
         DataRow dr;
         Dictionary<string, double> d20 = new Dictionary<string, double>();
         Dictionary<string, double> d21 = new Dictionary<string, double>();
-        Dictionary<int, int> hostel_mess = new Dictionary<int, int>();
+        Dictionary<string, int> hostel_mess = new Dictionary<string, int>();
+        int hostid=0;
         int i = 0;
+        string phone;
         long reg;
         public Booking(long regno)
         {
             
             InitializeComponent();
-            hostel_mess.Add(10, 1);
-            hostel_mess.Add(11, 2);
-            hostel_mess.Add(12, 3);
-            hostel_mess.Add(20, 4);
-            hostel_mess.Add(21, 5);
+            hostel_mess.Add("10", 1);
+            hostel_mess.Add("11", 2);
+            hostel_mess.Add("12", 3);
+            hostel_mess.Add("20", 4);
+            hostel_mess.Add("21", 5);
             reg = regno;
             reglabel.Text = reg.ToString();
             string ConStr = "DATA SOURCE=DESKTOP-FE4CR37:1521/XE;USER ID=SYSTEM;Password=rampage";
@@ -51,6 +53,15 @@ namespace HostelManagement
                 namelabel.Text = dr["name"].ToString();
                 cgpalabel.Text = dr["cgpa"].ToString();
                 genderlabel.Text = dr["gender"].ToString();
+                int.TryParse(dr["hostel_id"].ToString(),out hostid);
+                comm.CommandText = "select * from usertype where reg_no = '" + reg.ToString() + "'";
+                comm.CommandType = CommandType.Text;
+                ds = new DataSet();
+                da = new OracleDataAdapter(comm.CommandText, conn);
+                da.Fill(ds, "usertype");
+                dt = ds.Tables["usertype"];
+                dr = dt.Rows[i];
+                phone = dr["phone"].ToString();
                 if (genderlabel.Text == "MALE")
                 {
                     MblockCB.Visible = true;
@@ -115,7 +126,18 @@ namespace HostelManagement
 
         private void bookbutton_Click(object sender, EventArgs e)
         {
-            string ConStr = "DATA SOURCE=DESKTOP-83I4HPH:1521/XE;USER ID=SYSTEM;Password=2003";
+            if (hostid != 0) {
+                DialogResult dr2 = MessageBox.Show("Already booked a room!\n\nRedirecting to profile page","Error",MessageBoxButtons.OK,MessageBoxIcon.Stop);
+                if (dr2 == DialogResult.OK)
+                {
+                    Profile frm = new Profile(reg);
+                    this.Hide();
+                    frm.ShowDialog();
+                    this.Close();
+                }
+                return;
+            }
+            string ConStr = "DATA SOURCE=DESKTOP-FE4CR37:1521/XE;USER ID=SYSTEM;Password=rampage";
             OracleConnection conn = new OracleConnection(ConStr);
             try
             {
@@ -141,38 +163,33 @@ namespace HostelManagement
                         {
                             DialogResult dr1 = MessageBox.Show("You have successfully booked a room", "Booking confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             if (dr1== DialogResult.OK) {
-                                 Profile frm = new Profile(reg);
-                                    this.Hide();
-                                    frm.ShowDialog();
-                                    this.Close();
                                 //UPDATE BLOCK TABLE
-                                /*OracleCommand cmd = new OracleCommand("", conn);
+                                OracleCommand cmd = new OracleCommand("", conn);
                                 OracleTransaction txn = conn.BeginTransaction(IsolationLevel.ReadCommitted);
                                 try
                                 {
-                                    comm.CommandText = "select min(room_number) from b" + MblockCB.SelectedItem.ToString() + " where room_id='" + roomtypeCB.SelectedItem.ToString() + "' and reg_no='NULL'";
+                                    comm.CommandText = "select min(sno),min(room_number) from b" + MblockCB.SelectedItem.ToString() + " where room_id='" + roomtypeCB.SelectedItem.ToString() + "' and reg_no='NULL' group by room_id";
                                     comm.CommandType = CommandType.Text;
                                     ds = new DataSet();
                                     da = new OracleDataAdapter(comm.CommandText, conn);
                                     da.Fill(ds, "b" + MblockCB.SelectedItem.ToString());
                                     dt = ds.Tables["b" + MblockCB.SelectedItem.ToString()];
                                     dr = dt.Rows[0];
-                                    MessageBox.Show(dr["min(room_number)"].ToString());
-                                    cmd.CommandText = "update b" + MblockCB.SelectedItem.ToString()+ " set regno='" + phoneTB.Text + "', email='" + mailTB.Text + "' where reg_no=" + reg.ToString();
+                                    string sno = dr["min(sno)"].ToString();
+                                    string roomno = dr["min(room_number)"].ToString();
+                                    cmd.CommandText = "update b" + MblockCB.SelectedItem.ToString() + " set reg_no='" + reglabel.Text + "', name='" + namelabel.Text + "',room_id='" + roomtypeCB.SelectedItem.ToString() + "',sno='" + sno + "',contact='"+phone+"',room_number='"+roomno+"' where sno='" + sno + "'";
                                     cmd.CommandType = CommandType.Text;
                                     cmd.ExecuteNonQuery();
-                                    //txn.Commit();
-                                    float cg = 0;
-                                    float.TryParse(cgpaTB.Text, out cg);
-                                    cmd.CommandText = "update student set  cgpa=" + cg + ", branch='" + branchTB.Text + "',gender='" + genderCB.SelectedItem.ToString() + "' where registration_number=" + reg.ToString();
-                                    cmd.CommandType = CommandType.Text;
-                                    cmd.ExecuteNonQuery();
-                                    cmd.CommandText = "update student set semester=" + sem + " where registration_number=" + reg.ToString();
+                                    int mess_id = hostel_mess[MblockCB.SelectedItem.ToString()];
+                                    cmd.CommandText = "update student set hostel_id='" + MblockCB.SelectedItem.ToString() + "',mess_id='"+mess_id+"' where registration_number='" + reg.ToString()+"'";
                                     cmd.CommandType = CommandType.Text;
                                     cmd.ExecuteNonQuery();
                                     txn.Commit();
-                                     
-                                   
+                                    Profile frm = new Profile(reg);
+                                    this.Hide();
+                                    frm.ShowDialog();
+                                    this.Close();
+
                                 }
                                 catch (Exception e1)
                                 {
@@ -180,12 +197,12 @@ namespace HostelManagement
                                     DialogResult dr = MessageBox.Show(e1.ToString(), "Fail", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     if (dr == DialogResult.OK)
                                     {
-                                        EditDetails frm = new EditDetails(reg);
+                                        EditDetails frm1 = new EditDetails(reg);
                                         this.Hide();
-                                        frm.ShowDialog();
+                                        frm1.ShowDialog();
                                         this.Close();
                                     }
-                                }*/
+                                }
                             }
                         }
                     }
@@ -200,6 +217,18 @@ namespace HostelManagement
 
         private void bookuttonF_Click(object sender, EventArgs e)
         {
+            if (hostid != 0)
+            {
+                DialogResult dr2 = MessageBox.Show("Already booked a room!\n\nRedirecting to profile page", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                if (dr2 == DialogResult.OK)
+                {
+                    Profile frm = new Profile(reg);
+                    this.Hide();
+                    frm.ShowDialog();
+                    this.Close();
+                }
+                return;
+            }
             d20.Add("01AC", 8.5);
             d20.Add("01NC", 7);
             d20.Add("02AC", 7);
@@ -229,16 +258,51 @@ namespace HostelManagement
                     {
                         if (d20[roomtypeCB.SelectedItem.ToString()] <= cg)
                         {
-                            DialogResult dr = MessageBox.Show("Are you sure you want to book this room?", "Booking confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                            if (dr == DialogResult.Yes)
+                            DialogResult dr0 = MessageBox.Show("Are you sure you want to book this room?", "Booking confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                            if (dr0 == DialogResult.Yes)
                             {
                                 DialogResult dr1 = MessageBox.Show("You have successfully booked a room", "Booking confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 if (dr1 == DialogResult.OK)
                                 {
-                                    Profile frm = new Profile(reg);
-                                    this.Hide();
-                                    frm.ShowDialog();
-                                    this.Close();
+                                    OracleCommand cmd = new OracleCommand("", conn);
+                                    OracleTransaction txn = conn.BeginTransaction(IsolationLevel.ReadCommitted);
+                                    try
+                                    {
+                                        comm.CommandText = "select min(sno),min(room_number) from b" + FblockCB.SelectedItem.ToString() + " where room_id='" + roomtypeCB.SelectedItem.ToString() + "' and reg_no='NULL' group by room_id";
+                                        comm.CommandType = CommandType.Text;
+                                        ds = new DataSet();
+                                        da = new OracleDataAdapter(comm.CommandText, conn);
+                                        da.Fill(ds, "b" + FblockCB.SelectedItem.ToString());
+                                        dt = ds.Tables["b" + FblockCB.SelectedItem.ToString()];
+                                        dr = dt.Rows[0];
+                                        string sno = dr["min(sno)"].ToString();
+                                        string roomno = dr["min(room_number)"].ToString();
+                                        cmd.CommandText = "update b" + FblockCB.SelectedItem.ToString() + " set reg_no='" + reglabel.Text + "', name='" + namelabel.Text + "',room_id='" + roomtypeCB.SelectedItem.ToString() + "',sno='" + sno + "',contact='" + phone + "',room_number='" + roomno + "' where sno='" + sno + "'";
+                                        cmd.CommandType = CommandType.Text;
+                                        cmd.ExecuteNonQuery();
+                                        int mess_id = hostel_mess[FblockCB.SelectedItem.ToString()];
+                                        cmd.CommandText = "update student set hostel_id='" + FblockCB.SelectedItem.ToString() + "',mess_id='"+mess_id+"' where registration_number='" + reg.ToString() + "'";
+                                        cmd.CommandType = CommandType.Text;
+                                        cmd.ExecuteNonQuery();
+                                        txn.Commit();
+                                        Profile frm = new Profile(reg);
+                                        this.Hide();
+                                        frm.ShowDialog();
+                                        this.Close();
+
+                                    }
+                                    catch (Exception e1)
+                                    {
+                                        txn.Rollback();
+                                        DialogResult dr = MessageBox.Show(e1.ToString(), "Fail", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        if (dr == DialogResult.OK)
+                                        {
+                                            EditDetails frm1 = new EditDetails(reg);
+                                            this.Hide();
+                                            frm1.ShowDialog();
+                                            this.Close();
+                                        }
+                                    }
                                 }
                             }
                         }

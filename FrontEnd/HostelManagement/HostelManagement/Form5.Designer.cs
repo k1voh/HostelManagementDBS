@@ -339,9 +339,9 @@
             this.malecriteria.BackColor = System.Drawing.Color.Transparent;
             this.malecriteria.BackgroundImage = global::HostelManagement.Properties.Resources.MaleCriteria;
             this.malecriteria.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.malecriteria.Location = new System.Drawing.Point(422, 257);
+            this.malecriteria.Location = new System.Drawing.Point(411, 257);
             this.malecriteria.Name = "malecriteria";
-            this.malecriteria.Size = new System.Drawing.Size(381, 226);
+            this.malecriteria.Size = new System.Drawing.Size(392, 226);
             this.malecriteria.TabIndex = 100;
             this.malecriteria.TabStop = false;
             this.malecriteria.Visible = false;

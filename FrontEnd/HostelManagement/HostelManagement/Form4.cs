@@ -53,8 +53,44 @@ namespace HostelManagement
                 cgpalabel.Text = dr["cgpa"].ToString();
                 branchlabel.Text = dr["branch"].ToString();
                 semlabel.Text = dr["semester"].ToString();
+                blocklabel.Text = dr["hostel_id"].ToString();
+                messlabel.Text = dr["mess_id"].ToString();
+                comm.CommandText = "select * from mess where mess_id = '" + messlabel.Text + "'";
+                comm.CommandType = CommandType.Text;
+                ds = new DataSet();
+                da = new OracleDataAdapter(comm.CommandText, conn);
+                da.Fill(ds, "mess");
+                dt = ds.Tables["mess"];
+                dr = dt.Rows[i];
+                messlabel.Text = dr["mess_name"].ToString();
+                comm.CommandText = "select * from b"+blocklabel.Text+" where reg_no = '" + reg.ToString() + "'";
+                comm.CommandType = CommandType.Text;
+                ds = new DataSet();
+                da = new OracleDataAdapter(comm.CommandText, conn);
+                da.Fill(ds, "b" + blocklabel.Text);
+                dt = ds.Tables["b" + blocklabel.Text];
+                dr = dt.Rows[i];
+                roomlabel.Text = dr["room_number"].ToString();
+                string roomtype = dr["room_id"].ToString();
+                occupantlabel.Text = roomtype[1].ToString();
+                string ac = dr["room_id"].ToString().Substring(2,2);
+                if (ac == "AC")
+                {
+                    aclabel.Text = "AC Room";
+                }
+                else
+                {
+                    aclabel.Text = "Non-AC Room";
+                }
+                comm.CommandText = "select total_fee from fees where hostel_id='"+blocklabel.Text+"' and room_id='"+roomtype+"'";
+                comm.CommandType = CommandType.Text;
+                ds = new DataSet();
+                da = new OracleDataAdapter(comm.CommandText, conn);
+                da.Fill(ds, "fees");
+                dt = ds.Tables["fees"];
+                dr = dt.Rows[i];
+                feeslabel.Text = dr["total_fee"].ToString();
                 conn.Close();
-
             }
             catch (Exception e1)
             {
@@ -118,10 +154,25 @@ namespace HostelManagement
 
         private void editbutton_Click(object sender, EventArgs e)
         {
-            EditDetails frm = new EditDetails(reg);
-            this.Hide();
-            frm.ShowDialog();
-            this.Close();
+            if (roomlabel.Text == "NULL" || roomlabel.Text == string.Empty)
+            {
+                EditDetails frm1 = new EditDetails(reg);
+                this.Hide();
+                frm1.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                DialogResult dr2 = MessageBox.Show("Cannot edit details after booking a room\n\nPlease contact your administrator!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                if (dr2 == DialogResult.OK)
+                {
+                    Profile frm = new Profile(reg);
+                    this.Hide();
+                    frm.ShowDialog();
+                    this.Close();
+                }
+                return;
+            }
         }
     }
 }
