@@ -1,10 +1,10 @@
 *****
 
-insert into hostel values(10,'DANIEL',40,30);
-insert into hostel values(11,'JOHN',40,25);
-insert into hostel values(12,'TOM',30,20);
-insert into hostel values(20,'MAY',40,30);
-insert into hostel values(21,'JOAN',30,20);
+insert into hostel values(10,'DANIEL',40,40);
+insert into hostel values(11,'JOHN',40,40);
+insert into hostel values(12,'TOM',30,30);
+insert into hostel values(20,'MAY',40,40);
+insert into hostel values(21,'JOAN',30,30);
 //dont make warden details predetermined
 
 
@@ -144,7 +144,7 @@ insert into b10 values(12,'NULL','NULL','01NC',111,'NULL');
 insert into b10 values(13,'NULL','NULL','01NC',112,'NULL');
 insert into b10 values(14,'NULL','NULL','01NC',113,'NULL');
 insert into b10 values(15,'NULL','NULL','01NC',114,'NULL');
-insert into b10 values(16'NULL','NULL','01NC',115,'NULL');
+insert into b10 values(16,'NULL','NULL','01NC',115,'NULL');
 insert into b10 values(17,'NULL','NULL','01NC',116,'NULL');
 insert into b10 values(18,'NULL','NULL','01NC',117,'NULL');
 insert into b10 values(19,'NULL','NULL','01NC',118,'NULL');
@@ -333,4 +333,10 @@ insert into b21 values(30,'NULL','NULL','02NC',119,'NULL');
 
 *****
 
+update hostel set total_occupancy=40, unoccupied = 40 where hostel_id=10;
+update hostel set total_occupancy=40, unoccupied = 38 where hostel_id=11;
+update hostel set total_occupancy=30, unoccupied = 30 where hostel_id=12;
+update hostel set total_occupancy=40, unoccupied = 37 where hostel_id=20;
+update hostel set total_occupancy=30, unoccupied = 30 where hostel_id=21;
 
+*****

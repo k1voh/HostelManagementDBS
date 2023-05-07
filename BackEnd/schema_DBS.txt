@@ -2,7 +2,7 @@ create table Hostel(
     Hostel_id int primary key,
     warden varchar(50), 
     total_occupancy int, 
-    occupancy int, 
+    unoccupied int, 
     constraint chk_rooms check (total_occupancy >= occupancy));
 
 

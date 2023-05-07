@@ -55,6 +55,11 @@ namespace HostelManagement
                 semlabel.Text = dr["semester"].ToString();
                 blocklabel.Text = dr["hostel_id"].ToString();
                 messlabel.Text = dr["mess_id"].ToString();
+                if (blocklabel.Text.Length == 0)
+                {
+                    blocklabel.Text = "NULL";
+                    messlabel.Text = "NULL";
+                }
                 comm.CommandText = "select * from mess where mess_id = '" + messlabel.Text + "'";
                 comm.CommandType = CommandType.Text;
                 ds = new DataSet();
