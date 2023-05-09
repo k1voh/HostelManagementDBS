@@ -77,13 +77,14 @@
             // regTB
             // 
             this.regTB.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.regTB.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.regTB.Location = new System.Drawing.Point(112, 284);
             this.regTB.Margin = new System.Windows.Forms.Padding(4);
             this.regTB.Multiline = false;
             this.regTB.Name = "regTB";
             this.regTB.Size = new System.Drawing.Size(238, 29);
             this.regTB.TabIndex = 34;
-            this.regTB.Text = " ";
+            this.regTB.Text = "(ex. 20000000)";
             // 
             // reqreg
             // 
@@ -114,13 +115,14 @@
             // userTB
             // 
             this.userTB.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userTB.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.userTB.Location = new System.Drawing.Point(446, 284);
             this.userTB.Margin = new System.Windows.Forms.Padding(4);
             this.userTB.Multiline = false;
             this.userTB.Name = "userTB";
             this.userTB.Size = new System.Drawing.Size(238, 29);
             this.userTB.TabIndex = 37;
-            this.userTB.Text = "";
+            this.userTB.Text = "(ex. Matthew Adams)";
             // 
             // requser
             // 
@@ -151,13 +153,14 @@
             // contactTB
             // 
             this.contactTB.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contactTB.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.contactTB.Location = new System.Drawing.Point(112, 378);
             this.contactTB.Margin = new System.Windows.Forms.Padding(4);
             this.contactTB.Multiline = false;
             this.contactTB.Name = "contactTB";
             this.contactTB.Size = new System.Drawing.Size(238, 29);
             this.contactTB.TabIndex = 40;
-            this.contactTB.Text = "";
+            this.contactTB.Text = "(ex. 9999999999)";
             // 
             // reqcontact
             // 
@@ -188,13 +191,14 @@
             // mailTB
             // 
             this.mailTB.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mailTB.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.mailTB.Location = new System.Drawing.Point(455, 378);
             this.mailTB.Margin = new System.Windows.Forms.Padding(4);
             this.mailTB.Multiline = false;
             this.mailTB.Name = "mailTB";
             this.mailTB.Size = new System.Drawing.Size(238, 29);
             this.mailTB.TabIndex = 43;
-            this.mailTB.Text = "";
+            this.mailTB.Text = "ex. abc@gmail.com";
             // 
             // reqmail
             // 
@@ -308,6 +312,7 @@
             // 
             this.retypepassTB.AcceptsReturn = true;
             this.retypepassTB.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.retypepassTB.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.retypepassTB.Location = new System.Drawing.Point(455, 473);
             this.retypepassTB.Multiline = true;
             this.retypepassTB.Name = "retypepassTB";
@@ -344,6 +349,7 @@
             // 
             this.passTB.AcceptsReturn = true;
             this.passTB.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passTB.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.passTB.Location = new System.Drawing.Point(121, 473);
             this.passTB.Multiline = true;
             this.passTB.Name = "passTB";
@@ -484,6 +490,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox6);
             this.DoubleBuffered = true;
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "Form2";
             this.Text = "Registration Page";
             this.Load += new System.EventHandler(this.Form2_Load);
