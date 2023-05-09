@@ -106,11 +106,6 @@ insert into complaints values('21090003',1011,'Maintainance','No Hot Water','105
 insert into complaints values('21090004',1012,'Appliance','AC not working','123','NOT COMPLETED');
 insert into complaints values('21090005',1015,'Appliance','Fan regulator broken','107','NOT COMPLETED');
 
-*****
-
-insert into changecounter values('Mess Change', 0);
-insert into changecounter values('Room Change', 0);
-insert into changecounter values('Complaints', 0);
 
 *****
 
@@ -338,5 +333,9 @@ update hostel set total_occupancy=40, unoccupied = 38 where hostel_id=11;
 update hostel set total_occupancy=30, unoccupied = 30 where hostel_id=12;
 update hostel set total_occupancy=40, unoccupied = 37 where hostel_id=20;
 update hostel set total_occupancy=30, unoccupied = 30 where hostel_id=21;
+
+*****
+
+insert into issue_counter values('10853170');
 
 *****
