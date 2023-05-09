@@ -10,17 +10,18 @@ using System.Windows.Forms;
 using Oracle.DataAccess.Client;
 using Oracle.DataAccess.Types;
 
+
 namespace HostelManagement
 {
     public partial class Stats : Form
     {
-        long reg;
+        string reg;
         OracleDataAdapter da;
         DataSet ds;
         DataTable dt;
         DataRow dr;
         int i = 0;
-        public Stats(long regno)
+        public Stats(string regno)
         {
             InitializeComponent();
             reg = regno;
@@ -86,6 +87,11 @@ namespace HostelManagement
         }
 
         private void Stats_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
         {
 
         }

@@ -14,25 +14,25 @@ namespace HostelManagement
 {
     public partial class ProfileAdmin : Form
     {
-        long reg;
         OracleDataAdapter da;
         DataSet ds;
         DataTable dt;
         DataRow dr;
         int i = 0;
-        public ProfileAdmin(long regno)
+        string name;
+        string reg;
+        public ProfileAdmin(string regno)
         {
             InitializeComponent();
             reg = regno;
             reglabel.Text = reg.ToString();
             string ConStr = "DATA SOURCE=DESKTOP-FE4CR37:1521/XE;USER ID=SYSTEM;Password=rampage";
             OracleConnection conn = new OracleConnection(ConStr);
-
             try
             {
                 conn.Open();
                 OracleCommand comm = new OracleCommand("", conn);
-                comm.CommandText = "select * from usertype where reg_no = " + reg.ToString();
+                comm.CommandText = "select * from usertype where reg_no = '" + reg.ToString()+"'";
                 comm.CommandType = CommandType.Text;
                 ds = new DataSet();
                 da = new OracleDataAdapter(comm.CommandText, conn);
@@ -41,7 +41,7 @@ namespace HostelManagement
                 dr = dt.Rows[i];
                 phonelabel.Text = dr["phone"].ToString();
                 emailabel.Text = dr["email"].ToString();
-                comm.CommandText = "select * from administrator where admin_id = " + reg.ToString();
+                comm.CommandText = "select * from administrator where admin_id = '" + reg.ToString() +"'";
                 comm.CommandType = CommandType.Text;
                 ds = new DataSet();
                 da = new OracleDataAdapter(comm.CommandText, conn);
@@ -54,7 +54,6 @@ namespace HostelManagement
             }
             catch (Exception e1)
             {
-                //label1.Text = e1.ToString();
             }
         }
 

@@ -102,7 +102,7 @@ namespace HostelManagement
                         {
                             long x = 0;
                             long.TryParse(regTB.Text, out x);
-                            ProfileAdmin frm = new ProfileAdmin(x);
+                            ProfileAdmin frm = new ProfileAdmin(regTB.Text);
                             this.Hide();
                             frm.ShowDialog();
                             this.Close();
