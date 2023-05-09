@@ -101,39 +101,53 @@ namespace HostelManagement
 
         private void messchangeicon_Click(object sender, EventArgs e)
         {
-            string ConStr = "DATA SOURCE=DESKTOP-FE4CR37:1521/XE;USER ID=SYSTEM;Password=rampage";
-            OracleConnection conn = new OracleConnection(ConStr);
-            conn.Open();
-            OracleCommand comm = new OracleCommand("", conn);
-            OracleTransaction txn = conn.BeginTransaction(IsolationLevel.ReadCommitted);
-            try
+            if (hostel.Length != 0)
             {
-                comm.CommandText = "select * from mess_change where reg_no='" + reg.ToString() + "'";
-                comm.CommandType = CommandType.Text;
-                ds = new DataSet();
-                da = new OracleDataAdapter(comm.CommandText, conn);
-                da.Fill(ds, "mess_change");
-                dt = ds.Tables["mess_change"];
-                int n = dt.Rows.Count;
-                if (n == 0)
+                string ConStr = "DATA SOURCE=DESKTOP-FE4CR37:1521/XE;USER ID=SYSTEM;Password=rampage";
+                OracleConnection conn = new OracleConnection(ConStr);
+                conn.Open();
+                OracleCommand comm = new OracleCommand("", conn);
+                OracleTransaction txn = conn.BeginTransaction(IsolationLevel.ReadCommitted);
+                try
                 {
-                    Mess frm = new Mess(reg);
-                    this.Hide();
-                    frm.ShowDialog();
-                    this.Close();
+                    comm.CommandText = "select * from mess_change where reg_no='" + reg.ToString() + "'";
+                    comm.CommandType = CommandType.Text;
+                    ds = new DataSet();
+                    da = new OracleDataAdapter(comm.CommandText, conn);
+                    da.Fill(ds, "mess_change");
+                    dt = ds.Tables["mess_change"];
+                    int n = dt.Rows.Count;
+                    if (n == 0)
+                    {
+                        Mess frm = new Mess(reg);
+                        this.Hide();
+                        frm.ShowDialog();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Mess change application under approval process\n\nPlease contact your administrator for updates!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    }
                 }
-                else
+                catch (Exception e1)
                 {
-                    MessageBox.Show("Mess change application under approval process\n\nPlease contact your administrator for updates!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    txn.Rollback();
+                    DialogResult dr = MessageBox.Show(e1.ToString(), "Fail", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (dr == DialogResult.OK)
+                    {
+                        EditDetails frm1 = new EditDetails(reg);
+                        this.Hide();
+                        frm1.ShowDialog();
+                        this.Close();
+                    }
                 }
             }
-            catch (Exception e1)
+            else
             {
-                txn.Rollback();
-                DialogResult dr = MessageBox.Show(e1.ToString(), "Fail", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DialogResult dr = MessageBox.Show("Mess not alloted yet\n\nBook a room first!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 if (dr == DialogResult.OK)
                 {
-                    EditDetails frm1 = new EditDetails(reg);
+                    Booking frm1 = new Booking(reg);
                     this.Hide();
                     frm1.ShowDialog();
                     this.Close();
@@ -143,10 +157,58 @@ namespace HostelManagement
         
         private void roomchangeicon_Click(object sender, EventArgs e)
         {
-            Change frm = new Change(reg);
-            this.Hide();
-            frm.ShowDialog();
-            this.Close();
+            if (hostel.Length != 0)
+            {
+                string ConStr = "DATA SOURCE=DESKTOP-FE4CR37:1521/XE;USER ID=SYSTEM;Password=rampage";
+                OracleConnection conn = new OracleConnection(ConStr);
+                conn.Open();
+                OracleCommand comm = new OracleCommand("", conn);
+                OracleTransaction txn = conn.BeginTransaction(IsolationLevel.ReadCommitted);
+                try
+                {
+                    comm.CommandText = "select * from room_change where reg_no='" + reg.ToString() + "'";
+                    comm.CommandType = CommandType.Text;
+                    ds = new DataSet();
+                    da = new OracleDataAdapter(comm.CommandText, conn);
+                    da.Fill(ds, "room_change");
+                    dt = ds.Tables["room_change"];
+                    int n = dt.Rows.Count;
+                    if (n == 0)
+                    {
+                        Change frm = new Change(reg);
+                        this.Hide();
+                        frm.ShowDialog();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Room change application under approval process\n\nPlease contact your administrator for updates!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    }
+                }
+                catch (Exception e1)
+                {
+                    txn.Rollback();
+                    DialogResult dr = MessageBox.Show(e1.ToString(), "Fail", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (dr == DialogResult.OK)
+                    {
+                        EditDetails frm1 = new EditDetails(reg);
+                        this.Hide();
+                        frm1.ShowDialog();
+                        this.Close();
+                    }
+                }
+            }
+            else
+            {
+                DialogResult dr = MessageBox.Show("Room not alloted yet\n\nBook a room first!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                if (dr == DialogResult.OK)
+                {
+                    Booking frm1 = new Booking(reg);
+                    this.Hide();
+                    frm1.ShowDialog();
+                    this.Close();
+                }
+            }
         }
     }
 }

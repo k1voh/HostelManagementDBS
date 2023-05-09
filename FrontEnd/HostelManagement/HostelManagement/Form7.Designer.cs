@@ -37,6 +37,28 @@
             this.messchangeicon = new System.Windows.Forms.PictureBox();
             this.profileicon = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.typelabel = new System.Windows.Forms.Label();
+            this.namelabel = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.blocklabel = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.reglabel = new System.Windows.Forms.Label();
+            this.invalidmess = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.hostelCB = new System.Windows.Forms.ComboBox();
+            this.invalidpass = new System.Windows.Forms.Label();
+            this.passTB = new System.Windows.Forms.TextBox();
+            this.passenter = new System.Windows.Forms.Label();
+            this.apply = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.roomCB = new System.Windows.Forms.ComboBox();
+            this.invalidreason = new System.Windows.Forms.Label();
+            this.reasonTB = new System.Windows.Forms.RichTextBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.issuesicon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomchangeicon)).BeginInit();
@@ -129,13 +151,267 @@
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(470, 119);
+            this.pictureBox6.Location = new System.Drawing.Point(475, 51);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(284, 167);
+            this.pictureBox6.Size = new System.Drawing.Size(253, 149);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 31;
             this.pictureBox6.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Bookman Old Style", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(414, 204);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(365, 40);
+            this.label2.TabIndex = 46;
+            this.label2.Text = "Room Change Portal";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(276, 373);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 21);
+            this.label1.TabIndex = 63;
+            this.label1.Text = "Block:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(276, 413);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(61, 21);
+            this.label4.TabIndex = 62;
+            this.label4.Text = "Type: ";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // typelabel
+            // 
+            this.typelabel.AutoSize = true;
+            this.typelabel.BackColor = System.Drawing.Color.Transparent;
+            this.typelabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.typelabel.Location = new System.Drawing.Point(362, 415);
+            this.typelabel.Name = "typelabel";
+            this.typelabel.Size = new System.Drawing.Size(56, 21);
+            this.typelabel.TabIndex = 61;
+            this.typelabel.Text = "NULL";
+            this.typelabel.Click += new System.EventHandler(this.messlabel_Click);
+            // 
+            // namelabel
+            // 
+            this.namelabel.AutoSize = true;
+            this.namelabel.BackColor = System.Drawing.Color.Transparent;
+            this.namelabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.namelabel.Location = new System.Drawing.Point(362, 334);
+            this.namelabel.Name = "namelabel";
+            this.namelabel.Size = new System.Drawing.Size(56, 21);
+            this.namelabel.TabIndex = 60;
+            this.namelabel.Text = "NULL";
+            this.namelabel.Click += new System.EventHandler(this.namelabel_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(270, 292);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(72, 21);
+            this.label5.TabIndex = 59;
+            this.label5.Text = "Regno: ";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // blocklabel
+            // 
+            this.blocklabel.AutoSize = true;
+            this.blocklabel.BackColor = System.Drawing.Color.Transparent;
+            this.blocklabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.blocklabel.Location = new System.Drawing.Point(362, 373);
+            this.blocklabel.Name = "blocklabel";
+            this.blocklabel.Size = new System.Drawing.Size(56, 21);
+            this.blocklabel.TabIndex = 58;
+            this.blocklabel.Text = "NULL";
+            this.blocklabel.Click += new System.EventHandler(this.blocklabel_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(270, 333);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 21);
+            this.label3.TabIndex = 57;
+            this.label3.Text = "Name: ";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // reglabel
+            // 
+            this.reglabel.AutoSize = true;
+            this.reglabel.BackColor = System.Drawing.Color.Transparent;
+            this.reglabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reglabel.Location = new System.Drawing.Point(362, 293);
+            this.reglabel.Name = "reglabel";
+            this.reglabel.Size = new System.Drawing.Size(56, 21);
+            this.reglabel.TabIndex = 56;
+            this.reglabel.Text = "NULL";
+            this.reglabel.Click += new System.EventHandler(this.reglabel_Click);
+            // 
+            // invalidmess
+            // 
+            this.invalidmess.AutoSize = true;
+            this.invalidmess.BackColor = System.Drawing.Color.Transparent;
+            this.invalidmess.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.invalidmess.ForeColor = System.Drawing.Color.Red;
+            this.invalidmess.Location = new System.Drawing.Point(801, 326);
+            this.invalidmess.Name = "invalidmess";
+            this.invalidmess.Size = new System.Drawing.Size(99, 19);
+            this.invalidmess.TabIndex = 105;
+            this.invalidmess.Text = "*invalid field";
+            this.invalidmess.Visible = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(699, 269);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(185, 21);
+            this.label6.TabIndex = 104;
+            this.label6.Text = "Choose Hostel Block";
+            // 
+            // hostelCB
+            // 
+            this.hostelCB.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hostelCB.FormattingEnabled = true;
+            this.hostelCB.Location = new System.Drawing.Point(691, 293);
+            this.hostelCB.Name = "hostelCB";
+            this.hostelCB.Size = new System.Drawing.Size(201, 27);
+            this.hostelCB.TabIndex = 103;
+            this.hostelCB.Text = "Choose ";
+            // 
+            // invalidpass
+            // 
+            this.invalidpass.AutoSize = true;
+            this.invalidpass.BackColor = System.Drawing.Color.Transparent;
+            this.invalidpass.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.invalidpass.ForeColor = System.Drawing.Color.Red;
+            this.invalidpass.Location = new System.Drawing.Point(805, 554);
+            this.invalidpass.Name = "invalidpass";
+            this.invalidpass.Size = new System.Drawing.Size(132, 19);
+            this.invalidpass.TabIndex = 111;
+            this.invalidpass.Text = "*invalid password";
+            this.invalidpass.Visible = false;
+            // 
+            // passTB
+            // 
+            this.passTB.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passTB.Location = new System.Drawing.Point(687, 523);
+            this.passTB.Name = "passTB";
+            this.passTB.Size = new System.Drawing.Size(205, 25);
+            this.passTB.TabIndex = 110;
+            this.passTB.Visible = false;
+            // 
+            // passenter
+            // 
+            this.passenter.AutoSize = true;
+            this.passenter.BackColor = System.Drawing.Color.Transparent;
+            this.passenter.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passenter.Location = new System.Drawing.Point(645, 497);
+            this.passenter.Name = "passenter";
+            this.passenter.Size = new System.Drawing.Size(292, 19);
+            this.passenter.TabIndex = 109;
+            this.passenter.Text = "Enter password to confirm application";
+            this.passenter.Visible = false;
+            // 
+            // apply
+            // 
+            this.apply.BackColor = System.Drawing.Color.Tan;
+            this.apply.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.apply.Location = new System.Drawing.Point(653, 596);
+            this.apply.Name = "apply";
+            this.apply.Size = new System.Drawing.Size(126, 45);
+            this.apply.TabIndex = 113;
+            this.apply.Text = "Apply";
+            this.apply.UseVisualStyleBackColor = false;
+            this.apply.Click += new System.EventHandler(this.apply_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Red;
+            this.label8.Location = new System.Drawing.Point(801, 442);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(99, 19);
+            this.label8.TabIndex = 116;
+            this.label8.Text = "*invalid field";
+            this.label8.Visible = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(699, 385);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(172, 21);
+            this.label9.TabIndex = 115;
+            this.label9.Text = "Choose Room Type";
+            // 
+            // roomCB
+            // 
+            this.roomCB.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roomCB.FormattingEnabled = true;
+            this.roomCB.Location = new System.Drawing.Point(691, 409);
+            this.roomCB.Name = "roomCB";
+            this.roomCB.Size = new System.Drawing.Size(201, 27);
+            this.roomCB.TabIndex = 114;
+            this.roomCB.Text = "Choose ";
+            // 
+            // invalidreason
+            // 
+            this.invalidreason.AutoSize = true;
+            this.invalidreason.BackColor = System.Drawing.Color.Transparent;
+            this.invalidreason.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.invalidreason.ForeColor = System.Drawing.Color.Red;
+            this.invalidreason.Location = new System.Drawing.Point(460, 596);
+            this.invalidreason.Name = "invalidreason";
+            this.invalidreason.Size = new System.Drawing.Size(99, 19);
+            this.invalidreason.TabIndex = 119;
+            this.invalidreason.Text = "*invalid field";
+            this.invalidreason.Visible = false;
+            // 
+            // reasonTB
+            // 
+            this.reasonTB.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reasonTB.Location = new System.Drawing.Point(253, 497);
+            this.reasonTB.Name = "reasonTB";
+            this.reasonTB.Size = new System.Drawing.Size(318, 96);
+            this.reasonTB.TabIndex = 118;
+            this.reasonTB.Text = "";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(276, 464);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(257, 21);
+            this.label7.TabIndex = 117;
+            this.label7.Text = "Enter reason for room change";
             // 
             // Change
             // 
@@ -144,6 +420,28 @@
             this.BackgroundImage = global::HostelManagement.Properties.Resources.roomchange1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1039, 745);
+            this.Controls.Add(this.invalidreason);
+            this.Controls.Add(this.reasonTB);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.roomCB);
+            this.Controls.Add(this.apply);
+            this.Controls.Add(this.invalidpass);
+            this.Controls.Add(this.passTB);
+            this.Controls.Add(this.passenter);
+            this.Controls.Add(this.invalidmess);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.hostelCB);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.typelabel);
+            this.Controls.Add(this.namelabel);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.blocklabel);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.reglabel);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.issuelabel);
@@ -178,5 +476,27 @@
         private System.Windows.Forms.PictureBox messchangeicon;
         private System.Windows.Forms.PictureBox profileicon;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label typelabel;
+        private System.Windows.Forms.Label namelabel;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label blocklabel;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label reglabel;
+        private System.Windows.Forms.Label invalidmess;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox hostelCB;
+        private System.Windows.Forms.Label invalidpass;
+        private System.Windows.Forms.TextBox passTB;
+        private System.Windows.Forms.Label passenter;
+        private System.Windows.Forms.Button apply;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox roomCB;
+        private System.Windows.Forms.Label invalidreason;
+        private System.Windows.Forms.RichTextBox reasonTB;
+        private System.Windows.Forms.Label label7;
     }
 }

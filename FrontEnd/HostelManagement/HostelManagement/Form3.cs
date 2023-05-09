@@ -100,7 +100,7 @@ namespace HostelManagement
                 {     
                     conn.Open();
                     OracleCommand comm = new OracleCommand("", conn);
-                    comm.CommandText = "select email from usertype where reg_no=" + reg;
+                    comm.CommandText = "select email from usertype where reg_no='" + reg +"'";
                     comm.CommandType = CommandType.Text;
                     ds = new DataSet();
                     da = new OracleDataAdapter(comm.CommandText, conn);
@@ -129,7 +129,7 @@ namespace HostelManagement
                         OracleTransaction txn = conn.BeginTransaction(IsolationLevel.ReadCommitted);
                         try
                         {
-                            comm.CommandText = "update usertype set password='" + passTB.Text + "' where reg_no=" + reg.ToString();
+                            comm.CommandText = "update usertype set password='" + passTB.Text + "' where reg_no='" + reg.ToString() +"'";
                             comm.CommandType = CommandType.Text;
                             comm.ExecuteNonQuery();
                             txn.Commit();

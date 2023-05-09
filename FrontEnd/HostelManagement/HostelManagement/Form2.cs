@@ -104,7 +104,7 @@ namespace HostelManagement
                 reqcaptcha.Visible= false;
             }
             // Ensures registration number to have digits starting from the digit 0,1,2
-            if (!reqreg.Visible && (!IsNumeric(regTB.Text) || (regTB.Text[0]!='2' && regTB.Text[0]!='1' && regTB.Text[0]!='0')))
+            if (!reqreg.Visible && !IsNumeric(regTB.Text) && regTB.Text[0]!='2' && regTB.Text[0]!='1' && regTB.Text[0]!='0')
             {
                 invalidreg.Visible = true;
             }
