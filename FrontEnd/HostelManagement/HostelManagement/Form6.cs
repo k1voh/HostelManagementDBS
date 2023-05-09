@@ -251,26 +251,7 @@ namespace HostelManagement
                     OracleTransaction txn = conn.BeginTransaction(IsolationLevel.ReadCommitted);
                     try
                     {
-                        //int messno;
-                        comm.CommandText = "select * from mess where mess_name='"+messCB.SelectedItem.ToString()+"'";
-                        comm.CommandType = CommandType.Text;
-                        ds = new DataSet();
-                        da = new OracleDataAdapter(comm.CommandText, conn);
-                        da.Fill(ds, "mess");
-                        dt = ds.Tables["mess"];
-                        dr = dt.Rows[0];
-                        string strnewmess = dr["mess_id"].ToString();
-                        int.TryParse(strnewmess, out newmess);
-                        comm.CommandText = "select * from mess where mess_name='" + messlabel.Text + "'";
-                        comm.CommandType = CommandType.Text;
-                        ds = new DataSet();
-                        da = new OracleDataAdapter(comm.CommandText, conn);
-                        da.Fill(ds, "mess");
-                        dt = ds.Tables["mess"];
-                        dr = dt.Rows[0];
-                        string stroldmess = dr["mess_id"].ToString();
-                        int.TryParse(stroldmess, out oldmess);
-                        comm.CommandText = "insert into mess_change values('"+reglabel.Text+"',"+oldmess+","+newmess+")";
+                        comm.CommandText = "insert into mess_change values('" + reglabel.Text + "','" + messlabel.Text + "','" + messCB.SelectedItem.ToString() + "')";
                         comm.CommandType = CommandType.Text;
                         comm.ExecuteNonQuery();
                         txn.Commit();

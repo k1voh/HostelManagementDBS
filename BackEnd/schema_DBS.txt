@@ -119,8 +119,8 @@ create table B21(
 
 create table mess_change(
     reg_no varchar(20) references student(registration_number),
-    old_mess int references mess(mess_id),
-    new_mess int references mess(mess_id));
+    old_mess varchar(20),
+    new_mess varchar(20));
 
 create table room_change(
     reg_no varchar(20) references student(registration_number),
