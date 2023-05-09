@@ -71,25 +71,11 @@ create table caretaker(
     shift_timings varchar(10));
 
 
-create table complaints(
-    reg_no varchar(40) references student(registration_number), 
-    issue_id int primary key,
-    issue_type varchar(50), 
-    issue varchar(100), 
-    ct_id varchar(20) references caretaker(ct_id), 
-    issue_status varchar(50), 
-    constraint chk_status check (issue_status = 'COMPLETED' or issue_status = 'NOT COMPLETED'));
-
-
 create table administrator(
     admin_id varchar(20) references usertype(reg_no) primary key,
     name varchar(20) not null,
     department varchar(20));
 
-
- create table changecounter(
-    facility varchar(20) primary key,
-    counter int);
 
 create table B10(
     sno int primary key,
@@ -145,3 +131,14 @@ create table room_change(
     reason varchar(20),
     constraint chk_ID0 check(new_hostel_type = '01AC' or new_hostel_type = '01NC' or new_hostel_type = '02AC' or new_hostel_type = '02NC'),
     constraint chk_ID1 check(old_hostel_type = '01AC' or old_hostel_type = '01NC' or old_hostel_type = '02AC' or old_hostel_type = '02NC'));
+
+create table complaints(
+    reg_no varchar(20) references student(registration_number),
+    issue_id varchar(10) primary key,
+    issue_type varchar(30),
+    problem varchar(30),
+    status varchar(10),
+    constraint chk_ID2 check(status='PENDING' or status='RESOLVED'));
+
+create table issue_counter(
+    counter int);

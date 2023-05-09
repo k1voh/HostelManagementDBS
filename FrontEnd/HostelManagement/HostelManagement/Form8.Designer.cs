@@ -38,6 +38,22 @@
             this.profileicon = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.blocklabel = new System.Windows.Forms.Label();
+            this.messlabel = new System.Windows.Forms.Label();
+            this.reglabel = new System.Windows.Forms.Label();
+            this.namelabel = new System.Windows.Forms.Label();
+            this.invalidtype = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.typeCB = new System.Windows.Forms.ComboBox();
+            this.invalidproblem = new System.Windows.Forms.Label();
+            this.l1 = new System.Windows.Forms.Label();
+            this.problemCB = new System.Windows.Forms.ComboBox();
+            this.invalidesc = new System.Windows.Forms.Label();
+            this.descTB = new System.Windows.Forms.RichTextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.suggestTB = new System.Windows.Forms.RichTextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.post = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.issuesicon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomchangeicon)).BeginInit();
@@ -144,11 +160,202 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Bookman Old Style", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(407, 241);
+            this.label2.Location = new System.Drawing.Point(425, 243);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(399, 40);
             this.label2.TabIndex = 39;
             this.label2.Text = "Issues and Complaints";
+            // 
+            // blocklabel
+            // 
+            this.blocklabel.AutoSize = true;
+            this.blocklabel.BackColor = System.Drawing.Color.Transparent;
+            this.blocklabel.Font = new System.Drawing.Font("Bookman Old Style", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.blocklabel.Location = new System.Drawing.Point(268, 168);
+            this.blocklabel.Name = "blocklabel";
+            this.blocklabel.Size = new System.Drawing.Size(61, 21);
+            this.blocklabel.TabIndex = 113;
+            this.blocklabel.Text = "NULL";
+            // 
+            // messlabel
+            // 
+            this.messlabel.AutoSize = true;
+            this.messlabel.BackColor = System.Drawing.Color.Transparent;
+            this.messlabel.Font = new System.Drawing.Font("Bookman Old Style", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.messlabel.Location = new System.Drawing.Point(868, 168);
+            this.messlabel.Name = "messlabel";
+            this.messlabel.Size = new System.Drawing.Size(61, 21);
+            this.messlabel.TabIndex = 116;
+            this.messlabel.Text = "NULL";
+            // 
+            // reglabel
+            // 
+            this.reglabel.AutoSize = true;
+            this.reglabel.BackColor = System.Drawing.Color.Transparent;
+            this.reglabel.Font = new System.Drawing.Font("Bookman Old Style", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reglabel.Location = new System.Drawing.Point(268, 114);
+            this.reglabel.Name = "reglabel";
+            this.reglabel.Size = new System.Drawing.Size(61, 21);
+            this.reglabel.TabIndex = 111;
+            this.reglabel.Text = "NULL";
+            // 
+            // namelabel
+            // 
+            this.namelabel.AutoSize = true;
+            this.namelabel.BackColor = System.Drawing.Color.Transparent;
+            this.namelabel.Font = new System.Drawing.Font("Bookman Old Style", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.namelabel.Location = new System.Drawing.Point(850, 114);
+            this.namelabel.Name = "namelabel";
+            this.namelabel.Size = new System.Drawing.Size(61, 21);
+            this.namelabel.TabIndex = 120;
+            this.namelabel.Text = "NULL";
+            // 
+            // invalidtype
+            // 
+            this.invalidtype.AutoSize = true;
+            this.invalidtype.BackColor = System.Drawing.Color.Transparent;
+            this.invalidtype.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.invalidtype.ForeColor = System.Drawing.Color.Red;
+            this.invalidtype.Location = new System.Drawing.Point(403, 387);
+            this.invalidtype.Name = "invalidtype";
+            this.invalidtype.Size = new System.Drawing.Size(99, 19);
+            this.invalidtype.TabIndex = 123;
+            this.invalidtype.Text = "*invalid field";
+            this.invalidtype.Visible = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(350, 330);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(102, 21);
+            this.label6.TabIndex = 122;
+            this.label6.Text = "Issue Type";
+            // 
+            // typeCB
+            // 
+            this.typeCB.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.typeCB.FormattingEnabled = true;
+            this.typeCB.Items.AddRange(new object[] {
+            "Hostel Related",
+            "Mess Related"});
+            this.typeCB.Location = new System.Drawing.Point(293, 354);
+            this.typeCB.Name = "typeCB";
+            this.typeCB.Size = new System.Drawing.Size(218, 27);
+            this.typeCB.TabIndex = 121;
+            this.typeCB.Text = "Choose ";
+            // 
+            // invalidproblem
+            // 
+            this.invalidproblem.AutoSize = true;
+            this.invalidproblem.BackColor = System.Drawing.Color.Transparent;
+            this.invalidproblem.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.invalidproblem.ForeColor = System.Drawing.Color.Red;
+            this.invalidproblem.Location = new System.Drawing.Point(830, 387);
+            this.invalidproblem.Name = "invalidproblem";
+            this.invalidproblem.Size = new System.Drawing.Size(99, 19);
+            this.invalidproblem.TabIndex = 126;
+            this.invalidproblem.Text = "*invalid field";
+            this.invalidproblem.Visible = false;
+            // 
+            // l1
+            // 
+            this.l1.AutoSize = true;
+            this.l1.BackColor = System.Drawing.Color.Transparent;
+            this.l1.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.l1.Location = new System.Drawing.Point(783, 330);
+            this.l1.Name = "l1";
+            this.l1.Size = new System.Drawing.Size(80, 21);
+            this.l1.TabIndex = 125;
+            this.l1.Text = "Problem";
+            // 
+            // problemCB
+            // 
+            this.problemCB.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.problemCB.FormattingEnabled = true;
+            this.problemCB.Items.AddRange(new object[] {
+            "Roommate issues",
+            "Water dispenser related",
+            "Laundry related",
+            "Room cleaning related",
+            "AC not working",
+            "Furniture change",
+            "Bad mess food quality",
+            "Sanitation Issues",
+            "Other"});
+            this.problemCB.Location = new System.Drawing.Point(714, 357);
+            this.problemCB.Name = "problemCB";
+            this.problemCB.Size = new System.Drawing.Size(218, 27);
+            this.problemCB.TabIndex = 127;
+            this.problemCB.Text = "Choose ";
+            this.problemCB.SelectedIndexChanged += new System.EventHandler(this.hostelproblem_SelectedIndexChanged);
+            // 
+            // invalidesc
+            // 
+            this.invalidesc.AutoSize = true;
+            this.invalidesc.BackColor = System.Drawing.Color.Transparent;
+            this.invalidesc.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.invalidesc.ForeColor = System.Drawing.Color.Red;
+            this.invalidesc.Location = new System.Drawing.Point(459, 560);
+            this.invalidesc.Name = "invalidesc";
+            this.invalidesc.Size = new System.Drawing.Size(99, 19);
+            this.invalidesc.TabIndex = 130;
+            this.invalidesc.Text = "*invalid field";
+            this.invalidesc.Visible = false;
+            // 
+            // descTB
+            // 
+            this.descTB.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descTB.Location = new System.Drawing.Point(252, 461);
+            this.descTB.Name = "descTB";
+            this.descTB.Size = new System.Drawing.Size(318, 96);
+            this.descTB.TabIndex = 129;
+            this.descTB.Text = "";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(320, 437);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(182, 21);
+            this.label7.TabIndex = 128;
+            this.label7.Text = "Problem Description";
+            // 
+            // suggestTB
+            // 
+            this.suggestTB.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.suggestTB.Location = new System.Drawing.Point(665, 461);
+            this.suggestTB.Name = "suggestTB";
+            this.suggestTB.Size = new System.Drawing.Size(318, 96);
+            this.suggestTB.TabIndex = 132;
+            this.suggestTB.Text = "";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(740, 437);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(171, 21);
+            this.label3.TabIndex = 131;
+            this.label3.Text = "Suggestions (if any)";
+            // 
+            // post
+            // 
+            this.post.BackColor = System.Drawing.Color.PeachPuff;
+            this.post.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.post.Location = new System.Drawing.Point(552, 606);
+            this.post.Name = "post";
+            this.post.Size = new System.Drawing.Size(126, 45);
+            this.post.TabIndex = 134;
+            this.post.Text = "Post";
+            this.post.UseVisualStyleBackColor = false;
+            this.post.Click += new System.EventHandler(this.post_Click);
             // 
             // Issues
             // 
@@ -157,6 +364,22 @@
             this.BackgroundImage = global::HostelManagement.Properties.Resources.issues11;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1039, 745);
+            this.Controls.Add(this.post);
+            this.Controls.Add(this.suggestTB);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.invalidesc);
+            this.Controls.Add(this.descTB);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.problemCB);
+            this.Controls.Add(this.invalidproblem);
+            this.Controls.Add(this.l1);
+            this.Controls.Add(this.invalidtype);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.typeCB);
+            this.Controls.Add(this.namelabel);
+            this.Controls.Add(this.messlabel);
+            this.Controls.Add(this.blocklabel);
+            this.Controls.Add(this.reglabel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox1);
@@ -193,5 +416,21 @@
         private System.Windows.Forms.PictureBox profileicon;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label blocklabel;
+        private System.Windows.Forms.Label messlabel;
+        private System.Windows.Forms.Label reglabel;
+        private System.Windows.Forms.Label namelabel;
+        private System.Windows.Forms.Label invalidtype;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox typeCB;
+        private System.Windows.Forms.Label invalidproblem;
+        private System.Windows.Forms.Label l1;
+        private System.Windows.Forms.ComboBox problemCB;
+        private System.Windows.Forms.Label invalidesc;
+        private System.Windows.Forms.RichTextBox descTB;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.RichTextBox suggestTB;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button post;
     }
 }

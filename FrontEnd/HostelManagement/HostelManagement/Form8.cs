@@ -48,6 +48,18 @@ namespace HostelManagement
                 gender = dr["gender"].ToString();
                 branch = dr["branch"].ToString();
                 hostel = dr["hostel_id"].ToString();
+                blocklabel.Text = "Block "+hostel;
+                reglabel.Text = reg.ToString();
+                namelabel.Text = dr["name"].ToString();
+                string mess = dr["mess_id"].ToString();
+                comm.CommandText = "select * from mess where mess_id = '" + mess + "'";
+                comm.CommandType = CommandType.Text;
+                ds = new DataSet();
+                da = new OracleDataAdapter(comm.CommandText, conn);
+                da.Fill(ds, "mess");
+                dt = ds.Tables["mess"];
+                dr = dt.Rows[i];
+                messlabel.Text = dr["mess_name"].ToString();
                 conn.Close();
             }
             catch (Exception e1)
@@ -207,6 +219,84 @@ namespace HostelManagement
                     this.Hide();
                     frm1.ShowDialog();
                     this.Close();
+                }
+            }
+        }
+
+        private void hostelproblem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void post_Click(object sender, EventArgs e)
+        {
+            if (typeCB.SelectedIndex <= -1)
+            {
+                invalidtype.Visible = true;
+            }
+            else
+            {
+                invalidtype.Visible = false;
+            }
+            if (problemCB.SelectedIndex <= -1)
+            {
+                invalidproblem.Visible = true;
+            }
+            else
+            {
+                invalidproblem.Visible = false;
+            }
+            if (descTB.Text.Length == 0)
+            {
+                invalidesc.Visible = true;
+            }
+            else
+            {
+                invalidesc.Visible = false;
+            }
+            if(!invalidesc.Visible && !invalidproblem.Visible && !invalidtype.Visible){
+                DialogResult dr2 = MessageBox.Show("Thank you for your feedback!", "Complaint Posted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (dr2 == DialogResult.OK)
+                {
+                    string ConStr = "DATA SOURCE=DESKTOP-FE4CR37:1521/XE;USER ID=SYSTEM;Password=rampage";
+                    OracleConnection conn = new OracleConnection(ConStr);
+                    conn.Open();
+                    OracleCommand comm = new OracleCommand("", conn);
+                    OracleTransaction txn = conn.BeginTransaction(IsolationLevel.ReadCommitted);
+                    try
+                    {
+                        comm.CommandText = "select max(issue_id) from complaints";
+                        comm.CommandType = CommandType.Text;
+                        ds = new DataSet();
+                        da = new OracleDataAdapter(comm.CommandText, conn);
+                        da.Fill(ds, "complaints");
+                        dt = ds.Tables["complaints"];
+                        dr = dt.Rows[0];
+                        string issue_id = dr["max(issue_id)"].ToString();
+                        int id;
+                        int.TryParse(issue_id,out id);
+                        id++;
+                        comm.CommandText = "insert into complaints values('" + reglabel.Text + "','"+id+"','" + typeCB.SelectedItem.ToString() + "','" + problemCB.SelectedItem.ToString() + "','PENDING')";
+                        comm.CommandType = CommandType.Text;
+                        comm.ExecuteNonQuery();
+                        txn.Commit();
+                        Profile frm = new Profile(reg);
+                        this.Hide();
+                        frm.ShowDialog();
+                        this.Close();
+                    }
+                    catch (Exception e1)
+                    {
+                        txn.Rollback();
+                        DialogResult dr = MessageBox.Show(e1.ToString(), "Fail", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        if (dr == DialogResult.OK)
+                        {
+                            EditDetails frm1 = new EditDetails(reg);
+                            this.Hide();
+                            frm1.ShowDialog();
+                            this.Close();
+                        }
+                    }
                 }
             }
         }

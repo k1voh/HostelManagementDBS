@@ -251,18 +251,22 @@ namespace HostelManagement
 
         private void apply_Click(object sender, EventArgs e)
         {
-            if (roomCB.SelectedItem.ToString() == room_type && hostelCB.SelectedItem.ToString() == blocklabel.Text)
-            {
-                MessageBox.Show("Cannot book the same type of room again!", "Not a valid option", MessageBoxButtons.OK, MessageBoxIcon.Error );
-                return;
-            }
+            
             if (hostelCB.SelectedIndex <= -1)
             {
-                invalidmess.Visible = true;
+                invalidhostel.Visible = true;
             }
             else
             {
-                invalidmess.Visible = false;
+                invalidhostel.Visible = false;
+            }
+            if (roomCB.SelectedIndex <= -1)
+            {
+                invalidroom.Visible = true;
+            }
+            else
+            {
+                invalidroom.Visible = false;
             }
             if (reasonTB.Text == string.Empty)
             {
@@ -272,7 +276,7 @@ namespace HostelManagement
             {
                 invalidreason.Visible = false;
             }
-            if (!invalidreason.Visible && !invalidmess.Visible)
+            if (!invalidreason.Visible && !invalidhostel.Visible)
             {
 
                 if (!passTB.Visible)
@@ -290,7 +294,15 @@ namespace HostelManagement
             {
                 invalidpass.Visible = false;
             }
-            if (!invalidpass.Visible && !invalidmess.Visible && !invalidreason.Visible && passTB.Visible)
+            if(!invalidroom.Visible && !invalidhostel.Visible){
+                if (roomCB.SelectedItem.ToString() == room_type && hostelCB.SelectedItem.ToString() == blocklabel.Text)
+                {
+                    MessageBox.Show("Cannot book the same type of room again!", "Not a valid option", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+            
+            if (!invalidpass.Visible && !invalidhostel.Visible && !invalidreason.Visible && passTB.Visible && !invalidroom.Visible)
             {
                 DialogResult dr2 = MessageBox.Show("Applied for mess change successfully!", "Request Submitted Successfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 if (dr2 == DialogResult.OK)
