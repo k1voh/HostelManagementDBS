@@ -48,6 +48,10 @@ namespace HostelManagement
                 da.Fill(ds, "mess_change");
                 dt = ds.Tables["mess_change"];
                 int n = dt.Rows.Count;
+                if (n == 0)
+                {
+                    requestLB.Text = "No new mess change applicatons...";
+                }
                 for (int j = 0; j < n; j++)
                 {
                     dr = dt.Rows[j];

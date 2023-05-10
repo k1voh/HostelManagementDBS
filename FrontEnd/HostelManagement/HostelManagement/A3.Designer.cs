@@ -253,7 +253,7 @@
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MessAdmin";
-            this.Text = "A3";
+            this.Text = "Mess Change Approval";
             this.Load += new System.EventHandler(this.MessAdmin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profileicon)).EndInit();
