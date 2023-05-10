@@ -67,6 +67,7 @@
             this.detailsicon.Size = new System.Drawing.Size(61, 67);
             this.detailsicon.TabIndex = 142;
             this.detailsicon.TabStop = false;
+            this.detailsicon.Click += new System.EventHandler(this.detailsicon_Click);
             // 
             // profileicon
             // 
@@ -109,6 +110,7 @@
             this.issuesicon.Size = new System.Drawing.Size(61, 58);
             this.issuesicon.TabIndex = 137;
             this.issuesicon.TabStop = false;
+            this.issuesicon.Click += new System.EventHandler(this.issuesicon_Click);
             // 
             // pictureBox6
             // 
@@ -143,6 +145,7 @@
             this.button2.TabIndex = 145;
             this.button2.Text = "Logout";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label1
             // 

@@ -28,6 +28,7 @@ namespace HostelManagement
             InitializeComponent();
             reg = regno;
             reglabel.Text = reg.ToString();
+            requestLB.ScrollAlwaysVisible = true;
             string ConStr = "DATA SOURCE=DESKTOP-FE4CR37:1521/XE;USER ID=SYSTEM;Password=rampage";
             OracleConnection conn = new OracleConnection(ConStr);
             try

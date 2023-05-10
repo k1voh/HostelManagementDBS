@@ -40,7 +40,6 @@
             this.invalidhostel = new System.Windows.Forms.Label();
             this.l1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.invalidsearch = new System.Windows.Forms.Label();
             this.searchTB = new System.Windows.Forms.TextBox();
             this.reglabel = new System.Windows.Forms.Label();
             this.namelabel = new System.Windows.Forms.Label();
@@ -193,19 +192,6 @@
             this.label3.TabIndex = 138;
             this.label3.Text = "Search";
             // 
-            // invalidsearch
-            // 
-            this.invalidsearch.AutoSize = true;
-            this.invalidsearch.BackColor = System.Drawing.Color.Transparent;
-            this.invalidsearch.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.invalidsearch.ForeColor = System.Drawing.Color.Red;
-            this.invalidsearch.Location = new System.Drawing.Point(794, 295);
-            this.invalidsearch.Name = "invalidsearch";
-            this.invalidsearch.Size = new System.Drawing.Size(132, 19);
-            this.invalidsearch.TabIndex = 141;
-            this.invalidsearch.Text = "*invalid password";
-            this.invalidsearch.Visible = false;
-            // 
             // searchTB
             // 
             this.searchTB.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -332,7 +318,6 @@
             this.Controls.Add(this.searchbutton);
             this.Controls.Add(this.reglabel);
             this.Controls.Add(this.namelabel);
-            this.Controls.Add(this.invalidsearch);
             this.Controls.Add(this.searchTB);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.hostelCB);
@@ -374,7 +359,6 @@
         private System.Windows.Forms.Label invalidhostel;
         private System.Windows.Forms.Label l1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label invalidsearch;
         private System.Windows.Forms.TextBox searchTB;
         private System.Windows.Forms.Label reglabel;
         private System.Windows.Forms.Label namelabel;

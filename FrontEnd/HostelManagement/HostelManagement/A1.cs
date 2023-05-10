@@ -19,7 +19,6 @@ namespace HostelManagement
         DataTable dt;
         DataRow dr;
         int i = 0;
-        string name;
         string reg;
         public ProfileAdmin(string regno)
         {
