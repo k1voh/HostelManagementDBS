@@ -36,11 +36,11 @@
             this.roomchangeicon = new System.Windows.Forms.PictureBox();
             this.messchangeicon = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.RequestLB = new System.Windows.Forms.ListBox();
+            this.requestLB = new System.Windows.Forms.ListBox();
             this.reglabel = new System.Windows.Forms.Label();
             this.namelabel = new System.Windows.Forms.Label();
             this.apply = new System.Windows.Forms.Button();
-            this.invalidesc = new System.Windows.Forms.Label();
+            this.approve = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -137,16 +137,16 @@
             this.pictureBox6.TabIndex = 88;
             this.pictureBox6.TabStop = false;
             // 
-            // RequestLB
+            // requestLB
             // 
-            this.RequestLB.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RequestLB.FormattingEnabled = true;
-            this.RequestLB.ItemHeight = 21;
-            this.RequestLB.Location = new System.Drawing.Point(383, 279);
-            this.RequestLB.Name = "RequestLB";
-            this.RequestLB.Size = new System.Drawing.Size(454, 298);
-            this.RequestLB.TabIndex = 90;
-            this.RequestLB.SelectedIndexChanged += new System.EventHandler(this.RequestCB_SelectedIndexChanged);
+            this.requestLB.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.requestLB.FormattingEnabled = true;
+            this.requestLB.ItemHeight = 21;
+            this.requestLB.Location = new System.Drawing.Point(383, 279);
+            this.requestLB.Name = "requestLB";
+            this.requestLB.Size = new System.Drawing.Size(454, 298);
+            this.requestLB.TabIndex = 90;
+            this.requestLB.SelectedIndexChanged += new System.EventHandler(this.RequestCB_SelectedIndexChanged);
             // 
             // reglabel
             // 
@@ -180,19 +180,20 @@
             this.apply.TabIndex = 114;
             this.apply.Text = "Approve";
             this.apply.UseVisualStyleBackColor = false;
+            this.apply.Click += new System.EventHandler(this.apply_Click);
             // 
-            // invalidesc
+            // approve
             // 
-            this.invalidesc.AutoSize = true;
-            this.invalidesc.BackColor = System.Drawing.Color.Transparent;
-            this.invalidesc.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.invalidesc.ForeColor = System.Drawing.Color.Red;
-            this.invalidesc.Location = new System.Drawing.Point(683, 626);
-            this.invalidesc.Name = "invalidesc";
-            this.invalidesc.Size = new System.Drawing.Size(186, 19);
-            this.invalidesc.TabIndex = 131;
-            this.invalidesc.Text = "*select request to approve";
-            this.invalidesc.Visible = false;
+            this.approve.AutoSize = true;
+            this.approve.BackColor = System.Drawing.Color.Transparent;
+            this.approve.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.approve.ForeColor = System.Drawing.Color.Red;
+            this.approve.Location = new System.Drawing.Point(683, 626);
+            this.approve.Name = "approve";
+            this.approve.Size = new System.Drawing.Size(186, 19);
+            this.approve.TabIndex = 131;
+            this.approve.Text = "*select request to approve";
+            this.approve.Visible = false;
             // 
             // label1
             // 
@@ -237,11 +238,11 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.invalidesc);
+            this.Controls.Add(this.approve);
             this.Controls.Add(this.apply);
             this.Controls.Add(this.reglabel);
             this.Controls.Add(this.namelabel);
-            this.Controls.Add(this.RequestLB);
+            this.Controls.Add(this.requestLB);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.profileicon);
@@ -274,11 +275,11 @@
         private System.Windows.Forms.PictureBox roomchangeicon;
         private System.Windows.Forms.PictureBox messchangeicon;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.ListBox RequestLB;
+        private System.Windows.Forms.ListBox requestLB;
         private System.Windows.Forms.Label reglabel;
         private System.Windows.Forms.Label namelabel;
         private System.Windows.Forms.Button apply;
-        private System.Windows.Forms.Label invalidesc;
+        private System.Windows.Forms.Label approve;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

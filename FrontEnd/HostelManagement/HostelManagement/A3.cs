@@ -57,7 +57,7 @@ namespace HostelManagement
                     string student_reg = dr["reg_no"].ToString();
                     string oldname = dr["old_mess"].ToString();
                     string newname = dr["new_mess"].ToString();
-                    RequestLB.Items.Add("       "+student_reg+"  \t "+oldname+"\t   "+newname);
+                    requestLB.Items.Add("       "+student_reg+"  \t "+oldname+"\t   "+newname);
                 }
                 conn.Close();
 
@@ -104,6 +104,41 @@ namespace HostelManagement
         private void RequestCB_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void apply_Click(object sender, EventArgs e)
+        {
+            if (requestLB.SelectedIndex <= -1)
+            {
+                approve.Visible = true;
+            }
+            else
+            {
+                approve.Visible = false;
+            }
+            if(!approve.Visible){
+                MessageBox.Show("Approved mess change request!", "Successfully Approved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string ConStr = "DATA SOURCE=DESKTOP-FE4CR37:1521/XE;USER ID=SYSTEM;Password=rampage";
+                OracleConnection conn = new OracleConnection(ConStr);
+                conn.Open();
+                OracleCommand comm = new OracleCommand("", conn);
+                OracleTransaction txn = conn.BeginTransaction(IsolationLevel.ReadCommitted);
+                try
+                {
+                    /*comm.CommandText = "delete from mess_change where ";
+                    comm.CommandType = CommandType.Text;
+                    comm.ExecuteNonQuery();
+                    txn.Commit();
+                     * */
+                    requestLB.Items.RemoveAt(requestLB.SelectedIndex);
+                    
+                }
+                catch (Exception e1)
+                {
+                    txn.Rollback();
+                    MessageBox.Show(e1.ToString(), "Fail", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }
