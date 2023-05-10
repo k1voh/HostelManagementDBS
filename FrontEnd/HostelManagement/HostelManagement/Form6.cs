@@ -241,7 +241,7 @@ namespace HostelManagement
             }
             if(!invalidpass.Visible && !invalidmess.Visible && !invalidreason.Visible && passTB.Visible)
             {
-                DialogResult dr2 = MessageBox.Show("Applied for mess change successfully!", "Request Submitted Successfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DialogResult dr2 = MessageBox.Show("Applied for hostel change successfully!", "Request Submitted Successfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 if (dr2 == DialogResult.OK)
                 {
                     string ConStr = "DATA SOURCE=DESKTOP-FE4CR37:1521/XE;USER ID=SYSTEM;Password=rampage";
@@ -273,6 +273,18 @@ namespace HostelManagement
                         }
                     }
                 }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Are you sure you want to logout?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (dr == DialogResult.OK)
+            {
+                LOGIN frm = new LOGIN();
+                this.Hide();
+                frm.ShowDialog();
+                this.Close();
             }
         }
     }

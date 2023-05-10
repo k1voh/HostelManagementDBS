@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MessAdmin));
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.detailsicon = new System.Windows.Forms.PictureBox();
             this.profileicon = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.issuelabel = new System.Windows.Forms.Label();
@@ -44,7 +44,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.button2 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.detailsicon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profileicon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomchangeicon)).BeginInit();
@@ -52,18 +53,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox2
+            // detailsicon
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.BackgroundImage = global::HostelManagement.Properties.Resources.stats_icon;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(77, 551);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(81, 84);
-            this.pictureBox2.TabIndex = 87;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.detailsicon.BackColor = System.Drawing.Color.Transparent;
+            this.detailsicon.BackgroundImage = global::HostelManagement.Properties.Resources.searchicon1;
+            this.detailsicon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.detailsicon.Location = new System.Drawing.Point(91, 564);
+            this.detailsicon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.detailsicon.Name = "detailsicon";
+            this.detailsicon.Size = new System.Drawing.Size(61, 67);
+            this.detailsicon.TabIndex = 87;
+            this.detailsicon.TabStop = false;
+            this.detailsicon.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // profileicon
             // 
@@ -194,6 +195,7 @@
             this.approve.TabIndex = 131;
             this.approve.Text = "*select request to approve";
             this.approve.Visible = false;
+            this.approve.Click += new System.EventHandler(this.approve_Click);
             // 
             // label1
             // 
@@ -228,6 +230,18 @@
             this.label3.TabIndex = 134;
             this.label3.Text = "New";
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Beige;
+            this.button2.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(889, 683);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(126, 30);
+            this.button2.TabIndex = 135;
+            this.button2.Text = "Logout";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // MessAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -235,6 +249,7 @@
             this.BackgroundImage = global::HostelManagement.Properties.Resources.adminmesschange;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1039, 745);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -244,7 +259,7 @@
             this.Controls.Add(this.namelabel);
             this.Controls.Add(this.requestLB);
             this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.detailsicon);
             this.Controls.Add(this.profileicon);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.issuelabel);
@@ -255,7 +270,7 @@
             this.Name = "MessAdmin";
             this.Text = "Mess Change Approval";
             this.Load += new System.EventHandler(this.MessAdmin_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.detailsicon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profileicon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomchangeicon)).EndInit();
@@ -268,7 +283,7 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox detailsicon;
         private System.Windows.Forms.PictureBox profileicon;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label issuelabel;
@@ -283,5 +298,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button2;
     }
 }

@@ -521,6 +521,18 @@ namespace HostelManagement
                 }
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Are you sure you want to logout?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (dr == DialogResult.OK)
+            {
+                LOGIN frm = new LOGIN();
+                this.Hide();
+                frm.ShowDialog();
+                this.Close();
+            }
+        }
     }
 }
 

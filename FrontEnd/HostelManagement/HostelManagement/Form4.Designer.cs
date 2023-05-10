@@ -70,6 +70,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.messlabel = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.messchangeicon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roombookicon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomchangeicon)).BeginInit();
@@ -531,6 +532,18 @@
             this.label12.TabIndex = 50;
             this.label12.Text = "Mess Name: ";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Beige;
+            this.button1.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(880, 681);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(126, 30);
+            this.button1.TabIndex = 52;
+            this.button1.Text = "Logout";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -538,6 +551,7 @@
             this.BackgroundImage = global::HostelManagement.Properties.Resources.profilepage;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1039, 745);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.messlabel);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.feeslabel);
@@ -637,6 +651,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label messlabel;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button button1;
 
     }
 }

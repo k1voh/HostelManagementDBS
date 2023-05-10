@@ -44,14 +44,15 @@
             this.issuelabel = new System.Windows.Forms.Label();
             this.roomchangeicon = new System.Windows.Forms.PictureBox();
             this.messchangeicon = new System.Windows.Forms.PictureBox();
-            this.statsicon = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.detailsicon = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.profileicon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomchangeicon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.messchangeicon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statsicon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.detailsicon)).BeginInit();
             this.SuspendLayout();
             // 
             // editbutton
@@ -221,18 +222,6 @@
             this.messchangeicon.TabStop = false;
             this.messchangeicon.Click += new System.EventHandler(this.messchangeicon_Click);
             // 
-            // statsicon
-            // 
-            this.statsicon.BackColor = System.Drawing.Color.Transparent;
-            this.statsicon.BackgroundImage = global::HostelManagement.Properties.Resources.stats_icon;
-            this.statsicon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.statsicon.Location = new System.Drawing.Point(62, 555);
-            this.statsicon.Name = "statsicon";
-            this.statsicon.Size = new System.Drawing.Size(81, 84);
-            this.statsicon.TabIndex = 75;
-            this.statsicon.TabStop = false;
-            this.statsicon.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -244,6 +233,31 @@
             this.label1.TabIndex = 76;
             this.label1.Text = "Name: ";
             // 
+            // detailsicon
+            // 
+            this.detailsicon.BackColor = System.Drawing.Color.Transparent;
+            this.detailsicon.BackgroundImage = global::HostelManagement.Properties.Resources.searchicon1;
+            this.detailsicon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.detailsicon.Location = new System.Drawing.Point(75, 572);
+            this.detailsicon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.detailsicon.Name = "detailsicon";
+            this.detailsicon.Size = new System.Drawing.Size(61, 67);
+            this.detailsicon.TabIndex = 136;
+            this.detailsicon.TabStop = false;
+            this.detailsicon.Click += new System.EventHandler(this.detailsicon_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Beige;
+            this.button2.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(885, 683);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(126, 30);
+            this.button2.TabIndex = 137;
+            this.button2.Text = "Logout";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // ProfileAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -251,8 +265,9 @@
             this.BackgroundImage = global::HostelManagement.Properties.Resources.profilepage2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1039, 745);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.detailsicon);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.statsicon);
             this.Controls.Add(this.editbutton);
             this.Controls.Add(this.profileicon);
             this.Controls.Add(this.label15);
@@ -277,7 +292,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomchangeicon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.messchangeicon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statsicon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.detailsicon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -300,7 +315,8 @@
         private System.Windows.Forms.Label issuelabel;
         private System.Windows.Forms.PictureBox roomchangeicon;
         private System.Windows.Forms.PictureBox messchangeicon;
-        private System.Windows.Forms.PictureBox statsicon;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox detailsicon;
+        private System.Windows.Forms.Button button2;
     }
 }

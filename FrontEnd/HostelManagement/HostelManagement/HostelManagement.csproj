@@ -74,6 +74,24 @@
     <Compile Include="A4.Designer.cs">
       <DependentUpon>A4.cs</DependentUpon>
     </Compile>
+    <Compile Include="C1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C1.Designer.cs">
+      <DependentUpon>C1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="C2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C2.Designer.cs">
+      <DependentUpon>C2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="C3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C3.Designer.cs">
+      <DependentUpon>C3.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +159,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="A4.resx">
       <DependentUpon>A4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C1.resx">
+      <DependentUpon>C1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C2.resx">
+      <DependentUpon>C2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C3.resx">
+      <DependentUpon>C3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditDetails.resx">
       <DependentUpon>EditDetails.cs</DependentUpon>
@@ -275,6 +302,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\MaleCriteria.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\issues12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\searchicon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\searchicon1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profilepage3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\issues_icon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caretaker2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caretaker.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

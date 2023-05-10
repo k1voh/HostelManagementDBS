@@ -24,6 +24,7 @@ namespace HostelManagement
         public MessAdmin(string regno)
         {
             InitializeComponent();
+            requestLB.ScrollAlwaysVisible = true ;
             reg = regno;
             reglabel.Text = reg.ToString();
             string ConStr = "DATA SOURCE=DESKTOP-FE4CR37:1521/XE;USER ID=SYSTEM;Password=rampage";
@@ -50,7 +51,7 @@ namespace HostelManagement
                 int n = dt.Rows.Count;
                 if (n == 0)
                 {
-                    requestLB.Text = "No new mess change applicatons...";
+                    requestLB.Items.Add("No new mess change applications...");
                 }
                 for (int j = 0; j < n; j++)
                 {
@@ -156,6 +157,23 @@ namespace HostelManagement
                     txn.Rollback();
                     MessageBox.Show(e1.ToString(), "Fail", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        private void approve_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Are you sure you want to logout?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (dr == DialogResult.OK)
+            {
+                LOGIN frm = new LOGIN();
+                this.Hide();
+                frm.ShowDialog();
+                this.Close();
             }
         }
     }

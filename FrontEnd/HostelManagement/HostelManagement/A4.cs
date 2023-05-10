@@ -21,44 +21,53 @@ namespace HostelManagement
         DataTable dt;
         DataRow dr;
         int i = 0;
+        string name;
         public Stats(string regno)
         {
             InitializeComponent();
+            detailsLB.ScrollAlwaysVisible = true;
             reg = regno;
-            //reglabel.Text = reg.ToString();
+            reglabel.Text = reg.ToString();
             string ConStr = "DATA SOURCE=DESKTOP-FE4CR37:1521/XE;USER ID=SYSTEM;Password=rampage";
             OracleConnection conn = new OracleConnection(ConStr);
-
             try
             {
                 conn.Open();
                 OracleCommand comm = new OracleCommand("", conn);
-                comm.CommandText = "select * from usertype where reg_no = " + reg.ToString();
+                comm.CommandText = "select * from administrator where admin_id = '" + reg.ToString() + "'";
                 comm.CommandType = CommandType.Text;
                 ds = new DataSet();
                 da = new OracleDataAdapter(comm.CommandText, conn);
-                da.Fill(ds, "usertype");
-                dt = ds.Tables["usertype"];
+                da.Fill(ds, "administrator");
+                dt = ds.Tables["administrator"];
                 dr = dt.Rows[i];
-                //phonelabel.Text = dr["phone"].ToString();
-                //emailabel.Text = dr["email"].ToString();
-                comm.CommandText = "select * from student where registration_number = " + reg.ToString();
+                namelabel.Text = dr["name"].ToString();
+                name = namelabel.Text;
+                comm.CommandText = "select * from caretaker where hostel_id is not NULL";
                 comm.CommandType = CommandType.Text;
                 ds = new DataSet();
                 da = new OracleDataAdapter(comm.CommandText, conn);
-                da.Fill(ds, "student");
-                dt = ds.Tables["student"];
-                dr = dt.Rows[i];
-                //namelabel.Text = dr["name"].ToString();
-                //genderlabel.Text = dr["gender"].ToString();
-                //cgpalabel.Text = dr["cgpa"].ToString();
-                //branchlabel.Text = dr["branch"].ToString();
+                da.Fill(ds, "caretaker");
+                dt = ds.Tables["caretaker"];
+                int n = dt.Rows.Count;
+                if (n == 0)
+                {
+                    detailsLB.Items.Add("\tNo details available...");
+                }
+                for (int j = 0; j < n; j++)
+                {
+                    dr = dt.Rows[j];
+                    string ct_reg = dr["ct_id"].ToString();
+                    string ct_name = dr["ct_name"].ToString();
+                    string hostel = dr["hostel_id"].ToString();
+                    string shift = dr["shift_timings"].ToString();
+                    detailsLB.Items.Add("\t" + ct_reg + "  \t " + ct_name + "\t   " + hostel+"\t   "+shift);
+                }
                 conn.Close();
 
             }
             catch (Exception e1)
             {
-                //label1.Text = e1.ToString();
             }
         }
 
@@ -96,9 +105,92 @@ namespace HostelManagement
 
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        private void searchbutton_Click(object sender, EventArgs e)
         {
+            if (hostelCB.SelectedIndex <= -1)
+            {
+                invalidhostel.Visible = true;
+            }
+            else
+            {
+                invalidhostel.Visible = false;
+            }
+            if(!invalidhostel.Visible){
+                while(detailsLB.Items.Count!=0){
+                    detailsLB.Items.RemoveAt(detailsLB.Items.Count - 1);
+                }
+                string ConStr = "DATA SOURCE=DESKTOP-FE4CR37:1521/XE;USER ID=SYSTEM;Password=rampage";
+                OracleConnection conn = new OracleConnection(ConStr);
+                try
+                {
+                    conn.Open();
+                    OracleCommand comm = new OracleCommand("", conn);
+                    if (searchTB.Text.Length != 0)
+                    {
+                        comm.CommandText = "select * from caretaker where hostel_id = '" + hostelCB.SelectedItem.ToString() + "' and ct_id='" + searchTB.Text + "'";
+                        comm.CommandType = CommandType.Text;
+                        ds = new DataSet();
+                        da = new OracleDataAdapter(comm.CommandText, conn);
+                        da.Fill(ds, "caretaker");
+                        dt = ds.Tables["caretaker"];
+                        int n = dt.Rows.Count;
+                        if (n == 0)
+                        {
+                            detailsLB.Items.Add("\tNo details available...");
+                        }
+                        for (int j = 0; j < n; j++)
+                        {
+                            dr = dt.Rows[j];
+                            string ct_reg = dr["ct_id"].ToString();
+                            string ct_name = dr["ct_name"].ToString();
+                            string hostel = dr["hostel_id"].ToString();
+                            string shift = dr["shift_timings"].ToString();
+                            detailsLB.Items.Add("\t" + ct_reg + "  \t " + ct_name + "\t   " + hostel + "\t   " + shift);
+                        }
+                        conn.Close();
+                    }
+                    else
+                    {
+                        comm.CommandText = "select * from caretaker where hostel_id = '" + hostelCB.SelectedItem.ToString() + "'";
+                        comm.CommandType = CommandType.Text;
+                        ds = new DataSet();
+                        da = new OracleDataAdapter(comm.CommandText, conn);
+                        da.Fill(ds, "caretaker");
+                        dt = ds.Tables["caretaker"];
+                        int n = dt.Rows.Count;
+                        if (n == 0)
+                        {
+                            detailsLB.Items.Add("\tNo details available...");
+                        }
+                        for (int j = 0; j < n; j++)
+                        {
+                            dr = dt.Rows[j];
+                            string ct_reg = dr["ct_id"].ToString();
+                            string ct_name = dr["ct_name"].ToString();
+                            string hostel = dr["hostel_id"].ToString();
+                            string shift = dr["shift_timings"].ToString();
+                            detailsLB.Items.Add("\t" + ct_reg + "  \t " + ct_name + "\t   " + hostel + "\t   " + shift);
+                        }
+                        conn.Close();
+                    }
 
+                }
+                catch (Exception e1)
+                {
+                }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Are you sure you want to logout?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (dr == DialogResult.OK)
+            {
+                LOGIN frm = new LOGIN();
+                this.Hide();
+                frm.ShowDialog();
+                this.Close();
+            }
         }
     }
 }

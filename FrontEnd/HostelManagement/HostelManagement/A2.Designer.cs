@@ -29,32 +29,30 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangeAdmin));
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.profileicon = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.issuelabel = new System.Windows.Forms.Label();
             this.roomchangeicon = new System.Windows.Forms.PictureBox();
             this.messchangeicon = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.detailsicon = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.reglabel = new System.Windows.Forms.Label();
+            this.namelabel = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.requestLB = new System.Windows.Forms.ListBox();
+            this.approve = new System.Windows.Forms.Label();
+            this.apply = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.profileicon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomchangeicon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.messchangeicon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.detailsicon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.BackgroundImage = global::HostelManagement.Properties.Resources.stats_icon;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(64, 567);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(81, 84);
-            this.pictureBox2.TabIndex = 81;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // profileicon
             // 
@@ -111,17 +109,144 @@
             this.messchangeicon.TabStop = false;
             this.messchangeicon.Click += new System.EventHandler(this.messchangeicon_Click);
             // 
-            // pictureBox6
+            // detailsicon
             // 
-            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(480, 73);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(284, 167);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 82;
-            this.pictureBox6.TabStop = false;
+            this.detailsicon.BackColor = System.Drawing.Color.Transparent;
+            this.detailsicon.BackgroundImage = global::HostelManagement.Properties.Resources.searchicon1;
+            this.detailsicon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.detailsicon.Location = new System.Drawing.Point(77, 578);
+            this.detailsicon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.detailsicon.Name = "detailsicon";
+            this.detailsicon.Size = new System.Drawing.Size(61, 67);
+            this.detailsicon.TabIndex = 135;
+            this.detailsicon.TabStop = false;
+            this.detailsicon.Click += new System.EventHandler(this.detailsicon_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(480, 73);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(273, 155);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 136;
+            this.pictureBox2.TabStop = false;
+            // 
+            // reglabel
+            // 
+            this.reglabel.AutoSize = true;
+            this.reglabel.BackColor = System.Drawing.Color.Transparent;
+            this.reglabel.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reglabel.Location = new System.Drawing.Point(305, 139);
+            this.reglabel.Name = "reglabel";
+            this.reglabel.Size = new System.Drawing.Size(65, 23);
+            this.reglabel.TabIndex = 138;
+            this.reglabel.Text = "NULL";
+            // 
+            // namelabel
+            // 
+            this.namelabel.AutoSize = true;
+            this.namelabel.BackColor = System.Drawing.Color.Transparent;
+            this.namelabel.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.namelabel.Location = new System.Drawing.Point(843, 139);
+            this.namelabel.Name = "namelabel";
+            this.namelabel.Size = new System.Drawing.Size(65, 23);
+            this.namelabel.TabIndex = 137;
+            this.namelabel.Text = "NULL";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(766, 265);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(85, 24);
+            this.label3.TabIndex = 142;
+            this.label3.Text = "Reason";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(490, 265);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(45, 24);
+            this.label2.TabIndex = 141;
+            this.label2.Text = "Old";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(286, 265);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 24);
+            this.label1.TabIndex = 140;
+            this.label1.Text = "Regno";
+            // 
+            // requestLB
+            // 
+            this.requestLB.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.requestLB.FormattingEnabled = true;
+            this.requestLB.ItemHeight = 21;
+            this.requestLB.Location = new System.Drawing.Point(268, 292);
+            this.requestLB.Name = "requestLB";
+            this.requestLB.Size = new System.Drawing.Size(682, 277);
+            this.requestLB.TabIndex = 139;
+            this.requestLB.SelectedIndexChanged += new System.EventHandler(this.requestLB_SelectedIndexChanged);
+            // 
+            // approve
+            // 
+            this.approve.AutoSize = true;
+            this.approve.BackColor = System.Drawing.Color.Transparent;
+            this.approve.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.approve.ForeColor = System.Drawing.Color.Red;
+            this.approve.Location = new System.Drawing.Point(680, 626);
+            this.approve.Name = "approve";
+            this.approve.Size = new System.Drawing.Size(186, 19);
+            this.approve.TabIndex = 144;
+            this.approve.Text = "*select request to approve";
+            this.approve.Visible = false;
+            // 
+            // apply
+            // 
+            this.apply.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.apply.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.apply.Location = new System.Drawing.Point(539, 600);
+            this.apply.Name = "apply";
+            this.apply.Size = new System.Drawing.Size(126, 45);
+            this.apply.TabIndex = 143;
+            this.apply.Text = "Approve";
+            this.apply.UseVisualStyleBackColor = false;
+            this.apply.Click += new System.EventHandler(this.apply_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(570, 265);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(52, 24);
+            this.label4.TabIndex = 145;
+            this.label4.Text = "New";
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Beige;
+            this.button2.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(883, 694);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(126, 30);
+            this.button2.TabIndex = 146;
+            this.button2.Text = "Logout";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // ChangeAdmin
             // 
@@ -130,8 +255,18 @@
             this.BackgroundImage = global::HostelManagement.Properties.Resources.adminroomchange;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1039, 745);
-            this.Controls.Add(this.pictureBox6);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.approve);
+            this.Controls.Add(this.apply);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.requestLB);
+            this.Controls.Add(this.reglabel);
+            this.Controls.Add(this.namelabel);
             this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.detailsicon);
             this.Controls.Add(this.profileicon);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.issuelabel);
@@ -141,12 +276,12 @@
             this.Name = "ChangeAdmin";
             this.Text = "A2";
             this.Load += new System.EventHandler(this.ChangeAdmin_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profileicon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomchangeicon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.messchangeicon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.detailsicon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,12 +289,22 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox profileicon;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label issuelabel;
         private System.Windows.Forms.PictureBox roomchangeicon;
         private System.Windows.Forms.PictureBox messchangeicon;
-        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox detailsicon;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label reglabel;
+        private System.Windows.Forms.Label namelabel;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox requestLB;
+        private System.Windows.Forms.Label approve;
+        private System.Windows.Forms.Button apply;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button2;
     }
 }

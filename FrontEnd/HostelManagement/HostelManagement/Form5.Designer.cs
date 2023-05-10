@@ -54,6 +54,7 @@
             this.malecriteria = new System.Windows.Forms.PictureBox();
             this.invalidblock = new System.Windows.Forms.Label();
             this.invalidroom = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.issuesicon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomchangeicon)).BeginInit();
@@ -374,6 +375,18 @@
             this.invalidroom.Text = "*required field";
             this.invalidroom.Visible = false;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Beige;
+            this.button1.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(888, 677);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(126, 30);
+            this.button1.TabIndex = 105;
+            this.button1.Text = "Logout";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Booking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -381,6 +394,7 @@
             this.BackgroundImage = global::HostelManagement.Properties.Resources.roombooking2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1039, 745);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.invalidroom);
             this.Controls.Add(this.invalidblock);
             this.Controls.Add(this.malecriteria);
@@ -451,5 +465,6 @@
         private System.Windows.Forms.PictureBox malecriteria;
         private System.Windows.Forms.Label invalidblock;
         private System.Windows.Forms.Label invalidroom;
+        private System.Windows.Forms.Button button1;
     }
 }

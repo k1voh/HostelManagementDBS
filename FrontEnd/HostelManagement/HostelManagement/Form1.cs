@@ -100,9 +100,14 @@ namespace HostelManagement
                         }
                         else if (regTB.Text[0] == '0')
                         {
-                            long x = 0;
-                            long.TryParse(regTB.Text, out x);
                             ProfileAdmin frm = new ProfileAdmin(regTB.Text);
+                            this.Hide();
+                            frm.ShowDialog();
+                            this.Close();
+                        }
+                        else
+                        {
+                            ProfileCaretaker frm = new ProfileCaretaker(regTB.Text);
                             this.Hide();
                             frm.ShowDialog();
                             this.Close();

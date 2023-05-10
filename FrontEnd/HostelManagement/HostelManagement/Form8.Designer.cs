@@ -54,6 +54,7 @@
             this.suggestTB = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.post = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.issuesicon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomchangeicon)).BeginInit();
@@ -357,6 +358,18 @@
             this.post.UseVisualStyleBackColor = false;
             this.post.Click += new System.EventHandler(this.post_Click);
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Beige;
+            this.button2.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(890, 686);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(126, 30);
+            this.button2.TabIndex = 135;
+            this.button2.Text = "Logout";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Issues
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -364,6 +377,7 @@
             this.BackgroundImage = global::HostelManagement.Properties.Resources.issues11;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1039, 745);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.post);
             this.Controls.Add(this.suggestTB);
             this.Controls.Add(this.label3);
@@ -432,5 +446,6 @@
         private System.Windows.Forms.RichTextBox suggestTB;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button post;
+        private System.Windows.Forms.Button button2;
     }
 }
