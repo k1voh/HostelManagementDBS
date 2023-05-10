@@ -66,7 +66,7 @@ namespace HostelManagement
                     string id = dr["mail_code"].ToString();
                     string sub = dr["subject"].ToString();
                     string status = dr["status"].ToString();
-                    mailLB.Items.Add(""+id + "  \t" + sub + "\t\t" + status);
+                    mailLB.Items.Add(""+id + "  \t" + sub + "\t" + status);
                 }
                 conn.Close();
 

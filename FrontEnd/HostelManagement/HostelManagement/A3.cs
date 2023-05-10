@@ -59,7 +59,7 @@ namespace HostelManagement
                     string student_reg = dr["reg_no"].ToString();
                     string oldname = dr["old_mess"].ToString();
                     string newname = dr["new_mess"].ToString();
-                    requestLB.Items.Add("       "+student_reg+"  \t "+oldname+"\t   "+newname);
+                    requestLB.Items.Add(""+student_reg+"  \t "+oldname+"\t"+newname);
                 }
                 conn.Close();
 
@@ -127,7 +127,7 @@ namespace HostelManagement
                 OracleTransaction txn = conn.BeginTransaction(IsolationLevel.ReadCommitted);
                 try
                 {
-                    comm.CommandText = "select * from mess_change where reg_no = '" + requestLB.SelectedItem.ToString().Substring(7, 8) + "'";
+                    comm.CommandText = "select * from mess_change where reg_no = '" + requestLB.SelectedItem.ToString().Substring(0, 8) + "'";
                     comm.CommandType = CommandType.Text;
                     ds = new DataSet();
                     da = new OracleDataAdapter(comm.CommandText, conn);
@@ -146,7 +146,7 @@ namespace HostelManagement
                     comm.CommandText = "update student set mess_id='"+new_id+"' where registration_number='" + requestLB.SelectedItem.ToString().Substring(7, 8) + "'";
                     comm.CommandType = CommandType.Text;
                     comm.ExecuteNonQuery();
-                    comm.CommandText = "delete from mess_change where reg_no='" + requestLB.SelectedItem.ToString().Substring(7, 8) + "'";
+                    comm.CommandText = "delete from mess_change where reg_no='" + requestLB.SelectedItem.ToString().Substring(0, 8) + "'";
                     comm.CommandType = CommandType.Text;
                     comm.ExecuteNonQuery();
                     comm.CommandText = "select max(mail_code) from mail";
@@ -161,7 +161,7 @@ namespace HostelManagement
                     long.TryParse(mail_id, out mail);
                     mail++;
                     string application = "Mess Change Application";
-                    comm.CommandText = "insert into mail values('" + requestLB.SelectedItem.ToString().Substring(7, 8) + "','" + mail.ToString() + "','" + application + "','APPROVED')";
+                    comm.CommandText = "insert into mail values('" + requestLB.SelectedItem.ToString().Substring(0, 8) + "','" + mail.ToString() + "','" + application + "','APPROVED')";
                     comm.CommandType = CommandType.Text;
                     comm.ExecuteNonQuery();
                     txn.Commit();
@@ -225,10 +225,10 @@ namespace HostelManagement
                     long.TryParse(mail_id, out mail);
                     mail++;
                     string application = "Mess Change Application";
-                    comm.CommandText = "insert into mail values('" + requestLB.SelectedItem.ToString().Substring(7, 8) + "','" + mail.ToString() + "','" + application + "','REJECTED')";
+                    comm.CommandText = "insert into mail values('" + requestLB.SelectedItem.ToString().Substring(0, 8) + "','" + mail.ToString() + "','" + application + "','REJECTED')";
                     comm.CommandType = CommandType.Text;
                     comm.ExecuteNonQuery();
-                    comm.CommandText = "delete from mess_change where reg_no='" + requestLB.SelectedItem.ToString().Substring(7, 8) + "'";
+                    comm.CommandText = "delete from mess_change where reg_no='" + requestLB.SelectedItem.ToString().Substring(0, 8) + "'";
                     comm.CommandType = CommandType.Text;
                     comm.ExecuteNonQuery();
                     txn.Commit();

@@ -312,7 +312,7 @@
             // 
             this.retypepassTB.AcceptsReturn = true;
             this.retypepassTB.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.retypepassTB.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.retypepassTB.ForeColor = System.Drawing.SystemColors.InfoText;
             this.retypepassTB.Location = new System.Drawing.Point(455, 473);
             this.retypepassTB.Multiline = true;
             this.retypepassTB.Name = "retypepassTB";
@@ -349,7 +349,7 @@
             // 
             this.passTB.AcceptsReturn = true;
             this.passTB.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passTB.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.passTB.ForeColor = System.Drawing.SystemColors.InfoText;
             this.passTB.Location = new System.Drawing.Point(121, 473);
             this.passTB.Multiline = true;
             this.passTB.Name = "passTB";

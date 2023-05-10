@@ -145,9 +145,9 @@
             this.requestLB.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.requestLB.FormattingEnabled = true;
             this.requestLB.ItemHeight = 21;
-            this.requestLB.Location = new System.Drawing.Point(383, 279);
+            this.requestLB.Location = new System.Drawing.Point(326, 279);
             this.requestLB.Name = "requestLB";
-            this.requestLB.Size = new System.Drawing.Size(454, 298);
+            this.requestLB.Size = new System.Drawing.Size(553, 298);
             this.requestLB.TabIndex = 90;
             this.requestLB.SelectedIndexChanged += new System.EventHandler(this.RequestCB_SelectedIndexChanged);
             // 
@@ -204,7 +204,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(429, 253);
+            this.label1.Location = new System.Drawing.Point(346, 253);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 24);
             this.label1.TabIndex = 132;
@@ -215,7 +215,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(573, 252);
+            this.label2.Location = new System.Drawing.Point(531, 253);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 24);
             this.label2.TabIndex = 133;
@@ -226,7 +226,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(687, 253);
+            this.label3.Location = new System.Drawing.Point(703, 253);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 24);
             this.label3.TabIndex = 134;
