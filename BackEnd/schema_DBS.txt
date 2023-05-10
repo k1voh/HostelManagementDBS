@@ -139,6 +139,3 @@ create table complaints(
     problem varchar(30),
     status varchar(10),
     constraint chk_ID2 check(status='PENDING' or status='RESOLVED'));
-
-create table issue_counter(
-    counter int);

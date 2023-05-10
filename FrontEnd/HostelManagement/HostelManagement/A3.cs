@@ -19,10 +19,6 @@ namespace HostelManagement
         DataSet ds;
         DataTable dt;
         DataRow dr;
-        OracleDataAdapter da1;
-        DataSet ds1;
-        DataTable dt1;
-        DataRow dr1;
         int i = 0;
         string name;
         public MessAdmin(string regno)
@@ -44,6 +40,7 @@ namespace HostelManagement
                 dt = ds.Tables["administrator"];
                 dr = dt.Rows[i];
                 namelabel.Text = dr["name"].ToString();
+                name = namelabel.Text;
                 comm.CommandText = "select * from mess_change";
                 comm.CommandType = CommandType.Text;
                 ds = new DataSet();
@@ -125,13 +122,30 @@ namespace HostelManagement
                 OracleTransaction txn = conn.BeginTransaction(IsolationLevel.ReadCommitted);
                 try
                 {
-                    /*comm.CommandText = "delete from mess_change where ";
+                    comm.CommandText = "select * from mess_change where reg_no = '" + requestLB.SelectedItem.ToString().Substring(7, 8) + "'";
+                    comm.CommandType = CommandType.Text;
+                    ds = new DataSet();
+                    da = new OracleDataAdapter(comm.CommandText, conn);
+                    da.Fill(ds, "mess_change");
+                    dt = ds.Tables["mess_change"];
+                    dr = dt.Rows[0];
+                    string new_name = dr["new_mess"].ToString();
+                    comm.CommandText = "select * from mess where mess_name = '" + new_name + "'";
+                    comm.CommandType = CommandType.Text;
+                    ds = new DataSet();
+                    da = new OracleDataAdapter(comm.CommandText, conn);
+                    da.Fill(ds, "mess");
+                    dt = ds.Tables["mess"];
+                    dr = dt.Rows[0];
+                    string new_id = dr["mess_id"].ToString();
+                    comm.CommandText = "update student set mess_id='"+new_id+"' where registration_number='" + requestLB.SelectedItem.ToString().Substring(7, 8) + "'";
+                    comm.CommandType = CommandType.Text;
+                    comm.ExecuteNonQuery();
+                    comm.CommandText = "delete from mess_change where reg_no='" + requestLB.SelectedItem.ToString().Substring(7, 8) + "'";
                     comm.CommandType = CommandType.Text;
                     comm.ExecuteNonQuery();
                     txn.Commit();
-                     * */
                     requestLB.Items.RemoveAt(requestLB.SelectedIndex);
-                    
                 }
                 catch (Exception e1)
                 {
@@ -142,7 +156,3 @@ namespace HostelManagement
         }
     }
 }
-
-//Hello guys I am under the water please help me I'm drowning
-// TEST IF BHAVYA CAN READ THIS ON HER SYSTEM
-// AGAIN

@@ -9,18 +9,6 @@ end;
 /
 
 
- -- TRIGGER TO CALCULATE MESS CHANGE 
-create or replace trigger CHANGE_mess
-after update of Mess_id on student
-for each row
-begin
-    if updating then
-        update changecounter set counter = counter + 1 where (facility = 'Mess Change');
-    end if;
-end;
-/
-
-
 -- TRIGGER TO UPDATE OCCUPANCY ON UPDATE OF BLOCK 10
 create or replace trigger updateB10
 after update on B10
