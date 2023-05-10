@@ -90,9 +90,109 @@ namespace HostelManagement
             {
             }
         }
-        private void profileicon_Click(object sender, EventArgs e)
+
+        private void Mess_Load(object sender, EventArgs e)
         {
-            Profile frm = new Profile(reg);
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (messCB.SelectedIndex<=-1)
+            {
+                invalidmess.Visible = true;
+            }
+            else
+            {
+                invalidmess.Visible = false;
+            }
+            if (reasonTB.Text == string.Empty)
+            {
+                invalidreason.Visible = true;
+            }
+            else
+            {
+                invalidreason.Visible = false;
+            }
+            if (!invalidreason.Visible && !invalidmess.Visible)
+            {
+
+                if (!passTB.Visible)
+                {
+                    passenter.Visible = true;
+                    passTB.Visible = true;
+                    return;
+                }
+            }
+            if (passTB.Text != password && passTB.Visible)
+            {
+                invalidpass.Visible = true;
+            }
+            else{
+                invalidpass.Visible = false;
+            }
+            if(!invalidpass.Visible && !invalidmess.Visible && !invalidreason.Visible && passTB.Visible)
+            {
+                DialogResult dr2 = MessageBox.Show("Applied for mess change successfully!", "Request Submitted Successfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (dr2 == DialogResult.OK)
+                {
+                    string ConStr = "DATA SOURCE=DESKTOP-FE4CR37:1521/XE;USER ID=SYSTEM;Password=rampage";
+                    OracleConnection conn = new OracleConnection(ConStr);
+                    conn.Open();
+                    OracleCommand comm = new OracleCommand("", conn);
+                    OracleTransaction txn = conn.BeginTransaction(IsolationLevel.ReadCommitted);
+                    try
+                    {
+                        comm.CommandText = "insert into mess_change values('" + reglabel.Text + "','" + messlabel.Text + "','" + messCB.SelectedItem.ToString() + "')";
+                        comm.CommandType = CommandType.Text;
+                        comm.ExecuteNonQuery();
+                        txn.Commit();
+                        Profile frm = new Profile(reg);
+                        this.Hide();
+                        frm.ShowDialog();
+                        this.Close();
+                    }
+                    catch (Exception e1)
+                    {
+                        txn.Rollback();
+                        DialogResult dr = MessageBox.Show(e1.ToString(), "Fail", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        if (dr == DialogResult.OK)
+                        {
+                            EditDetails frm1 = new EditDetails(reg);
+                            this.Hide();
+                            frm1.ShowDialog();
+                            this.Close();
+                        }
+                    }
+                }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Are you sure you want to logout?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (dr == DialogResult.OK)
+            {
+                LOGIN frm = new LOGIN();
+                this.Hide();
+                frm.ShowDialog();
+                this.Close();
+            }
+        }
+
+        private void mailicon_Click(object sender, EventArgs e)
+        {
+            Mail frm = new Mail(reg);
             this.Hide();
             frm.ShowDialog();
             this.Close();
@@ -125,12 +225,7 @@ namespace HostelManagement
             }
         }
 
-        private void Mess_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void roomchangeicon_Click(object sender, EventArgs e)
+        private void roomchangeicon_Click_1(object sender, EventArgs e)
         {
             if (hostel.Length != 0)
             {
@@ -186,106 +281,20 @@ namespace HostelManagement
             }
         }
 
+        private void profileicon_Click(object sender, EventArgs e)
+        {
+            Profile frm = new Profile(reg);
+            this.Hide();
+            frm.ShowDialog();
+            this.Close();
+        }
+
         private void issuesicon_Click(object sender, EventArgs e)
         {
             Issues frm = new Issues(reg);
             this.Hide();
             frm.ShowDialog();
             this.Close();
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (messCB.SelectedIndex<=-1)
-            {
-                invalidmess.Visible = true;
-            }
-            else
-            {
-                invalidmess.Visible = false;
-            }
-            if (reasonTB.Text == string.Empty)
-            {
-                invalidreason.Visible = true;
-            }
-            else
-            {
-                invalidreason.Visible = false;
-            }
-            if (!invalidreason.Visible && !invalidmess.Visible)
-            {
-
-                if (!passTB.Visible)
-                {
-                    passenter.Visible = true;
-                    passTB.Visible = true;
-                    return;
-                }
-            }
-            if (passTB.Text != password && passTB.Visible)
-            {
-                invalidpass.Visible = true;
-            }
-            else{
-                invalidpass.Visible = false;
-            }
-            if(!invalidpass.Visible && !invalidmess.Visible && !invalidreason.Visible && passTB.Visible)
-            {
-                DialogResult dr2 = MessageBox.Show("Applied for hostel change successfully!", "Request Submitted Successfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                if (dr2 == DialogResult.OK)
-                {
-                    string ConStr = "DATA SOURCE=DESKTOP-FE4CR37:1521/XE;USER ID=SYSTEM;Password=rampage";
-                    OracleConnection conn = new OracleConnection(ConStr);
-                    conn.Open();
-                    OracleCommand comm = new OracleCommand("", conn);
-                    OracleTransaction txn = conn.BeginTransaction(IsolationLevel.ReadCommitted);
-                    try
-                    {
-                        comm.CommandText = "insert into mess_change values('" + reglabel.Text + "','" + messlabel.Text + "','" + messCB.SelectedItem.ToString() + "')";
-                        comm.CommandType = CommandType.Text;
-                        comm.ExecuteNonQuery();
-                        txn.Commit();
-                        Profile frm = new Profile(reg);
-                        this.Hide();
-                        frm.ShowDialog();
-                        this.Close();
-                    }
-                    catch (Exception e1)
-                    {
-                        txn.Rollback();
-                        DialogResult dr = MessageBox.Show(e1.ToString(), "Fail", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        if (dr == DialogResult.OK)
-                        {
-                            EditDetails frm1 = new EditDetails(reg);
-                            this.Hide();
-                            frm1.ShowDialog();
-                            this.Close();
-                        }
-                    }
-                }
-            }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            DialogResult dr = MessageBox.Show("Are you sure you want to logout?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            if (dr == DialogResult.OK)
-            {
-                LOGIN frm = new LOGIN();
-                this.Hide();
-                frm.ShowDialog();
-                this.Close();
-            }
         }
     }
 }

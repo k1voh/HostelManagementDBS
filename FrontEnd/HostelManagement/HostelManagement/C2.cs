@@ -139,8 +139,24 @@ namespace HostelManagement
                 OracleTransaction txn = conn.BeginTransaction(IsolationLevel.ReadCommitted);
                 try
                 {
-                    string id = issueLB.SelectedItem.ToString().Substring(19, 5);
+                    string id = issueLB.SelectedItem.ToString().Substring(19, 8);
+                    string regno = issueLB.SelectedItem.ToString().Substring(7, 8);
                     comm.CommandText = "update complaints set status='RESOLVED' where issue_id='" + id + "'";
+                    comm.CommandType = CommandType.Text;
+                    comm.ExecuteNonQuery();
+                    comm.CommandText = "select max(mail_code) from mail";
+                    comm.CommandType = CommandType.Text;
+                    ds = new DataSet();
+                    da = new OracleDataAdapter(comm.CommandText, conn);
+                    da.Fill(ds, "mail");
+                    dt = ds.Tables["mail"];
+                    dr = dt.Rows[0];
+                    string mail_id = dr["max(mail_code)"].ToString();
+                    long mail;
+                    long.TryParse(mail_id, out mail);
+                    mail++;
+                    string application = "Query Resolution";
+                    comm.CommandText = "insert into mail values('" + regno + "','" + mail.ToString() + "','" + application + "','RESOLVED')";
                     comm.CommandType = CommandType.Text;
                     comm.ExecuteNonQuery();
                     txn.Commit();

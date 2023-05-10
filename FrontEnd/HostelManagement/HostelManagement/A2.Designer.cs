@@ -46,6 +46,8 @@
             this.apply = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.reject = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.profileicon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomchangeicon)).BeginInit();
@@ -206,7 +208,7 @@
             this.approve.BackColor = System.Drawing.Color.Transparent;
             this.approve.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.approve.ForeColor = System.Drawing.Color.Red;
-            this.approve.Location = new System.Drawing.Point(680, 626);
+            this.approve.Location = new System.Drawing.Point(349, 646);
             this.approve.Name = "approve";
             this.approve.Size = new System.Drawing.Size(186, 19);
             this.approve.TabIndex = 144;
@@ -217,7 +219,7 @@
             // 
             this.apply.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.apply.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.apply.Location = new System.Drawing.Point(539, 600);
+            this.apply.Location = new System.Drawing.Point(380, 598);
             this.apply.Name = "apply";
             this.apply.Size = new System.Drawing.Size(126, 45);
             this.apply.TabIndex = 143;
@@ -248,6 +250,31 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // reject
+            // 
+            this.reject.AutoSize = true;
+            this.reject.BackColor = System.Drawing.Color.Transparent;
+            this.reject.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reject.ForeColor = System.Drawing.Color.Red;
+            this.reject.Location = new System.Drawing.Point(701, 646);
+            this.reject.Name = "reject";
+            this.reject.Size = new System.Drawing.Size(172, 19);
+            this.reject.TabIndex = 148;
+            this.reject.Text = "*select request to reject";
+            this.reject.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button1.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(725, 598);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(126, 45);
+            this.button1.TabIndex = 147;
+            this.button1.Text = "Reject";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // ChangeAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -255,6 +282,8 @@
             this.BackgroundImage = global::HostelManagement.Properties.Resources.adminroomchange;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1039, 745);
+            this.Controls.Add(this.reject);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.approve);
@@ -306,5 +335,7 @@
         private System.Windows.Forms.Button apply;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label reject;
+        private System.Windows.Forms.Button button1;
     }
 }

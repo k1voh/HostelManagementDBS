@@ -170,6 +170,21 @@ namespace HostelManagement
                     comm.CommandText = "update b" + old_id + " set reg_no='NULL', name='NULL',contact='NULL' where sno='" + sno_old + "'";
                     comm.CommandType = CommandType.Text;
                     comm.ExecuteNonQuery();
+                    comm.CommandText = "select max(mail_code) from mail";
+                    comm.CommandType = CommandType.Text;
+                    ds = new DataSet();
+                    da = new OracleDataAdapter(comm.CommandText, conn);
+                    da.Fill(ds, "mail");
+                    dt = ds.Tables["mail"];
+                    dr = dt.Rows[0];
+                    string mail_id = dr["max(mail_code)"].ToString();
+                    long mail;
+                    long.TryParse(mail_id,out mail);
+                    mail++;
+                    string application = "Room Change Application";
+                    comm.CommandText = "insert into mail values('"+regno+"','"+mail.ToString()+"','"+application+"','APPROVED')";
+                    comm.CommandType = CommandType.Text;
+                    comm.ExecuteNonQuery();
                     txn.Commit();
                     requestLB.Items.RemoveAt(requestLB.SelectedIndex);
                 }
@@ -190,6 +205,56 @@ namespace HostelManagement
                 this.Hide();
                 frm.ShowDialog();
                 this.Close();
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (requestLB.SelectedIndex <= -1)
+            {
+                reject.Visible = true;
+            }
+            else
+            {
+                reject.Visible = false;
+            }
+            if (!reject.Visible)
+            {
+                MessageBox.Show("Rejected hostel change request!", "Successfully Rejected", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string ConStr = "DATA SOURCE=DESKTOP-FE4CR37:1521/XE;USER ID=SYSTEM;Password=rampage";
+                OracleConnection conn = new OracleConnection(ConStr);
+                conn.Open();
+                OracleCommand comm = new OracleCommand("", conn);
+                OracleTransaction txn = conn.BeginTransaction(IsolationLevel.ReadCommitted);
+                try
+                {
+                    string regno = requestLB.SelectedItem.ToString().Substring(0, 8);
+                    comm.CommandText = "select max(mail_code) from mail";
+                    comm.CommandType = CommandType.Text;
+                    ds = new DataSet();
+                    da = new OracleDataAdapter(comm.CommandText, conn);
+                    da.Fill(ds, "mail");
+                    dt = ds.Tables["mail"];
+                    dr = dt.Rows[0];
+                    string mail_id = dr["max(mail_code)"].ToString();
+                    long mail;
+                    long.TryParse(mail_id, out mail);
+                    mail++;
+                    string application = "Room Change Application";
+                    comm.CommandText = "insert into mail values('" + regno + "','" + mail.ToString() + "','" + application + "','REJECTED')";
+                    comm.CommandType = CommandType.Text;
+                    comm.ExecuteNonQuery();
+                    comm.CommandText = "delete from room_change where reg_no='" + regno + "'";
+                    comm.CommandType = CommandType.Text;
+                    comm.ExecuteNonQuery();
+                    txn.Commit();
+                    requestLB.Items.RemoveAt(requestLB.SelectedIndex);
+                }
+                catch (Exception e1)
+                {
+                    txn.Rollback();
+                    MessageBox.Show(e1.ToString(), "Fail", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }

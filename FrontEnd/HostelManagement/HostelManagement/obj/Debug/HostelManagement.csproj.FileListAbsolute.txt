@@ -54,3 +54,4 @@ C:\Users\Dell\Desktop\Hostel-Management-DBS-Project\FrontEnd\HostelManagement\Ho
 E:\Study\OneDrive - Manipal Academy of Higher Education\Coding\DBS Project\FrontEnd\HostelManagement\HostelManagement\obj\Debug\HostelManagement.ProfileCaretaker.resources
 E:\Study\OneDrive - Manipal Academy of Higher Education\Coding\DBS Project\FrontEnd\HostelManagement\HostelManagement\obj\Debug\HostelManagement.CIssue.resources
 E:\Study\OneDrive - Manipal Academy of Higher Education\Coding\DBS Project\FrontEnd\HostelManagement\HostelManagement\obj\Debug\HostelManagement.CDetails.resources
+E:\Study\OneDrive - Manipal Academy of Higher Education\Coding\DBS Project\FrontEnd\HostelManagement\HostelManagement\obj\Debug\HostelManagement.Mail.resources

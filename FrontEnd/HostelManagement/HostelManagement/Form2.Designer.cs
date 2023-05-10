@@ -77,7 +77,7 @@
             // regTB
             // 
             this.regTB.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.regTB.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.regTB.ForeColor = System.Drawing.SystemColors.InfoText;
             this.regTB.Location = new System.Drawing.Point(112, 284);
             this.regTB.Margin = new System.Windows.Forms.Padding(4);
             this.regTB.Multiline = false;
@@ -115,7 +115,7 @@
             // userTB
             // 
             this.userTB.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userTB.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.userTB.ForeColor = System.Drawing.SystemColors.InfoText;
             this.userTB.Location = new System.Drawing.Point(446, 284);
             this.userTB.Margin = new System.Windows.Forms.Padding(4);
             this.userTB.Multiline = false;
@@ -153,7 +153,7 @@
             // contactTB
             // 
             this.contactTB.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contactTB.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.contactTB.ForeColor = System.Drawing.SystemColors.InfoText;
             this.contactTB.Location = new System.Drawing.Point(112, 378);
             this.contactTB.Margin = new System.Windows.Forms.Padding(4);
             this.contactTB.Multiline = false;
@@ -191,14 +191,14 @@
             // mailTB
             // 
             this.mailTB.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mailTB.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.mailTB.ForeColor = System.Drawing.SystemColors.InfoText;
             this.mailTB.Location = new System.Drawing.Point(455, 378);
             this.mailTB.Margin = new System.Windows.Forms.Padding(4);
             this.mailTB.Multiline = false;
             this.mailTB.Name = "mailTB";
             this.mailTB.Size = new System.Drawing.Size(238, 29);
             this.mailTB.TabIndex = 43;
-            this.mailTB.Text = "ex. abc@gmail.com";
+            this.mailTB.Text = "(ex. abc@gmail.com)";
             // 
             // reqmail
             // 

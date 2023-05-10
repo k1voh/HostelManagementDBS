@@ -312,5 +312,13 @@ namespace HostelManagement
                 this.Close();
             }
         }
+
+        private void mailicon_Click(object sender, EventArgs e)
+        {
+            Mail frm = new Mail(reg);
+            this.Hide();
+            frm.ShowDialog();
+            this.Close();
+        }
     }
 }

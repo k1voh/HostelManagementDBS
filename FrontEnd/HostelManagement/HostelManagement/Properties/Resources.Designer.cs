@@ -83,6 +83,16 @@ namespace HostelManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap adminroomchange1 {
+            get {
+                object obj = ResourceManager.GetObject("adminroomchange1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap adminstats {
             get {
                 object obj = ResourceManager.GetObject("adminstats", resourceCulture);
@@ -196,6 +206,56 @@ namespace HostelManagement.Properties {
         internal static System.Drawing.Bitmap issues12 {
             get {
                 object obj = ResourceManager.GetObject("issues12", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mail {
+            get {
+                object obj = ResourceManager.GetObject("mail", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mailblack {
+            get {
+                object obj = ResourceManager.GetObject("mailblack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mailwhite {
+            get {
+                object obj = ResourceManager.GetObject("mailwhite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mailwhite1 {
+            get {
+                object obj = ResourceManager.GetObject("mailwhite1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mailwhite2 {
+            get {
+                object obj = ResourceManager.GetObject("mailwhite2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -128,7 +128,7 @@ create table room_change(
     old_hostel_type varchar(5),
     new_hostel_id references hostel(hostel_id),
     new_hostel_type varchar(5),
-    reason varchar(20),
+    reason varchar(60),
     constraint chk_ID0 check(new_hostel_type = '01AC' or new_hostel_type = '01NC' or new_hostel_type = '02AC' or new_hostel_type = '02NC'),
     constraint chk_ID1 check(old_hostel_type = '01AC' or old_hostel_type = '01NC' or old_hostel_type = '02AC' or old_hostel_type = '02NC'));
 
@@ -139,3 +139,10 @@ create table complaints(
     problem varchar(30),
     status varchar(10),
     constraint chk_ID2 check(status='PENDING' or status='RESOLVED'));
+
+create table mail(
+    reg_no varchar(20) references student(registration_number),
+    mail_code varchar(10) primary key,
+    subject varchar(30),
+    status varchar(10),
+    constraint chk_ID3 check(status='REJECTED' or status='APPROVED' or status='RESOLVED'));

@@ -146,6 +146,12 @@
     <Compile Include="Form8.Designer.cs">
       <DependentUpon>Form8.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form9.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form9.Designer.cs">
+      <DependentUpon>Form9.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="A1.resx">
@@ -195,6 +201,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form8.resx">
       <DependentUpon>Form8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form9.resx">
+      <DependentUpon>Form9.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -323,6 +332,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\caretaker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mailwhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mailwhite1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mailwhite2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mailblack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adminroomchange1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
