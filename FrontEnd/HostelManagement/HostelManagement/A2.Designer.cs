@@ -303,7 +303,7 @@
             this.Controls.Add(this.messchangeicon);
             this.DoubleBuffered = true;
             this.Name = "ChangeAdmin";
-            this.Text = "A2";
+            this.Text = "Room Change";
             this.Load += new System.EventHandler(this.ChangeAdmin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.profileicon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

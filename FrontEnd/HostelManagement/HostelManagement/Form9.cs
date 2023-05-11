@@ -58,7 +58,7 @@ namespace HostelManagement
                 int n = dt.Rows.Count;
                 if (n == 0)
                 {
-                    mailLB.Items.Add("\t\t\tNo new mails...");
+                    mailLB.Items.Add("\t\tNo new mails...");
                 }
                 for (int j = 0; j < n; j++)
                 {

@@ -119,7 +119,7 @@
             this.roombookicon.BackColor = System.Drawing.Color.Transparent;
             this.roombookicon.BackgroundImage = global::HostelManagement.Properties.Resources.roombook_icon;
             this.roombookicon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.roombookicon.Location = new System.Drawing.Point(73, 272);
+            this.roombookicon.Location = new System.Drawing.Point(73, 278);
             this.roombookicon.Name = "roombookicon";
             this.roombookicon.Size = new System.Drawing.Size(61, 58);
             this.roombookicon.TabIndex = 163;
@@ -200,7 +200,7 @@
             this.phonelabel.AutoSize = true;
             this.phonelabel.BackColor = System.Drawing.Color.Transparent;
             this.phonelabel.Font = new System.Drawing.Font("Bookman Old Style", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phonelabel.Location = new System.Drawing.Point(854, 182);
+            this.phonelabel.Location = new System.Drawing.Point(838, 182);
             this.phonelabel.Name = "phonelabel";
             this.phonelabel.Size = new System.Drawing.Size(61, 21);
             this.phonelabel.TabIndex = 172;

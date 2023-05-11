@@ -116,6 +116,16 @@ namespace HostelManagement
             {
                 invalidgender.Visible = false;
             }
+            double cgp;
+            double.TryParse(cgpaTB.Text,out cgp);
+            if (cgpaTB.Text == string.Empty && cgp < 0 && cgp > 10)
+            {
+                invalidcg.Visible = true;
+            }
+            else
+            {
+                invalidcg.Visible = false;
+            }
             if (!invalidcg.Visible && !invalidmail.Visible && !invalidphone.Visible && !invalidbranch.Visible && !invalidsem.Visible && !invalidgender.Visible) {
                 try
                 {
@@ -319,6 +329,11 @@ namespace HostelManagement
             this.Hide();
             frm.ShowDialog();
             this.Close();
+        }
+
+        private void forgotpassword_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
         }
     }
 }
