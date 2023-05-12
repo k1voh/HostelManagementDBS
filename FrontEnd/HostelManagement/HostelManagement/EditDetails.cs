@@ -146,6 +146,10 @@ namespace HostelManagement
                         cmd.CommandText = "update student set semester=" + sem + " where registration_number='" + reg.ToString()+"'";
                         cmd.CommandType = CommandType.Text;
                         cmd.ExecuteNonQuery();
+                        cmd.CommandText = "fresherCG";
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add("sem",OracleDbType.Int32).Value = sem;
+                        cmd.ExecuteNonQuery();
                         txn.Commit();
                         Profile frm = new Profile(reg);
                         this.Hide();
@@ -325,10 +329,24 @@ namespace HostelManagement
 
         private void issuesicon_Click(object sender, EventArgs e)
         {
-            Issues frm = new Issues(reg);
-            this.Hide();
-            frm.ShowDialog();
-            this.Close();
+            if (hostel.Length != 0)
+            {
+                Issues frm = new Issues(reg);
+                this.Hide();
+                frm.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                DialogResult dr = MessageBox.Show("Room not alloted yet\n\nBook a room first!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                if (dr == DialogResult.OK)
+                {
+                    Booking frm1 = new Booking(reg);
+                    this.Hide();
+                    frm1.ShowDialog();
+                    this.Close();
+                }
+            }
         }
 
         private void forgotpassword_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)

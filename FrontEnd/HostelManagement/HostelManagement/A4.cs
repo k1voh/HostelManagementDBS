@@ -107,15 +107,6 @@ namespace HostelManagement
 
         private void searchbutton_Click(object sender, EventArgs e)
         {
-            if (hostelCB.SelectedIndex <= -1)
-            {
-                invalidhostel.Visible = true;
-            }
-            else
-            {
-                invalidhostel.Visible = false;
-            }
-            if(!invalidhostel.Visible){
                 while(detailsLB.Items.Count!=0){
                     detailsLB.Items.RemoveAt(detailsLB.Items.Count - 1);
                 }
@@ -127,7 +118,7 @@ namespace HostelManagement
                     OracleCommand comm = new OracleCommand("", conn);
                     if (searchTB.Text.Length != 0)
                     {
-                        comm.CommandText = "select * from caretaker where hostel_id = '" + hostelCB.SelectedItem.ToString() + "' and ct_id='" + searchTB.Text + "'";
+                        comm.CommandText = "select * from caretaker where ct_id='" + searchTB.Text + "'";
                         comm.CommandType = CommandType.Text;
                         ds = new DataSet();
                         da = new OracleDataAdapter(comm.CommandText, conn);
@@ -149,7 +140,7 @@ namespace HostelManagement
                         }
                         conn.Close();
                     }
-                    else
+                    else if (searchTB.Text.Length == 0 && hostelCB.SelectedIndex >= 0)
                     {
                         comm.CommandText = "select * from caretaker where hostel_id = '" + hostelCB.SelectedItem.ToString() + "'";
                         comm.CommandType = CommandType.Text;
@@ -173,12 +164,34 @@ namespace HostelManagement
                         }
                         conn.Close();
                     }
-
+                    else
+                    {
+                        comm.CommandText = "select * from caretaker";
+                        comm.CommandType = CommandType.Text;
+                        ds = new DataSet();
+                        da = new OracleDataAdapter(comm.CommandText, conn);
+                        da.Fill(ds, "caretaker");
+                        dt = ds.Tables["caretaker"];
+                        int n = dt.Rows.Count;
+                        if (n == 0)
+                        {
+                            detailsLB.Items.Add("\tNo details available...");
+                        }
+                        for (int j = 0; j < n; j++)
+                        {
+                            dr = dt.Rows[j];
+                            string ct_reg = dr["ct_id"].ToString();
+                            string ct_name = dr["ct_name"].ToString();
+                            string hostel = dr["hostel_id"].ToString();
+                            string shift = dr["shift_timings"].ToString();
+                            detailsLB.Items.Add("\t" + ct_reg + "  \t " + ct_name + "\t   " + hostel + "\t   " + shift);
+                        }
+                        conn.Close();
+                    }
                 }
                 catch (Exception e1)
                 {
                 }
-            }
         }
 
         private void button2_Click(object sender, EventArgs e)

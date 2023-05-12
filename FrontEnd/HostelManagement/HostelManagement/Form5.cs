@@ -472,10 +472,24 @@ namespace HostelManagement
 
         private void issuesicon_Click(object sender, EventArgs e)
         {
-            Issues frm = new Issues(reg);
-            this.Hide();
-            frm.ShowDialog();
-            this.Close();
+            if (block.Length != 0)
+            {
+                Issues frm = new Issues(reg);
+                this.Hide();
+                frm.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                DialogResult dr = MessageBox.Show("Room not alloted yet\n\nBook a room first!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                if (dr == DialogResult.OK)
+                {
+                    Booking frm1 = new Booking(reg);
+                    this.Hide();
+                    frm1.ShowDialog();
+                    this.Close();
+                }
+            }
         }
 
         private void roomchangeicon_Click(object sender, EventArgs e)

@@ -7,14 +7,12 @@ dbms_output.put_line(n);
 end;
 /
 
-
-
--- NOT OUR CODE
-create or replace procedure try(namee IN varchar)
+create or replace procedure fresherCG(sem IN int)
 is
-n person%rowtype;
+    n int;
 begin
-select * into n from person where person.name=namee;
-
+    if sem=1 then
+        update student set cgpa=10 where semester=sem;
+    end if;
 end;
 /

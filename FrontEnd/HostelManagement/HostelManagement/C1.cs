@@ -62,6 +62,7 @@ namespace HostelManagement
         private void C1_Load(object sender, EventArgs e)
         {
 
+
         }
 
         private void detailsicon_Click(object sender, EventArgs e)

@@ -20,6 +20,7 @@ namespace HostelManagement
         DataRow dr;
         int i = 0;
         long reg = 0;
+        string hostel,cg,sem,branch,gender;
         public Mail(long regno)
         {
             InitializeComponent();
@@ -40,6 +41,11 @@ namespace HostelManagement
                 dt = ds.Tables["student"];
                 dr = dt.Rows[i];
                 namelabel.Text = dr["name"].ToString();
+                hostel = dr["hostel_id"].ToString();
+                cg=dr["cgpa"].ToString();
+                branch = dr["branch"].ToString();
+                sem = dr["semester"].ToString();
+                gender = dr["gender"].ToString();
                 comm.CommandText = "select * from usertype where reg_no = '" + reg.ToString() + "'";
                 comm.CommandType = CommandType.Text;
                 ds = new DataSet();
@@ -91,34 +97,163 @@ namespace HostelManagement
 
         private void roombookicon_Click(object sender, EventArgs e)
         {
-            Booking frm = new Booking(reg);
-            this.Hide();
-            frm.ShowDialog();
-            this.Close();
+            if (cg == string.Empty || sem == string.Empty || branch == string.Empty || gender == string.Empty)
+            {
+                DialogResult dr = MessageBox.Show("Details not updated yet!\n\nUpdate details first to proceed for room booking", "Edit Details First", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (dr == DialogResult.OK)
+                {
+                    EditDetails frm = new EditDetails(reg);
+                    this.Hide();
+                    frm.ShowDialog();
+                    this.Close();
+                }
+            }
+            else if (hostel.Length != 0)
+            {
+                MessageBox.Show("Already booked a room!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return;
+            }
+            else
+            {
+                Booking frm = new Booking(reg);
+                this.Hide();
+                frm.ShowDialog();
+                this.Close();
+            }
         }
 
         private void messchangeicon_Click(object sender, EventArgs e)
         {
-            Mess frm = new Mess(reg);
-            this.Hide();
-            frm.ShowDialog();
-            this.Close();
+            if (hostel.Length != 0)
+            {
+                string ConStr = "DATA SOURCE=DESKTOP-FE4CR37:1521/XE;USER ID=SYSTEM;Password=rampage";
+                OracleConnection conn = new OracleConnection(ConStr);
+                conn.Open();
+                OracleCommand comm = new OracleCommand("", conn);
+                OracleTransaction txn = conn.BeginTransaction(IsolationLevel.ReadCommitted);
+                try
+                {
+                    comm.CommandText = "select * from mess_change where reg_no='" + reg.ToString() + "'";
+                    comm.CommandType = CommandType.Text;
+                    ds = new DataSet();
+                    da = new OracleDataAdapter(comm.CommandText, conn);
+                    da.Fill(ds, "mess_change");
+                    dt = ds.Tables["mess_change"];
+                    int n = dt.Rows.Count;
+                    if (n == 0)
+                    {
+                        Mess frm = new Mess(reg);
+                        this.Hide();
+                        frm.ShowDialog();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Mess change application under approval process\n\nPlease contact your administrator for updates!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    }
+                }
+                catch (Exception e1)
+                {
+                    txn.Rollback();
+                    DialogResult dr = MessageBox.Show(e1.ToString(), "Fail", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (dr == DialogResult.OK)
+                    {
+                        EditDetails frm1 = new EditDetails(reg);
+                        this.Hide();
+                        frm1.ShowDialog();
+                        this.Close();
+                    }
+                }
+            }
+            else
+            {
+                DialogResult dr = MessageBox.Show("Mess not alloted yet\n\nBook a room first!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                if (dr == DialogResult.OK)
+                {
+                    Booking frm1 = new Booking(reg);
+                    this.Hide();
+                    frm1.ShowDialog();
+                    this.Close();
+                }
+            }
         }
 
         private void roomchangeicon_Click(object sender, EventArgs e)
         {
-            Change frm = new Change(reg);
-            this.Hide();
-            frm.ShowDialog();
-            this.Close();
+            if (hostel.Length != 0)
+            {
+                string ConStr = "DATA SOURCE=DESKTOP-FE4CR37:1521/XE;USER ID=SYSTEM;Password=rampage";
+                OracleConnection conn = new OracleConnection(ConStr);
+                conn.Open();
+                OracleCommand comm = new OracleCommand("", conn);
+                OracleTransaction txn = conn.BeginTransaction(IsolationLevel.ReadCommitted);
+                try
+                {
+                    comm.CommandText = "select * from room_change where reg_no='" + reg.ToString() + "'";
+                    comm.CommandType = CommandType.Text;
+                    ds = new DataSet();
+                    da = new OracleDataAdapter(comm.CommandText, conn);
+                    da.Fill(ds, "room_change");
+                    dt = ds.Tables["room_change"];
+                    int n = dt.Rows.Count;
+                    if (n == 0)
+                    {
+                        Change frm = new Change(reg);
+                        this.Hide();
+                        frm.ShowDialog();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Room change application under approval process\n\nPlease contact your administrator for updates!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    }
+                }
+                catch (Exception e1)
+                {
+                    txn.Rollback();
+                    DialogResult dr = MessageBox.Show(e1.ToString(), "Fail", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (dr == DialogResult.OK)
+                    {
+                        EditDetails frm1 = new EditDetails(reg);
+                        this.Hide();
+                        frm1.ShowDialog();
+                        this.Close();
+                    }
+                }
+            }
+            else
+            {
+                DialogResult dr = MessageBox.Show("Room not alloted yet\n\nBook a room first!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                if (dr == DialogResult.OK)
+                {
+                    Booking frm1 = new Booking(reg);
+                    this.Hide();
+                    frm1.ShowDialog();
+                    this.Close();
+                }
+            }
         }
 
         private void issuesicon_Click(object sender, EventArgs e)
         {
-            Issues frm = new Issues(reg);
-            this.Hide();
-            frm.ShowDialog();
-            this.Close();
+            if (hostel.Length != 0)
+            {
+                Issues frm = new Issues(reg);
+                this.Hide();
+                frm.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                DialogResult dr = MessageBox.Show("Room not alloted yet\n\nBook a room first!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                if (dr == DialogResult.OK)
+                {
+                    Booking frm1 = new Booking(reg);
+                    this.Hide();
+                    frm1.ShowDialog();
+                    this.Close();
+                }
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

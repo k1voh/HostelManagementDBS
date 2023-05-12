@@ -37,7 +37,6 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.detailsLB = new System.Windows.Forms.ListBox();
             this.hostelCB = new System.Windows.Forms.ComboBox();
-            this.invalidhostel = new System.Windows.Forms.Label();
             this.l1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.searchTB = new System.Windows.Forms.TextBox();
@@ -156,19 +155,6 @@
             this.hostelCB.Size = new System.Drawing.Size(196, 27);
             this.hostelCB.TabIndex = 137;
             this.hostelCB.Text = "Choose ";
-            // 
-            // invalidhostel
-            // 
-            this.invalidhostel.AutoSize = true;
-            this.invalidhostel.BackColor = System.Drawing.Color.Transparent;
-            this.invalidhostel.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.invalidhostel.ForeColor = System.Drawing.Color.Red;
-            this.invalidhostel.Location = new System.Drawing.Point(406, 297);
-            this.invalidhostel.Name = "invalidhostel";
-            this.invalidhostel.Size = new System.Drawing.Size(99, 19);
-            this.invalidhostel.TabIndex = 136;
-            this.invalidhostel.Text = "*invalid field";
-            this.invalidhostel.Visible = false;
             // 
             // l1
             // 
@@ -321,7 +307,6 @@
             this.Controls.Add(this.searchTB);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.hostelCB);
-            this.Controls.Add(this.invalidhostel);
             this.Controls.Add(this.l1);
             this.Controls.Add(this.detailsLB);
             this.Controls.Add(this.pictureBox6);
@@ -356,7 +341,6 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.ListBox detailsLB;
         private System.Windows.Forms.ComboBox hostelCB;
-        private System.Windows.Forms.Label invalidhostel;
         private System.Windows.Forms.Label l1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox searchTB;

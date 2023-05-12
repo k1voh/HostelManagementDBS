@@ -106,16 +106,6 @@ namespace HostelManagement
 
         private void searchbutton_Click(object sender, EventArgs e)
         {
-            if (hostelCB.SelectedIndex <= -1)
-            {
-                invalidhostel.Visible = true;
-            }
-            else
-            {
-                invalidhostel.Visible = false;
-            }
-            if (!invalidhostel.Visible)
-            {
                 while (detailsLB.Items.Count != 0)
                 {
                     detailsLB.Items.RemoveAt(detailsLB.Items.Count - 1);
@@ -128,7 +118,32 @@ namespace HostelManagement
                     OracleCommand comm = new OracleCommand("", conn);
                     if (searchTB.Text.Length != 0)
                     {
-                        comm.CommandText = "select * from student where hostel_id = '" + hostelCB.SelectedItem.ToString() + "' and registration_number='" + searchTB.Text + "'";
+                        comm.CommandText = "select * from student where registration_number='" + searchTB.Text + "'";
+                        comm.CommandType = CommandType.Text;
+                        ds = new DataSet();
+                        da = new OracleDataAdapter(comm.CommandText, conn);
+                        da.Fill(ds, "student");
+                        dt = ds.Tables["student"];
+                        int n = dt.Rows.Count;
+                        if (n == 0)
+                        {
+                            detailsLB.Items.Add("\tNo details available...");
+                        }
+                        for (int j = 0; j < n; j++)
+                        {
+                            dr = dt.Rows[j];
+                            string sreg = dr["registration_number"].ToString();
+                            string name = dr["name"].ToString();
+                            string hostel = dr["hostel_id"].ToString();
+                            string branch = dr["branch"].ToString();
+                            detailsLB.Items.Add(sreg + "  \t " + name + "\t   " + hostel + "\t   " + branch);
+                        }
+                        
+                        conn.Close();
+                    }
+                    else if (searchTB.Text.Length == 0 && hostelCB.SelectedIndex >= 0)
+                    {
+                        comm.CommandText = "select * from student where hostel_id = '" + hostelCB.SelectedItem.ToString() + "'";
                         comm.CommandType = CommandType.Text;
                         ds = new DataSet();
                         da = new OracleDataAdapter(comm.CommandText, conn);
@@ -150,9 +165,34 @@ namespace HostelManagement
                         }
                         conn.Close();
                     }
+                    else if (searchTB.Text.Length != 0 && hostelCB.SelectedIndex <= -1)
+                    {
+                        comm.CommandText = "select * from student where registration_number='" + searchTB.Text + "'";
+                        comm.CommandType = CommandType.Text;
+                        ds = new DataSet();
+                        da = new OracleDataAdapter(comm.CommandText, conn);
+                        da.Fill(ds, "student");
+                        dt = ds.Tables["student"];
+                        int n = dt.Rows.Count;
+                        if (n == 0)
+                        {
+                            detailsLB.Items.Add("\tNo details available...");
+                        }
+                        for (int j = 0; j < n; j++)
+                        {
+                            dr = dt.Rows[j];
+                            string sreg = dr["registration_number"].ToString();
+                            string name = dr["name"].ToString();
+                            string hostel = dr["hostel_id"].ToString();
+                            string branch = dr["branch"].ToString();
+                            detailsLB.Items.Add(sreg + "  \t " + name + "\t   " + hostel + "\t   " + branch);
+                        }
+
+                        conn.Close();
+                    }
                     else
                     {
-                        comm.CommandText = "select * from student where hostel_id = '" + hostelCB.SelectedItem.ToString() + "'";
+                        comm.CommandText = "select * from student";
                         comm.CommandType = CommandType.Text;
                         ds = new DataSet();
                         da = new OracleDataAdapter(comm.CommandText, conn);
@@ -180,7 +220,6 @@ namespace HostelManagement
                 {
                 }
             }
-        }
 
         private void label4_Click(object sender, EventArgs e)
         {
