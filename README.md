@@ -34,6 +34,7 @@ After the database design and implementation, we designed and implemented the fr
 - **Student**: Starts with the digit 2 and consists of a total of 8 digits.
 - **Caretaker**: Starts with the digit 1 and consists of a total of 3 digits.
 - **Administrator**: Starts with the digit 0 and consists of a total of 5 digits.
+
 After logging in successfully, the users are redirected to their respective landing pages. The student initially is able to view the information set during registration and is supposed to edit cgpa, branch and gender before proceeding to room booking. Initially the mess change and room change features are blocked unless the room is booked. After successful room booking, the profile page is updated and the students are not enabled to change mess and hostel rooms. 
 
 Messes are predetermined based on the hostel blocks selected initially can be changed after applying for a mess change. The students are also provided with a feature to lodge a complaint or ask a query to the caretakers through this system. Also at all times, the student inbox feature is enabled where any approved or rejected applications are visible. The students can also log out of the system at all times using the logout button.
