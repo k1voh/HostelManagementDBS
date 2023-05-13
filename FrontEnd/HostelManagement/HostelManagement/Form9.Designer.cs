@@ -178,7 +178,7 @@
             this.namelabel.AutoSize = true;
             this.namelabel.BackColor = System.Drawing.Color.Transparent;
             this.namelabel.Font = new System.Drawing.Font("Bookman Old Style", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.namelabel.Location = new System.Drawing.Point(838, 119);
+            this.namelabel.Location = new System.Drawing.Point(821, 119);
             this.namelabel.Name = "namelabel";
             this.namelabel.Size = new System.Drawing.Size(61, 21);
             this.namelabel.TabIndex = 170;
