@@ -43,4 +43,8 @@ For the administrators, they are enabled with approval features of any student a
 
 The caretakers have control over any issues or student queries. The listboxes provided are pre-filled with the requests and once resolved, are sent to students for confirmation. They also have a feature to view student details and filter results specifically based on blocks or using student registration numbers.
 
-
+## Tech Stack Used
+- **C#**: Language used for coding logic into the project
+- **Visual Studio 2012**: IDE used for front-end design and connectivity with backend
+- **Oracle Database Client 12c**: Data access tool for integration with Oracle Database
+- **Oracle Express 21c**: Structure for database creation and management
