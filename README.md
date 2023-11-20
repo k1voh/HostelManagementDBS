@@ -6,7 +6,7 @@ This project aims to simplify the tedious process of hostel booking and allotmen
 
 ## Features
 
-- Multiple user privileage logins
+- Multiple user privilege logins
 - GUI based user-friendly experience
 - Validation checks for data consistency
 - Windows-exclusive executable application
